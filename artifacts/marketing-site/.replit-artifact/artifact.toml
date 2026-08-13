@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "KlaraLearn Marketing Site"
+description = "SEO-optimised marketing website for KlaraLearn — a tutoring marketplace connecting UK secondary school students with affordable private tutors for 11 Plus, GCSE, SATs, and Common Entrance exams. Includes subject pages, location pages, blog articles, and all structured data/schema markup."
+version = "1.0.0"
+id = "artifacts/marketing-site"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21209
+
+[services.development]
+run = "pnpm --filter @workspace/marketing-site run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/marketing-site", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/marketing-site/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21209"
+BASE_PATH = "/"
