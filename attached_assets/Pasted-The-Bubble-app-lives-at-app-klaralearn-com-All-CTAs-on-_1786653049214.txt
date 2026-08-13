@@ -1,0 +1,324 @@
+The Bubble app lives at app.klaralearn.com. All CTAs on the marketing site (Sign Up, Login, Book a Tutor, View Profile) should link there. Tutor data for listing pages can be fetched from Bubble's Data API at build time via getStaticProps.
+
+
+
+Project Context
+You are working on a tutoring marketplace called KlaraLearn (https://klaralearn.com) that connects affordable tutors (including tutors from developing countries and local UK tutors) with UK secondary school students and their parents. The primary audience is parents of UK secondary school children searching for private tuition, particularly for the 11 Plus exam and other key UK assessments (SATs, GCSE, Common Entrance). The real value proposition is professional-quality tutoring at significantly lower price points than the UK market average.
+
+The backend is handled separately. Your remit is:
+
+Technical SEO — pre-rendering, structured data, sitemap, crawlability, internal linking, page speed
+Content SEO — information-rich, keyword-optimised page content that earns rankings and trust
+AEO (Answer Engine Optimisation) — structuring content to appear in featured snippets and "People Also Ask" boxes on Google
+GEO (Generative Engine Optimisation) — structuring content so that AI systems (ChatGPT, Perplexity, Gemini, Google SGE) cite KlaraLearn as a trusted answer when parents ask questions about tutoring
+A keyword sheet with high-volume, high-intent terms will be provided separately. Integrate those keywords into every layer of the implementation below.
+
+1. Pre-Rendering (Critical — Do This First)
+This is likely a React or Next.js SPA. Google's JavaScript renderer is unreliable and slow. Every page must render real HTML at build time.
+
+If React + Vite:
+
+Create src/entry-server.tsx as the SSR render entry
+Create scripts/prerender.mjs that builds an SSR bundle, discovers all routes from data files, renders each with renderToString, and writes dist/[route]/index.html with the full rendered HTML injected
+Every route must produce a standalone HTML file — /subjects/maths/index.html, /tutors/[slug]/index.html, /location/london/index.html, etc.
+The pre-render script must also inject per-page <title>, <meta name="description">, <link rel="canonical">, and all Open Graph tags into the <head> of each file
+If Next.js:
+
+Use getStaticProps + getStaticPaths for all dynamic routes (tutor profiles, subject pages, location pages)
+Use generateMetadata (App Router) or getServerSideProps (Pages Router) for metadata
+Ensure ISR (Incremental Static Regeneration) is set up for tutor profiles so new tutors appear without full rebuilds
+The test: curl -s https://klaralearn.com/subjects/maths | grep "<h1>" must return actual content. If it returns an empty <div id="root">, pre-rendering is not working and Google will not index your pages.
+
+2. Page-Level SEO Metadata
+Every page needs a <SEOHead> component (or equivalent) that sets:
+
+<title>{pageTitle} | KlaraLearn</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={`https://klaralearn.com${path}`} />
+<meta property="og:title" content={pageTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={`https://klaralearn.com${path}`} />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://klaralearn.com/og-image.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+
+Title formula by page type:
+
+Homepage: Affordable Private Tutors for 11 Plus & Secondary School | KlaraLearn
+Subject page: [Subject] Tutors for 11 Plus & GCSE — From £X/hr | KlaraLearn
+Location page: Private Tutors in [City] — 11 Plus, GCSE & SATs | KlaraLearn
+Tutor profile: [Tutor Name] — [Subject] Tutor | KlaraLearn
+Blog/guide: [H1 of article] | KlaraLearn
+Noindex pages (set <meta name="robots" content="noindex, nofollow"> on these):
+
+/login, /register, /dashboard, /booking/confirm, /payment/success, /admin/*
+Any page that requires authentication to be useful
+3. Structured Data (Schema.org JSON-LD)
+This is the most important layer for AEO. Every page type needs its own schema. Inject as <script type="application/ld+json"> in the <head>.
+
+Homepage
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "KlaraLearn",
+  "url": "https://klaralearn.com",
+  "description": "Affordable private tutors for 11 Plus, GCSE, and SATs. Connect with qualified tutors from £X per hour.",
+  "areaServed": "United Kingdom",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Private Tutoring Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "11 Plus Tuition" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "GCSE Maths Tutoring" } }
+    ]
+  }
+}
+
+Subject / Exam Page (e.g. /subjects/11-plus)
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "11 Plus Private Tutoring",
+  "serviceType": "Private Tuition",
+  "provider": { "@type": "EducationalOrganization", "name": "KlaraLearn" },
+  "areaServed": "United Kingdom",
+  "audience": { "@type": "Audience", "audienceType": "Parents of UK primary school children" },
+  "offers": {
+    "@type": "AggregateOffer",
+    "lowPrice": "X",
+    "highPrice": "Y",
+    "priceCurrency": "GBP",
+    "offerCount": "[number of tutors]"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.8",
+    "reviewCount": "120"
+  }
+}
+
+Tutor Profile Page
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "[Tutor Full Name]",
+  "jobTitle": "Private Tutor",
+  "knowsAbout": ["Mathematics", "11 Plus", "GCSE"],
+  "hasCredential": { "@type": "EducationalOccupationalCredential", "name": "[Degree or qualification]" },
+  "offers": {
+    "@type": "Offer",
+    "name": "[Subject] Private Tutoring",
+    "price": "[hourly rate]",
+    "priceCurrency": "GBP"
+  }
+}
+
+FAQ Pages / FAQ Sections (critical for AEO)
+Every subject page and the homepage must include an FAQ section with at minimum 6 questions. Schema:
+
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How much does 11 Plus tutoring cost in the UK?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "11 Plus tutoring in the UK typically costs between £30 and £80 per hour with local tutors. On KlaraLearn, you can find qualified tutors from £X per hour..."
+      }
+    }
+  ]
+}
+
+Blog / Guide Articles
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "[Article title]",
+  "author": { "@type": "Person", "name": "[Author]" },
+  "publisher": { "@type": "Organization", "name": "KlaraLearn", "url": "https://klaralearn.com" },
+  "datePublished": "YYYY-MM-DD",
+  "dateModified": "YYYY-MM-DD",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://klaralearn.com/blog/[slug]" }
+}
+
+4. Site Architecture & URL Structure
+Structure URLs to be keyword-rich, flat, and crawlable:
+
+https://klaralearn.com/                          → Homepage
+https://klaralearn.com/subjects/                 → All subjects
+https://klaralearn.com/subjects/maths/           → Maths tutors
+https://klaralearn.com/subjects/english/         → English tutors
+https://klaralearn.com/subjects/11-plus/         → 11 Plus tutors
+https://klaralearn.com/subjects/science/         → Science tutors
+https://klaralearn.com/subjects/gcse-maths/      → GCSE Maths specifically
+https://klaralearn.com/location/london/          → Tutors in London
+https://klaralearn.com/location/manchester/      → Tutors in Manchester
+https://klaralearn.com/location/online/          → Online tutors (global)
+https://klaralearn.com/tutors/[slug]/            → Individual tutor profiles
+https://klaralearn.com/blog/                     → Guides and articles
+https://klaralearn.com/blog/[slug]/              → Individual articles
+https://klaralearn.com/how-it-works/             → Trust + process page
+https://klaralearn.com/parents/                  → Parent-specific landing page
+https://klaralearn.com/about/                    → About page
+
+Every URL segment must be lowercase, hyphenated, and contain the primary keyword for that page.
+
+5. Sitemap & robots.txt
+Generate sitemap.xml dynamically at build time. It must include:
+
+All subject pages with <priority>0.9</priority>
+All location pages with <priority>0.8</priority>
+All tutor profile pages with <priority>0.7</priority>
+All blog posts with <priority>0.7</priority>
+Homepage at <priority>1.0</priority>
+<lastmod> dates pulled from when each tutor profile or article was last updated
+<url>
+  <loc>https://klaralearn.com/subjects/11-plus/</loc>
+  <lastmod>2026-08-13</lastmod>
+  <priority>0.9</priority>
+</url>
+
+robots.txt:
+
+User-agent: *
+Disallow: /dashboard/
+Disallow: /admin/
+Disallow: /api/
+Disallow: /login
+Disallow: /register
+Sitemap: https://klaralearn.com/sitemap.xml
+
+Submit IndexNow after every deploy: POST all URLs to https://api.indexnow.org/indexnow with your key. This notifies Bing, Yandex, and Google immediately. The IndexNow key file ([key].txt) must be served at https://klaralearn.com/[key].txt.
+
+6. Internal Linking Strategy
+Internal linking is how PageRank flows through your site. Follow these rules:
+
+Every tutor profile must link to their subject page(s) and location page
+Every subject page must link to: related subjects, relevant blog posts, the homepage, and a "Browse all tutors" CTA
+Every location page must link to: subjects available in that city, the homepage, and nearby cities
+The homepage must link to: all primary subject pages, top 3–5 location pages, the blog, and How It Works
+Every blog post must link to: at minimum 2 relevant subject pages, 1 location page, and 1 related blog post
+Use exact-match or close-match anchor text: "11 Plus tutors in London", not "click here"
+Never use window.location.href or plain <a href> for internal navigation in a React/Next.js app — always use the router's <Link> component to preserve SPA behaviour and avoid full page reloads
+7. Content Requirements by Page Type
+Subject Pages (e.g. https://klaralearn.com/subjects/11-plus/)
+Each subject page must contain:
+
+H1: Primary keyword-rich heading (e.g. "Private 11 Plus Tutors — Affordable UK-Wide & Online")
+Introduction paragraph (150–200 words): What the subject/exam is, who needs it, why private tuition helps, and what KlaraLearn offers. Use the provided keywords naturally.
+How our tutors help section: 3–4 bullet points about the tutoring approach
+Pricing transparency section: Range of prices on KlaraLearn, comparison to UK market average
+Tutor listing: Grid of tutor cards with name, photo, subject, hourly rate, rating, country
+FAQ section (minimum 6 Q&As, see AEO section below)
+Trust signals: Total sessions completed, average rating, number of tutors in this subject, DBS/background check status
+Related subjects links section
+Location Pages (e.g. https://klaralearn.com/location/london/)
+H1: "Private Tutors in London — 11 Plus, GCSE & SATs from £X/hr"
+Local context paragraph: Reference London's school system, competitive secondary school admissions, grammar school catchment areas
+Tutor listing filtered by location + online
+Local school exam context (which grammar schools serve London, key exam dates)
+FAQ specific to London tutoring
+Tutor Profile Pages (https://klaralearn.com/tutors/[slug]/)
+Full name, photo, country/city, verified badge
+Bio (minimum 150 words) written in first person: background, teaching philosophy, subjects and levels, experience
+Subjects taught with links to subject pages
+Hourly rate + session length options
+Rating and reviews (with schema markup)
+Availability calendar snippet
+"Book a free trial session" CTA above the fold
+Credentials / qualifications section
+Blog / Resource Articles (https://klaralearn.com/blog/[slug]/)
+These are your primary AEO and GEO assets. Topics should map directly to "People Also Ask" questions parents search for. Required articles:
+
+"What is the 11 Plus exam? Complete Parent's Guide [2026]"
+"How much does an 11 Plus tutor cost in the UK?"
+"Online vs in-person tutoring — which is better for 11 Plus?"
+"How to choose the right tutor for your child"
+"Grammar school admissions: what parents need to know"
+"GCSE Maths tutoring: when to start and what to expect"
+"How tutors from overseas can help UK students (and why it works)"
+Each article: minimum 1,200 words, clear subheadings (H2/H3), internal links to relevant KlaraLearn subject/location pages, FAQ schema on the page, author name and date visible.
+
+8. AEO — Answer Engine Optimisation
+AEO is about getting KlaraLearn's content into Google's featured snippets and People Also Ask boxes. Rules:
+
+For featured snippets:
+
+Identify the exact question the searcher asks (e.g. "How much does 11 Plus tutoring cost?")
+Answer it in the first 40–60 words of the relevant section, directly and completely
+Use the question as the H2 or H3 heading immediately above the answer
+Format: Definition box style (one clear paragraph), or a numbered list for "how to" questions
+For People Also Ask:
+
+Every subject page and every blog post must include a visible FAQ section
+Each question in the FAQ section must exactly match or closely mirror real PAA questions from Google (research these for each keyword)
+Apply FAQPage JSON-LD schema to every FAQ section
+Questions should be written from the parent's perspective: "How many hours a week should my child have 11 Plus tutoring?", "Is online tutoring as effective as in-person for 11 Plus?"
+Snippet-ready content formats:
+
+Tables (e.g. "11 Plus Tutoring Cost Comparison" table: Local UK tutor vs KlaraLearn tutor)
+Numbered lists (e.g. "5 things to look for in an 11 Plus tutor")
+Definition paragraphs (e.g. "What is the 11 Plus? The 11 Plus is a selective entrance examination taken by Year 5 and Year 6 pupils in England...")
+9. GEO — Generative Engine Optimisation
+GEO is about ensuring AI systems (ChatGPT, Perplexity, Google Gemini, Claude) reference KlaraLearn when parents ask tutoring questions. AI models prioritise:
+
+Entity clarity: Every page must make it 100% clear what KlaraLearn is, who it serves, and what it does. The homepage and About page must state this in plain, unambiguous language in the first paragraph. AI systems read this to build their knowledge graph entry for KlaraLearn.
+
+Authoritative factual content: AI models cite sources that state facts accurately and cite their reasoning. Each article should include:
+
+Accurate statistics about UK school exams (sourced from GOV.UK, exam boards)
+Pricing data compared to industry averages
+Expert commentary from named tutors on KlaraLearn
+Brand entity establishment: Ensure the name "KlaraLearn" appears consistently across all pages, in schema markup ("name": "KlaraLearn"), in the Open Graph title, and in the page title. Consistency of name = stronger entity recognition by AI. The canonical domain https://klaralearn.com must appear in every canonical tag and schema URL field.
+
+Structured "about" content: Include a clear, structured About page at https://klaralearn.com/about/ with:
+
+What KlaraLearn is (one sentence)
+Who it's for (parents of UK secondary school students)
+How it works (3 steps)
+How tutors are vetted
+Company background and mission
+Citations and E-E-A-T (Experience, Expertise, Authority, Trust):
+
+Every tutor profile should show verifiable credentials
+Every blog post should have a named author with a byline and bio
+Link to authoritative external sources (GOV.UK, exam board websites) from relevant articles — this signals to AI that KlaraLearn's content is grounded in real-world, verifiable information
+10. Technical Infrastructure Checklist
+Before launch and after every major deploy, verify all of the following:
+
+ Every page returns real HTML content when curled (pre-rendering confirmed): curl -s https://klaralearn.com/subjects/maths | grep "<h1>"
+ Every page has a unique <title> and <meta name="description">
+ Every page has a self-referencing <link rel="canonical" href="https://klaralearn.com/[path]/">
+ Structured data validates cleanly in Google's Rich Results Test for https://klaralearn.com
+ https://klaralearn.com/sitemap.xml is accessible and includes all public URLs
+ https://klaralearn.com/robots.txt is accessible and correct
+ HTTP → HTTPS 301 redirect enforced: curl -I http://klaralearn.com must return 301 pointing to https://klaralearn.com
+ Dashboard, booking, and auth pages are noindexed
+ IndexNow key file is live at https://klaralearn.com/[key].txt
+ Core Web Vitals: LCP < 2.5s, CLS < 0.1, INP < 200ms
+ All images have descriptive alt text
+ No broken internal links
+ Mobile rendering confirmed (Google uses mobile-first indexing)
+11. Keyword Integration Instructions
+When you receive the keyword sheet, apply keywords as follows:
+
+Priority	Placement
+Primary keyword	H1, <title>, first 100 words of body, meta description, URL slug
+Secondary keywords	H2/H3 subheadings, image alt text, internal link anchor text
+Long-tail keywords	FAQ questions, blog post titles, body paragraphs
+Location + keyword combos	Location page H1s and meta, tutor profile metadata
+Do not keyword-stuff. Each keyword should appear naturally and be surrounded by relevant supporting content. Google's Helpful Content system penalises thin, keyword-heavy pages.
+
+12. Trust Signals (Converts Parents, Also Helps SEO)
+Parents are the decision-makers and they are cautious. Every page on https://klaralearn.com must prominently feature:
+
+Total number of tutors on the platform
+Total sessions completed
+Average tutor rating
+Safeguarding statement (DBS checks, ID verification, or equivalent)
+Money-back guarantee or free trial session offer
+Real student success stories (with schema Review markup)
+Press mentions or awards (if any)
+These convert visitors AND they signal E-E-A-T to Google and AI systems.

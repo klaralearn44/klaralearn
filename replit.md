@@ -1,6 +1,6 @@
-# [Project name]
+# KlaraLearn
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+SEO-optimised marketing website for KlaraLearn (https://klaralearn.com) — a tutoring marketplace that connects UK secondary school students and parents with affordable private tutors (including tutors from developing countries) for the 11 Plus, GCSE, SATs, and Common Entrance exams.
 
 ## Run & Operate
 
