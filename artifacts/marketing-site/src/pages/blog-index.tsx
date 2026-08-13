@@ -7,31 +7,80 @@ import { motion } from 'framer-motion';
 export function BlogIndex() {
   const articles = [
     {
-      title: "What is the 11 Plus exam? Complete Parent's Guide [2026]",
-      excerpt: "Everything you need to know about the 11 Plus exam: what it is, how it works, and how to prepare your child for grammar school entry.",
-      date: "August 12, 2026",
-      href: "/blog/what-is-a-grammar-school",
+      title: "What Is the 11 Plus Exam? A Parent's Complete Guide",
+      excerpt: "Everything you need to know about the 11 plus: what it tests, which schools use it, the difference between GL Assessment and CEM, and what a good score looks like.",
+      date: "September 1, 2025",
+      href: "/blog/what-is-the-11-plus",
       category: "Guides"
     },
     {
-      title: "How much does an 11 Plus tutor cost in the UK?",
-      excerpt: "A complete breakdown of tutoring rates across the UK, why local prices are so high, and how to find affordable alternatives.",
-      date: "August 5, 2026",
+      title: "How to Prepare for the 11 Plus: The Ultimate Parent's Guide",
+      excerpt: "A year-by-year preparation guide from Year 3 to exam day in Year 6 — when to start, what to study, sample timetables, and how tutoring makes the difference.",
+      date: "September 1, 2025",
+      href: "/blog/how-to-prepare-for-11-plus",
+      category: "Guides"
+    },
+    {
+      title: "11 Plus Verbal & Non-Verbal Reasoning: What Parents Need to Know",
+      excerpt: "Verbal reasoning and non-verbal reasoning are core 11 plus subjects not taught in primary schools. See example question types and learn how to build these skills at home.",
+      date: "September 1, 2025",
+      href: "/blog/11-plus-verbal-reasoning",
+      category: "11 Plus"
+    },
+    {
+      title: "Best 11 Plus Practice Papers: Everything Parents Need to Know",
+      excerpt: "GL Assessment and CEM-style practice papers compared, plus a 6-step guide to using them effectively — from untimed concept-building to full mock exams.",
+      date: "September 1, 2025",
+      href: "/blog/11-plus-practice-papers",
+      category: "11 Plus"
+    },
+    {
+      title: "Grammar School Admissions: A Complete Parent's Guide",
+      excerpt: "How to apply for a grammar school place — the full timeline, Common Application Form, Stage 2 headteacher assessments, and tips for improving your child's chances.",
+      date: "September 1, 2025",
+      href: "/blog/grammar-school-admissions",
+      category: "Admissions"
+    },
+    {
+      title: "Are Grammar Schools Free? Fees, Costs & What Parents Pay",
+      excerpt: "State grammar schools charge no tuition fees. But private grammar schools charge £12,000–£20,000/yr. We explain the difference — and the hidden cost most parents overlook.",
+      date: "September 1, 2025",
+      href: "/blog/grammar-school-fees",
+      category: "Guides"
+    },
+    {
+      title: "How Much Does Private Tutoring Cost in the UK? (2025 Prices)",
+      excerpt: "Private tutoring costs £25–£80/hr on average in the UK. We break down prices by subject, level, and location — and show how to get expert tuition from £15/hr.",
+      date: "September 1, 2025",
       href: "/blog/how-much-does-tutoring-cost",
       category: "Pricing"
     },
     {
-      title: "Grammar school admissions: what parents need to know",
-      excerpt: "Navigating the complex world of grammar school admissions, catchment areas, and appeal processes.",
-      date: "July 28, 2026",
-      href: "/blog/grammar-school-admissions",
-      category: "Admissions"
+      title: "Best Grammar Schools in England: A Regional Guide",
+      excerpt: "Top grammar schools in London, Kent, Buckinghamshire, and the West Midlands — with competition levels, exam boards, and what makes each area different.",
+      date: "September 1, 2025",
+      href: "/blog/best-grammar-schools-uk",
+      category: "Schools"
+    },
+    {
+      title: "Grammar School vs Comprehensive School: Which Is Better?",
+      excerpt: "An objective comparison of grammar schools and comprehensives on academic outcomes, social diversity, and wellbeing — so parents can make a genuinely informed decision.",
+      date: "September 1, 2025",
+      href: "/blog/grammar-school-vs-comprehensive",
+      category: "Guides"
+    },
+    {
+      title: "What Is a Grammar School? A Complete Guide for UK Parents",
+      excerpt: "A grammar school is a state-funded secondary school that selects its pupils by academic ability through the 11 plus. Here's everything you need to know.",
+      date: "August 15, 2026",
+      href: "/blog/what-is-a-grammar-school",
+      category: "Guides"
     }
   ];
 
   return (
     <Layout>
-      <SEOHead 
+      <SEOHead
         title="KlaraLearn Blog | Guides for 11 Plus, GCSEs & Tutoring"
         description="Expert advice, study guides, and cost breakdowns for UK parents navigating grammar school admissions, GCSEs, and private tutoring."
         path="/blog"
@@ -47,15 +96,15 @@ export function BlogIndex() {
       </section>
 
       <section className="py-24 bg-white">
-        <div className="container mx-auto px-4 max-w-5xl">
+        <div className="container mx-auto px-4 max-w-6xl">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {articles.map((article, index) => (
-              <motion.article 
+              <motion.article
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
                 className="group flex flex-col bg-white rounded-2xl border overflow-hidden hover:shadow-lg transition-all"
               >
                 <div className="p-8 flex flex-col flex-1">

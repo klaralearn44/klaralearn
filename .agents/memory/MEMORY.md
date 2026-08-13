@@ -1,0 +1,2 @@
+- [KlaraLearn site structure](klaralearn-site.md) — marketing-site artifact at root; 21 pages built; all CTAs → https://app.klaralearn.com
+- [KlaraLearn keyword mapping](klaralearn-keywords.md) — 4 Moz exports mapped; doc at docs/seo/keyword-page-mapping.md; coverage gaps remain for maths/english/science/Manchester exports
