@@ -3,7 +3,7 @@ import type { Tutor } from '@/data/tutors';
 export const PUBLIC_TUTORS_API_URL =
   'https://edubridgegloballearning.com/version-test/api/1.1/obj/publictutorcard';
 
-interface BubbleTutorRecord {
+export interface BubbleTutorRecord {
   _id?: string;
   fullname?: string;
   headline?: string;
@@ -125,7 +125,9 @@ function tutorTags(record: BubbleTutorRecord) {
   const prioritisedTags = priorityTags.filter((tag) => orderedTags.includes(tag));
   const remainingTags = orderedTags.filter((tag) => !prioritisedTags.includes(tag));
 
-  return [...prioritisedTags, ...remainingTags].slice(0, 5);
+  // Keep the complete taxonomy on the mapped tutor. TutorCard limits the
+  // badges shown visually, while subject pages use these tags for filtering.
+  return [...prioritisedTags, ...remainingTags];
 }
 
 export function mapBubbleTutor(record: BubbleTutorRecord, index: number): Tutor {

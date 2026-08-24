@@ -50,7 +50,7 @@ export function TutorCard({ tutor, index = 0 }: { tutor: Tutor, index?: number }
       {tutor.experience && <p className="mt-3 text-xs leading-relaxed text-slate-500 line-clamp-2">{tutor.experience}</p>}
 
       <div className="flex flex-wrap gap-2 my-6">
-        {tutor.tags.map(tag => (
+        {tutor.tags.slice(0, 5).map(tag => (
           <Badge key={tag} variant="secondary" className="bg-slate-100 text-slate-600 hover:bg-slate-200">
             {tag}
           </Badge>
