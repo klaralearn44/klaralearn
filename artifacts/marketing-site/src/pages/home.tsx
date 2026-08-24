@@ -12,6 +12,8 @@ import { motion } from 'framer-motion';
 import { Link } from 'wouter';
 
 export function Home() {
+  const heroImageSrc = `${import.meta.env.BASE_URL}images/klara-school-tutoring.jpg`;
+
   const faqs = [
     {
       q: "How are KlaraLearn tutors so affordable?",
@@ -48,8 +50,15 @@ export function Home() {
       />
 
       {/* Hero Section */}
-      <section className="relative pt-24 pb-32 overflow-hidden bg-[#1B3D5C]">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#1B3D5C] to-[#00A896]/20 mix-blend-multiply" />
+      <section className="relative pt-24 pb-32 md:pt-32 md:pb-40 overflow-hidden bg-[#1B3D5C]">
+        <img
+          src={heroImageSrc}
+          alt="Secondary school students and a teacher in a spacious classroom, representing supportive learning"
+          className="absolute inset-0 w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-[#1B3D5C]/70 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#1B3D5C] via-[#1B3D5C]/90 to-[#1B3D5C]/20" />
+
         {/* Subtle noise texture */}
         <div className="absolute inset-0 opacity-10 mix-blend-overlay" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")' }}></div>
 
@@ -60,11 +69,18 @@ export function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
             >
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                Affordable private tutors for 11 Plus, GCSE & SATs
+              <div className="mb-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/90 text-sm font-medium backdrop-blur-md">
+                <span className="w-2 h-2 rounded-full bg-[#4DE1C1]"></span>
+                Trusted UK Curriculum Experts
+              </div>
+
+              <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white mb-6 leading-[1.15] tracking-tight">
+                Affordable private tutors <br className="hidden md:block" />
+                for <span className="text-[#4DE1C1]">11 Plus, GCSE & SATs</span>
               </h1>
-              <p className="text-xl text-white/90 mb-10 leading-relaxed max-w-2xl">
-                World-class education shouldn't be a luxury. Connect with highly-rated global tutors who understand the UK curriculum—at a fraction of the cost.
+
+              <p className="text-lg md:text-xl text-white/90 mb-10 leading-relaxed max-w-2xl font-light">
+                World-class education shouldn't be a luxury. Connect with highly-rated global tutors who understand the UK curriculum—<span className="font-semibold text-white">at a fraction of the cost.</span>
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
@@ -76,10 +92,10 @@ export function Home() {
                 </Button>
               </div>
               
-              <div className="mt-10 flex items-center gap-4 text-sm text-white/80 font-medium">
-                <span className="flex items-center gap-1.5"><CheckCircle2 className="w-5 h-5 text-[#00A896]" /> DBS Checked</span>
-                <span className="flex items-center gap-1.5"><CheckCircle2 className="w-5 h-5 text-[#00A896]" /> Free Trial</span>
-                <span className="flex items-center gap-1.5"><CheckCircle2 className="w-5 h-5 text-[#00A896]" /> No Commitments</span>
+              <div className="mt-10 flex items-center gap-4 text-sm text-white/80 font-medium flex-wrap">
+                <span className="flex items-center gap-1.5"><CheckCircle2 className="w-5 h-5 text-[#4DE1C1]" /> DBS Checked</span>
+                <span className="flex items-center gap-1.5"><CheckCircle2 className="w-5 h-5 text-[#4DE1C1]" /> Free Trial</span>
+                <span className="flex items-center gap-1.5"><CheckCircle2 className="w-5 h-5 text-[#4DE1C1]" /> No Commitments</span>
               </div>
             </motion.div>
           </div>
