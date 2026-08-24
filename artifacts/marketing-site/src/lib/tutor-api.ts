@@ -16,6 +16,9 @@ export interface BubbleTutorRecord {
   total_reviews?: number | string | null;
   profile_photo?: string;
   tutoring_experience?: string;
+  languages?: string | string[] | null;
+  Slug?: string;
+  'Modified Date'?: string;
 }
 
 interface BubbleTutorResponse {
@@ -49,6 +52,11 @@ function normalisePhotoUrl(value?: string) {
   const url = cleanText(value);
   if (!url) return undefined;
   return url.startsWith('//') ? `https:${url}` : url;
+}
+
+function normaliseLanguages(value?: string | string[] | null) {
+  const values = Array.isArray(value) ? value : value?.split(',');
+  return values?.map(cleanText).filter(Boolean) ?? [];
 }
 
 function initialsFor(name: string) {
@@ -134,6 +142,7 @@ export function mapBubbleTutor(record: BubbleTutorRecord, index: number): Tutor 
   const name = cleanText(record.fullname) || `KlaraLearn Tutor ${index + 1}`;
   const country = cleanText(record.country) || 'Global online';
   const tags = tutorTags(record);
+  const slug = cleanText(record.Slug);
   const subject =
     (record.subjects ?? []).map(cleanText).filter(Boolean).join(' & ') ||
     cleanText(record.headline) ||
@@ -159,6 +168,11 @@ export function mapBubbleTutor(record: BubbleTutorRecord, index: number): Tutor 
     photoUrl: normalisePhotoUrl(record.profile_photo),
     headline: cleanText(record.headline) || undefined,
     experience: cleanText(record.tutoring_experience) || undefined,
+    languages: normaliseLanguages(record.languages),
+    profileUrl: slug
+      ? `https://app.klaralearn.com/publictutorcard/${encodeURIComponent(slug)}`
+      : undefined,
+    updatedAt: cleanText(record['Modified Date']) || undefined,
   };
 }
 

@@ -13,6 +13,9 @@ export interface Tutor {
   photoUrl?: string;
   headline?: string;
   experience?: string;
+  languages?: string[];
+  profileUrl?: string;
+  updatedAt?: string;
 }
 
 export const tutors: Tutor[] = [

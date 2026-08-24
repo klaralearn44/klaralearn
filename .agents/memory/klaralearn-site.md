@@ -14,7 +14,7 @@ description: Page inventory, brand, routing conventions, and GEO/AEO content sta
 
 **Why:** Bubble's public tutor records have optional, inconsistent fields and combine broad subject lists with curricula. The marketing site must surface relevant tutors without misleading parents when the live feed is unavailable.
 
-**How to apply:** When extending the tutor taxonomy, make each routing-relevant label resilient to incomplete source metadata and ensure it survives visual tag limits.
+**How to apply:** When extending the tutor taxonomy, make each routing-relevant label resilient to incomplete source metadata and ensure it survives visual tag limits. Tutor profile links use `https://app.klaralearn.com/publictutorcard/{slug}`.
 
 ## Artifact
 - Dir: artifacts/marketing-site

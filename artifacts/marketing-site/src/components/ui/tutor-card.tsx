@@ -6,6 +6,11 @@ import { Badge } from '@/components/ui/badge';
 import { motion } from 'framer-motion';
 
 export function TutorCard({ tutor, index = 0 }: { tutor: Tutor, index?: number }) {
+  const updatedDate = tutor.updatedAt ? new Date(tutor.updatedAt) : null;
+  const formattedUpdatedDate = updatedDate && !Number.isNaN(updatedDate.getTime())
+    ? new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }).format(updatedDate)
+    : null;
+
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
@@ -48,6 +53,16 @@ export function TutorCard({ tutor, index = 0 }: { tutor: Tutor, index?: number }
         {tutor.bio}
       </p>
       {tutor.experience && <p className="mt-3 text-xs leading-relaxed text-slate-500 line-clamp-2">{tutor.experience}</p>}
+      {tutor.languages && tutor.languages.length > 0 && (
+        <p className="mt-3 text-xs font-medium text-slate-600">
+          Languages: {tutor.languages.join(', ')}
+        </p>
+      )}
+      {formattedUpdatedDate && (
+        <p className="mt-1 text-xs text-slate-500">
+          Profile updated {formattedUpdatedDate}
+        </p>
+      )}
 
       <div className="flex flex-wrap gap-2 my-6">
         {tutor.tags.slice(0, 5).map(tag => (
@@ -58,7 +73,13 @@ export function TutorCard({ tutor, index = 0 }: { tutor: Tutor, index?: number }
       </div>
 
       <Button asChild className="w-full bg-[#00A896] hover:bg-[#00A896]/90 text-white rounded-full">
-        <a href="https://app.klaralearn.com" target="_blank" rel="noopener noreferrer">View Profile</a>
+        <a
+          href={tutor.profileUrl ?? 'https://app.klaralearn.com'}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Profile
+        </a>
       </Button>
     </motion.div>
   );
