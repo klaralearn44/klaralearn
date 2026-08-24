@@ -121,6 +121,17 @@ export function LocationOnline() {
           </Accordion>
         </div>
       </section>
+
+      <section className="py-16 bg-slate-50 border-t">
+        <div className="container mx-auto px-4 text-center">
+          <h3 className="text-xl font-bold text-secondary mb-8">Keep Exploring</h3>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/find-a-tutor" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Find an Online Tutor</Link>
+            <Link href="/parents/tools" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Parent Tools</Link>
+            <Link href="/parents" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">For Parents</Link>
+          </div>
+        </div>
+      </section>
     </Layout>
   );
 }

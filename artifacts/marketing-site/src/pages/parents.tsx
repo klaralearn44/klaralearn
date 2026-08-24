@@ -106,9 +106,14 @@ export function ParentsPage() {
           <p className="text-xl text-slate-600 mb-8 max-w-2xl">
             We exist for one reason: to make expert tutoring accessible to every UK family, regardless of budget. Here's how we work, what we do to keep children safe, and how to get started.
           </p>
-          <Button asChild size="lg" className="bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white rounded-full px-8">
-            <a href="https://app.klaralearn.com" target="_blank" rel="noopener noreferrer">Start with a Free Trial Lesson</a>
-          </Button>
+          <div className="flex flex-wrap gap-4">
+            <Button asChild size="lg" className="bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white rounded-full px-8">
+              <a href="https://app.klaralearn.com" target="_blank" rel="noopener noreferrer">Start with a Free Trial Lesson</a>
+            </Button>
+            <Button asChild size="lg" variant="outline" className="rounded-full px-8 border-secondary text-secondary hover:bg-secondary hover:text-white">
+              <Link href="/find-a-tutor">Browse tutors first</Link>
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -229,6 +234,20 @@ export function ParentsPage() {
         </div>
       </section>
 
+      {/* Parent toolkit */}
+      <section className="py-16 bg-primary/5 border-y">
+        <div className="container mx-auto px-4 max-w-5xl flex flex-col md:flex-row gap-8 items-start md:items-center justify-between">
+          <div>
+            <p className="text-sm font-bold tracking-[0.16em] uppercase text-primary mb-2">Practical help before you book</p>
+            <h2 className="text-3xl font-bold text-secondary mb-3">Use our free parent toolkit</h2>
+            <p className="text-slate-600 max-w-2xl">Work through a readiness checklist, compare likely tutoring costs, create a weekly revision plan and prepare questions for a tutor trial.</p>
+          </div>
+          <Button asChild variant="outline" className="shrink-0 rounded-full border-primary text-primary hover:bg-primary hover:text-white px-7">
+            <Link href="/parents/tools">Open Parent Tools</Link>
+          </Button>
+        </div>
+      </section>
+
       {/* Testimonials */}
       <section className="py-20 bg-slate-50 border-y">
         <div className="container mx-auto px-4 max-w-5xl">
@@ -296,6 +315,8 @@ export function ParentsPage() {
           <h3 className="text-xl font-bold text-secondary mb-8">Explore More</h3>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/subjects/11-plus" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">11 Plus Tutors</Link>
+            <Link href="/find-a-tutor" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Find a Tutor</Link>
+            <Link href="/parents/tools" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Parent Tools</Link>
             <Link href="/how-it-works" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">How It Works</Link>
             <Link href="/blog/how-much-does-tutoring-cost" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Tutoring Costs</Link>
             <Link href="/location/online" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Online Tutoring</Link>

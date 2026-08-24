@@ -7,8 +7,9 @@ import { TrustStats } from '@/components/ui/trust-stats';
 import { HowItWorksSteps } from '@/components/ui/how-it-works';
 import { tutors } from '@/data/tutors';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { BookOpen, Calculator, PenTool, Beaker, CheckCircle2, ArrowRight } from 'lucide-react';
+import { BookOpen, Calculator, PenTool, Beaker, CheckCircle2, ArrowRight, Search, Target, CalendarCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Link } from 'wouter';
 
 export function Home() {
   const faqs = [
@@ -68,7 +69,7 @@ export function Home() {
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild size="lg" className="bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white border-none text-lg h-14 px-8 rounded-full shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5">
-                  <a href="https://app.klaralearn.com">Find a Tutor</a>
+                   <Link href="/find-a-tutor">Browse Live Tutors</Link>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="bg-white/10 hover:bg-white/20 text-white border-white/30 text-lg h-14 px-8 rounded-full backdrop-blur-sm transition-all">
                   <a href="https://app.klaralearn.com">Book a Free Trial</a>
@@ -95,6 +96,60 @@ export function Home() {
             <span className="hidden md:inline text-primary/30">|</span>
             <span className="text-primary font-bold">KlaraLearn tutors: from £15/hr</span>
           </p>
+        </div>
+      </section>
+
+      {/* Parent decision path */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <p className="text-sm font-bold tracking-[0.16em] uppercase text-primary mb-3">Not sure where to start?</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-4">Start with what your child needs</h2>
+            <p className="text-lg text-slate-600">Choose a clear next step, whether you are ready to meet a tutor today or still working out the right support.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {[
+              {
+                icon: Search,
+                title: 'Find the right tutor',
+                description: 'Browse live profiles by subject, school stage, learning goal and budget before you decide.',
+                href: '/find-a-tutor',
+                label: 'Explore tutor matches',
+              },
+              {
+                icon: Target,
+                title: 'Plan exam support',
+                description: 'Start with 11 Plus, GCSE or SATs guidance tailored to the kind of progress your child needs.',
+                href: '/subjects/11-plus',
+                label: 'Explore exam tuition',
+              },
+              {
+                icon: CalendarCheck,
+                title: 'Use parent tools',
+                description: 'Try free checklists, a tutoring-cost comparison and a simple weekly revision planner.',
+                href: '/parents/tools',
+                label: 'Open the parent toolkit',
+              },
+            ].map((path, index) => (
+              <motion.div
+                key={path.title}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.45, delay: index * 0.08 }}
+                className="rounded-2xl border bg-slate-50 p-7 flex flex-col"
+              >
+                <div className="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-5">
+                  <path.icon className="w-5 h-5" />
+                </div>
+                <h3 className="text-xl font-bold text-secondary mb-3">{path.title}</h3>
+                <p className="text-slate-600 leading-relaxed flex-1 mb-6">{path.description}</p>
+                <Link href={path.href} className="text-primary font-semibold hover:underline inline-flex items-center gap-2">
+                  {path.label} <ArrowRight className="w-4 h-4" />
+                </Link>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -150,7 +205,7 @@ export function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-6">Meet some of our expert tutors</h2>
             <p className="text-lg text-slate-600 mb-8">Passionate educators from around the world, rigorously vetted to teach the UK curriculum.</p>
             <Button asChild variant="outline" className="rounded-full border-primary text-primary hover:bg-primary hover:text-white font-semibold px-8">
-              <a href="https://app.klaralearn.com">Browse All Tutors</a>
+               <Link href="/find-a-tutor">Browse All Tutors</Link>
             </Button>
           </div>
 

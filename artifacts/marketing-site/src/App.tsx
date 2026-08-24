@@ -32,6 +32,8 @@ import { BlogTutoringCost } from './pages/blog-tutoring-cost';
 import { BlogBestGrammarSchools } from './pages/blog-best-grammar-schools';
 import { BlogGrammarVsComprehensive } from './pages/blog-grammar-vs-comprehensive';
 import { ParentsPage } from './pages/parents';
+import { FindATutor } from './pages/find-a-tutor';
+import { ParentTools } from './pages/parent-tools';
 
 const queryClient = new QueryClient();
 
@@ -59,6 +61,8 @@ function Router() {
         <Route path="/blog/best-grammar-schools-uk" component={BlogBestGrammarSchools} />
         <Route path="/blog/grammar-school-vs-comprehensive" component={BlogGrammarVsComprehensive} />
         <Route path="/parents" component={ParentsPage} />
+        <Route path="/find-a-tutor" component={FindATutor} />
+        <Route path="/parents/tools" component={ParentTools} />
 
         {/* Placeholders for pages not yet built */}
         <Route path="/subjects/gcse-maths" component={Home} />

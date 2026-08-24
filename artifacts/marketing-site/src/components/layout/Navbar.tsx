@@ -76,6 +76,9 @@ export function Navbar() {
           <Link href="/how-it-works" className={`font-medium ${isCurrent('/how-it-works') ? 'text-primary' : 'text-slate-600 hover:text-primary'}`}>
             How It Works
           </Link>
+          <Link href="/find-a-tutor" className={`font-medium ${isCurrent('/find-a-tutor') ? 'text-primary' : 'text-slate-600 hover:text-primary'}`}>
+            Find a Tutor
+          </Link>
           <Link href="/parents" className={`font-medium ${isCurrent('/parents') ? 'text-primary' : 'text-slate-600 hover:text-primary'}`}>
             For Parents
           </Link>
@@ -132,8 +135,10 @@ export function Navbar() {
               <Link href="/blog/grammar-school-vs-comprehensive" onClick={() => setIsOpen(false)} className="block px-2 py-2 text-slate-600 text-sm">Grammar vs Comprehensive</Link>
               <Link href="/blog/how-much-does-tutoring-cost" onClick={() => setIsOpen(false)} className="block px-2 py-2 text-slate-600 text-sm">Tutoring Costs</Link>
             </div>
+            <Link href="/find-a-tutor" onClick={() => setIsOpen(false)} className="block px-2 py-2 text-slate-900 font-medium">Find a Tutor</Link>
             <Link href="/how-it-works" onClick={() => setIsOpen(false)} className="block px-2 py-2 text-slate-900 font-medium">How It Works</Link>
             <Link href="/parents" onClick={() => setIsOpen(false)} className="block px-2 py-2 text-slate-900 font-medium">For Parents</Link>
+            <Link href="/parents/tools" onClick={() => setIsOpen(false)} className="block px-2 py-2 text-slate-900 font-medium">Parent Tools</Link>
             <Link href="/blog" onClick={() => setIsOpen(false)} className="block px-2 py-2 text-slate-900 font-medium">All Blog Articles</Link>
             <div className="flex flex-col gap-3 pt-4">
               <a href="https://app.klaralearn.com/login" className="w-full text-center py-3 font-medium border rounded-full">Login</a>

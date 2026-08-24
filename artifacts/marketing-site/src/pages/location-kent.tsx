@@ -328,6 +328,8 @@ export function LocationKent() {
         <div className="container mx-auto px-4 text-center">
           <h3 className="text-xl font-bold text-secondary mb-8">Explore More</h3>
           <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/find-a-tutor" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Find a Tutor</Link>
+            <Link href="/parents/tools" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">11 Plus Parent Tools</Link>
             <Link href="/subjects/11-plus" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">11 Plus Tutors</Link>
             <Link href="/blog/what-is-the-11-plus" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">What Is the 11 Plus?</Link>
             <Link href="/blog/how-to-prepare-for-11-plus" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">How to Prepare</Link>

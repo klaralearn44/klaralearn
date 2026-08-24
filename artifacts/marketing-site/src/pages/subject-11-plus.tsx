@@ -296,6 +296,8 @@ export function Subject11Plus() {
         <div className="container mx-auto px-4 text-center">
           <h3 className="text-xl font-bold text-secondary mb-8">Related Pages</h3>
           <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/find-a-tutor" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Find a Tutor</Link>
+            <Link href="/parents/tools" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">11 Plus Parent Tools</Link>
             <Link href="/subjects/gcse-maths" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">GCSE Maths</Link>
             <Link href="/subjects/english" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">English</Link>
             <Link href="/subjects/science" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Science</Link>
