@@ -1,7 +1,7 @@
 import { SEOHead } from '@/components/seo/SEOHead';
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
-import { TutorCard } from '@/components/ui/tutor-card';
+import { TutorShowcase } from '@/components/ui/tutor-showcase';
 import { tutors } from '@/data/tutors';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { TrustStats } from '@/components/ui/trust-stats';
@@ -251,10 +251,13 @@ export function LocationKent() {
             <p className="text-slate-600">All experienced with the Kent Test GL Assessment format.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {kentTutors.map((tutor, index) => (
-              <TutorCard key={tutor.id} tutor={tutor} index={index} />
-            ))}
+          <div className="mb-12">
+            <TutorShowcase
+              fallbackTutors={kentTutors}
+              filter={(tutor) => tutor.tags.includes('11 Plus')}
+              limit={3}
+              emptyMessage="Our next Kent Test tutor profiles are being added. Browse all tutors to find an 11 Plus specialist."
+            />
           </div>
 
           <div className="text-center">

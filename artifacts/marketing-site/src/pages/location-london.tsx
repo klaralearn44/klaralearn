@@ -1,7 +1,7 @@
 import { SEOHead } from '@/components/seo/SEOHead';
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
-import { TutorCard } from '@/components/ui/tutor-card';
+import { TutorShowcase } from '@/components/ui/tutor-showcase';
 import { tutors } from '@/data/tutors';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Link } from 'wouter';
@@ -74,10 +74,8 @@ export function LocationLondon() {
             <p className="text-slate-600">Avoid the commute and the high London premiums. Meet our expert tutors who teach online.</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {londonTutors.map((tutor, index) => (
-              <TutorCard key={tutor.id} tutor={tutor} index={index} />
-            ))}
+          <div className="mb-12">
+            <TutorShowcase fallbackTutors={londonTutors} limit={3} />
           </div>
           
           <div className="text-center">

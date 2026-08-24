@@ -2,16 +2,15 @@ import { Link } from 'wouter';
 import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
 export function Footer() {
+  const logoSrc = `${import.meta.env.BASE_URL}brand/logo-mono-white.png`;
+
   return (
     <footer className="bg-[#1B3D5C] text-white/80 py-16 border-t border-white/10">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-12">
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-6">
-              <span className="text-2xl font-bold tracking-tight">
-                <span className="text-white">Klara</span>
-                <span className="text-[#00A896]">Learn</span>
-              </span>
+              <img src={logoSrc} alt="KlaraLearn" className="h-10 w-auto max-w-[178px] object-contain" />
             </Link>
             <p className="text-lg mb-6 text-white/90 max-w-sm">
               Global tutors. Brighter futures.

@@ -1,7 +1,7 @@
 import { SEOHead } from '@/components/seo/SEOHead';
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
-import { TutorCard } from '@/components/ui/tutor-card';
+import { TutorShowcase } from '@/components/ui/tutor-showcase';
 import { tutors } from '@/data/tutors';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { TrustStats } from '@/components/ui/trust-stats';
@@ -256,10 +256,13 @@ export function SubjectMaths() {
             <p className="text-slate-600">Browse highly rated maths tutors available for online sessions.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {mathsTutors.map((tutor, index) => (
-              <TutorCard key={tutor.id} tutor={tutor} index={index} />
-            ))}
+          <div className="mb-12">
+            <TutorShowcase
+              fallbackTutors={mathsTutors}
+              filter={(tutor) => tutor.tags.includes('Maths') || tutor.tags.includes('GCSE Maths')}
+              limit={6}
+              emptyMessage="Our next maths tutor profiles are being added. Browse all tutors to find the right match."
+            />
           </div>
 
           <div className="text-center">

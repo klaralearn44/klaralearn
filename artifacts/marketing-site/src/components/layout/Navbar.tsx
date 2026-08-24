@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [location] = useLocation();
+  const logoSrc = `${import.meta.env.BASE_URL}brand/logo-full.png`;
 
   const isCurrent = (path: string) => location === path;
 
@@ -13,56 +14,11 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="relative flex items-center">
-            {/* SVG Logo */}
-            <svg
-              width="48"
-              height="48"
-              viewBox="0 0 48 48"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              className="group-hover:scale-105 transition-transform duration-300"
-            >
-              {/* K lettermark */}
-              <path
-                d="M12 12V32"
-                stroke="#1B3D5C"
-                strokeWidth="6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M32 12L12 28"
-                stroke="#1B3D5C"
-                strokeWidth="6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M19 22L32 36"
-                stroke="#1B3D5C"
-                strokeWidth="6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              {/* Open Book Base */}
-              <path
-                d="M8 38C12 36 18 36 24 40C30 36 36 36 40 38"
-                stroke="#00A896"
-                strokeWidth="4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              {/* Orange Dot */}
-              <circle cx="21" cy="22" r="5" fill="#E05C2A" />
-            </svg>
-
-            {/* Wordmark */}
-            <span className="ml-1 text-2xl font-bold tracking-tight">
-              <span className="text-[#1B3D5C]">Klara</span>
-              <span className="text-[#00A896]">Learn</span>
-            </span>
-          </div>
+          <img
+            src={logoSrc}
+            alt="KlaraLearn"
+            className="h-10 w-auto max-w-[174px] object-contain transition-transform duration-300 group-hover:scale-[1.02]"
+          />
         </Link>
 
         {/* Desktop Nav */}

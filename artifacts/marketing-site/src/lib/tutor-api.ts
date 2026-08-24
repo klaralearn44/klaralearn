@@ -1,0 +1,182 @@
+import type { Tutor } from '@/data/tutors';
+
+export const PUBLIC_TUTORS_API_URL =
+  'https://edubridgegloballearning.com/version-test/api/1.1/obj/publictutorcard';
+
+interface BubbleTutorRecord {
+  _id?: string;
+  fullname?: string;
+  headline?: string;
+  bio?: string;
+  country?: string;
+  subjects?: string[] | null;
+  curricula?: string[] | null;
+  hourly_rate?: number | string | null;
+  average_rating?: number | string | null;
+  total_reviews?: number | string | null;
+  profile_photo?: string;
+  tutoring_experience?: string;
+}
+
+interface BubbleTutorResponse {
+  response?: {
+    results?: BubbleTutorRecord[];
+  };
+}
+
+const countryFlags: Record<string, string> = {
+  nigeria: '🇳🇬',
+  'united kingdom': '🇬🇧',
+  uk: '🇬🇧',
+  india: '🇮🇳',
+  philippines: '🇵🇭',
+  pakistan: '🇵🇰',
+  ghana: '🇬🇭',
+  kenya: '🇰🇪',
+  'south africa': '🇿🇦',
+};
+
+function cleanText(value?: string | null) {
+  return value?.replace(/\s+/g, ' ').trim() || '';
+}
+
+function toNumber(value?: number | string | null) {
+  const parsed = typeof value === 'number' ? value : Number(value);
+  return Number.isFinite(parsed) && parsed >= 0 ? parsed : 0;
+}
+
+function normalisePhotoUrl(value?: string) {
+  const url = cleanText(value);
+  if (!url) return undefined;
+  return url.startsWith('//') ? `https:${url}` : url;
+}
+
+function initialsFor(name: string) {
+  const initials = name
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0]?.toUpperCase())
+    .join('');
+
+  return initials || 'KT';
+}
+
+function tutorTags(record: BubbleTutorRecord) {
+  const tags = new Set<string>();
+  const subjects = (record.subjects ?? []).map(cleanText).filter(Boolean);
+  const curricula = (record.curricula ?? []).map(cleanText).filter(Boolean);
+  const searchable = [
+    subjects.join(' '),
+    curricula.join(' '),
+    record.headline ?? '',
+    record.bio ?? '',
+    record.tutoring_experience ?? '',
+  ].join(' ').toLowerCase();
+
+  subjects.forEach((subject) => {
+    const lower = subject.toLowerCase();
+    if (lower === 'math' || lower === 'maths' || lower === 'mathematics') {
+      tags.add('Maths');
+    } else {
+      tags.add(subject);
+    }
+  });
+
+  curricula.forEach((curriculum) => {
+    const lower = curriculum.toLowerCase();
+    if (lower.includes('eleven plus') || lower.includes('11 plus')) {
+      tags.add('11 Plus');
+    } else if (lower.includes('a level')) {
+      tags.add('A-Level');
+    } else if (lower.includes('uk national')) {
+      tags.add('UK Curriculum');
+    } else {
+      tags.add(curriculum);
+    }
+  });
+
+  if (searchable.includes('eleven plus') || searchable.includes('11 plus')) {
+    tags.add('11 Plus');
+  }
+
+  if (/\bmath(?:s|ematics)?\b/.test(searchable)) {
+    tags.add('Maths');
+  }
+
+  if (searchable.includes('gcse')) {
+    tags.add('GCSE');
+  }
+
+  if (searchable.includes('a-level') || searchable.includes('a level')) {
+    tags.add('A-Level');
+  }
+
+  if (tags.has('Maths') && tags.has('GCSE')) {
+    tags.add('GCSE Maths');
+  }
+
+  if (tags.has('Maths') && tags.has('11 Plus')) {
+    tags.add('11 Plus Maths');
+  }
+
+  const orderedTags = Array.from(tags);
+  const priorityTags = ['11 Plus', 'GCSE Maths', 'Maths', 'GCSE', 'A-Level'];
+  const prioritisedTags = priorityTags.filter((tag) => orderedTags.includes(tag));
+  const remainingTags = orderedTags.filter((tag) => !prioritisedTags.includes(tag));
+
+  return [...prioritisedTags, ...remainingTags].slice(0, 5);
+}
+
+export function mapBubbleTutor(record: BubbleTutorRecord, index: number): Tutor {
+  const name = cleanText(record.fullname) || `KlaraLearn Tutor ${index + 1}`;
+  const country = cleanText(record.country) || 'Global online';
+  const tags = tutorTags(record);
+  const subject =
+    (record.subjects ?? []).map(cleanText).filter(Boolean).join(' & ') ||
+    cleanText(record.headline) ||
+    tags.slice(0, 2).join(' & ') ||
+    'Online tutor';
+
+  return {
+    id: cleanText(record._id) || `public-tutor-${index}`,
+    name,
+    flag: countryFlags[country.toLowerCase()] ?? '🌍',
+    country,
+    subject,
+    rate: toNumber(record.hourly_rate),
+    rating: toNumber(record.average_rating),
+    reviews: Math.floor(toNumber(record.total_reviews)),
+    bio:
+      cleanText(record.bio) ||
+      cleanText(record.tutoring_experience) ||
+      cleanText(record.headline) ||
+      'Experienced online tutor supporting UK learners.',
+    tags,
+    initials: initialsFor(name),
+    photoUrl: normalisePhotoUrl(record.profile_photo),
+    headline: cleanText(record.headline) || undefined,
+    experience: cleanText(record.tutoring_experience) || undefined,
+  };
+}
+
+export async function fetchPublicTutors(signal?: AbortSignal): Promise<Tutor[]> {
+  const response = await fetch(PUBLIC_TUTORS_API_URL, {
+    method: 'GET',
+    headers: { Accept: 'application/json' },
+    signal,
+  });
+
+  if (!response.ok) {
+    throw new Error(`Tutor listings could not be loaded (${response.status}).`);
+  }
+
+  const payload = (await response.json()) as BubbleTutorResponse;
+  const records = payload.response?.results;
+
+  if (!Array.isArray(records)) {
+    throw new Error('Tutor listings returned an unexpected response.');
+  }
+
+  return records.map(mapBubbleTutor).filter((tutor) => Boolean(tutor.name));
+}

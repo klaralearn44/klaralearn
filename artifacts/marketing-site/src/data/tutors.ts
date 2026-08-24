@@ -10,6 +10,9 @@ export interface Tutor {
   bio: string;
   tags: string[];
   initials: string;
+  photoUrl?: string;
+  headline?: string;
+  experience?: string;
 }
 
 export const tutors: Tutor[] = [

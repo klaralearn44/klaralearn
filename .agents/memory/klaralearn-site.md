@@ -7,7 +7,14 @@ description: Page inventory, brand, routing conventions, and GEO/AEO content sta
 - Navy #1B3D5C, Teal #00A896, Orange #E05C2A
 - Fonts: Playfair Display (headings), Source Sans 3 (body)
 - App URL: https://app.klaralearn.com (all CTAs)
-- Backend is a Bubble app — marketing site is pure React/Vite, no API calls
+- Backend is a Bubble app. The marketing site remains React/Vite but now reads public tutor cards directly from Bubble's CORS-enabled endpoint.
+
+## Public tutor cards
+- Preserve routing/exam taxonomy (especially `11 Plus`) before limiting visual tags: source records can have many subjects, which otherwise hides their most important matching label.
+
+**Why:** Bubble's public tutor records have optional, inconsistent fields and combine broad subject lists with curricula. The marketing site must surface relevant tutors without misleading parents when the live feed is unavailable.
+
+**How to apply:** When extending the tutor taxonomy, make each routing-relevant label resilient to incomplete source metadata and ensure it survives visual tag limits.
 
 ## Artifact
 - Dir: artifacts/marketing-site

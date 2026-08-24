@@ -1,7 +1,7 @@
 import { SEOHead } from '@/components/seo/SEOHead';
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
-import { TutorCard } from '@/components/ui/tutor-card';
+import { TutorShowcase } from '@/components/ui/tutor-showcase';
 import { SubjectCard } from '@/components/ui/subject-card';
 import { TrustStats } from '@/components/ui/trust-stats';
 import { HowItWorksSteps } from '@/components/ui/how-it-works';
@@ -154,11 +154,7 @@ export function Home() {
             </Button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {tutors.slice(0, 6).map((tutor, index) => (
-              <TutorCard key={tutor.id} tutor={tutor} index={index} />
-            ))}
-          </div>
+          <TutorShowcase fallbackTutors={tutors} limit={6} />
         </div>
       </section>
 
