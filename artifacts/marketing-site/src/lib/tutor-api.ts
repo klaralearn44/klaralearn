@@ -1,7 +1,7 @@
 import type { Tutor } from '@/data/tutors';
 
 export const PUBLIC_TUTORS_API_URL =
-  'https://edubridgegloballearning.com/version-test/api/1.1/obj/publictutorcard';
+  '/api/public-tutors';
 
 export interface BubbleTutorRecord {
   _id?: string;
@@ -19,6 +19,10 @@ export interface BubbleTutorRecord {
   languages?: string | string[] | null;
   Slug?: string;
   'Modified Date'?: string;
+  public_discovery_approved?: boolean;
+  safeguarding_verified?: boolean;
+  qualifications?: string | string[] | null;
+  qualification_summary?: string | string[] | null;
 }
 
 interface BubbleTutorResponse {
@@ -57,6 +61,33 @@ function normalisePhotoUrl(value?: string) {
 function normaliseLanguages(value?: string | string[] | null) {
   const values = Array.isArray(value) ? value : value?.split(',');
   return values?.map(cleanText).filter(Boolean) ?? [];
+}
+
+function normaliseQualifications(value?: string | string[] | null) {
+  const values = Array.isArray(value) ? value : value?.split(',');
+  return values?.map(cleanText).filter(Boolean) ?? [];
+}
+
+export function isPublishableBubbleTutorRecord(record: BubbleTutorRecord) {
+  const rate = toNumber(record.hourly_rate);
+  const qualifications = normaliseQualifications(
+    record.qualifications ?? record.qualification_summary,
+  );
+
+  return (
+    record.public_discovery_approved === true &&
+    record.safeguarding_verified === true &&
+    Boolean(cleanText(record._id)) &&
+    Boolean(cleanText(record.Slug)) &&
+    cleanText(record.fullname).length >= 2 &&
+    cleanText(record.headline).length > 0 &&
+    cleanText(record.bio).length > 0 &&
+    cleanText(record.tutoring_experience).length > 0 &&
+    (record.subjects ?? []).some((subject) => Boolean(cleanText(subject))) &&
+    qualifications.length > 0 &&
+    rate >= 15 &&
+    rate <= 80
+  );
 }
 
 function initialsFor(name: string) {
@@ -169,6 +200,10 @@ export function mapBubbleTutor(record: BubbleTutorRecord, index: number): Tutor 
     headline: cleanText(record.headline) || undefined,
     experience: cleanText(record.tutoring_experience) || undefined,
     languages: normaliseLanguages(record.languages),
+    qualifications: normaliseQualifications(
+      record.qualifications ?? record.qualification_summary,
+    ),
+    safeguardingVerified: record.safeguarding_verified === true,
     profileUrl: slug
       ? `https://app.klaralearn.com/publictutorcard/${encodeURIComponent(slug)}`
       : undefined,
@@ -194,5 +229,13 @@ export async function fetchPublicTutors(signal?: AbortSignal): Promise<Tutor[]> 
     throw new Error('Tutor listings returned an unexpected response.');
   }
 
-  return records.map(mapBubbleTutor).filter((tutor) => Boolean(tutor.name));
+  const approvedRecords = records.filter(isPublishableBubbleTutorRecord);
+
+  if (approvedRecords.length === 0) {
+    throw new Error('No approved tutor profiles are currently available.');
+  }
+
+  return approvedRecords
+    .map(mapBubbleTutor)
+    .filter((tutor) => Boolean(tutor.profileUrl));
 }

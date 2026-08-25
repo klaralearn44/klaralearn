@@ -7,7 +7,7 @@ description: Page inventory, brand, routing conventions, and GEO/AEO content sta
 - Navy #1B3D5C, Teal #00A896, Orange #E05C2A
 - Fonts: Playfair Display (headings), Source Sans 3 (body)
 - App URL: https://app.klaralearn.com (all CTAs)
-- Backend is a Bubble app. The marketing site remains React/Vite but now reads public tutor cards directly from Bubble's CORS-enabled endpoint.
+- Backend is a Bubble app. Public tutor discovery is served through the first-party API proxy, not directly from Bubble.
 
 ## Public tutor cards
 - Preserve routing/exam taxonomy (especially `11 Plus`) before limiting visual tags: source records can have many subjects, which otherwise hides their most important matching label.
@@ -15,6 +15,13 @@ description: Page inventory, brand, routing conventions, and GEO/AEO content sta
 **Why:** Bubble's public tutor records have optional, inconsistent fields and combine broad subject lists with curricula. The marketing site must surface relevant tutors without misleading parents when the live feed is unavailable.
 
 **How to apply:** When extending the tutor taxonomy, make each routing-relevant label resilient to incomplete source metadata and ensure it survives visual tag limits. Tutor profile links use `https://app.klaralearn.com/publictutorcard/{slug}`.
+
+## Public discovery safety
+- Fail closed when no production inventory is configured: do not replace unavailable listings with static marketing samples.
+
+**Why:** The only reachable Bubble source was a `/version-test/` feed containing test-quality profiles, while the production Data API was unavailable. Publishing those records would make vetting, safeguarding, pricing, and qualification claims unreliable.
+
+**How to apply:** Configure the proxy only with its canonical production Bubble endpoint. It must return explicit discovery approval, safeguarding confirmation, qualifications, complete profile details, and an in-range hourly rate; use an explicit allowlist when the inventory needs further restriction. Public responses must not be cached because approval can be withdrawn.
 
 ## Artifact
 - Dir: artifacts/marketing-site

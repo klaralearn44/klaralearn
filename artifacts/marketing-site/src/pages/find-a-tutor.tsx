@@ -4,7 +4,6 @@ import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { TutorCard } from '@/components/ui/tutor-card';
 import { useLiveTutors } from '@/hooks/use-live-tutors';
-import { tutors as staticTutors } from '@/data/tutors';
 import { Link } from 'wouter';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { ShieldCheck, BookOpen, RotateCcw, CreditCard, Search, X, CheckCircle2 } from 'lucide-react';
@@ -34,7 +33,9 @@ function SkeletonCard() {
 
 export function FindATutor() {
   const { data: liveTutors, isLoading, error } = useLiveTutors();
-  const baseTutors = error ? staticTutors : (liveTutors || staticTutors);
+  // Never substitute unreviewed marketing samples into a public discovery
+  // surface. The API and fetch adapter both enforce the approved inventory.
+  const baseTutors = liveTutors ?? [];
 
   // Filter State
   const [selectedSubjects, setSelectedSubjects] = useState<string[]>([]);
@@ -324,13 +325,37 @@ export function FindATutor() {
                 <div className="mt-0.5">
                   <ShieldCheck className="w-4 h-4 text-amber-600" />
                 </div>
-                <p>Live availability is temporarily offline. Showing a curated selection of our top-rated specialists.</p>
+                <p>
+                  Live tutor availability is temporarily offline. We are not
+                  showing unreviewed profiles.{' '}
+                  <a
+                    href="https://app.klaralearn.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold underline underline-offset-2"
+                  >
+                    Open KlaraLearn
+                  </a>{' '}
+                  to enquire about current availability.
+                </p>
               </div>
             )}
 
             {isLoading ? (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-6">
                 {[1, 2, 3, 4, 5, 6].map(i => <SkeletonCard key={i} />)}
+              </div>
+            ) : error ? (
+              <div className="bg-slate-50 border border-slate-200 border-dashed rounded-2xl p-12 text-center my-8">
+                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-5 shadow-sm border border-slate-100">
+                  <ShieldCheck className="w-6 h-6 text-slate-300" />
+                </div>
+                <h3 className="text-xl font-bold text-secondary mb-2">Tutor profiles are being checked</h3>
+                <p className="text-slate-500 max-w-md mx-auto">
+                  We’ll show profiles here once the approved live inventory is
+                  available. Your search is not being filled with test or
+                  unreviewed data.
+                </p>
               </div>
             ) : filteredTutors.length === 0 ? (
               <div className="bg-slate-50 border border-slate-200 border-dashed rounded-2xl p-12 text-center my-8">

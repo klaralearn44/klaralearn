@@ -16,6 +16,8 @@ export interface Tutor {
   languages?: string[];
   profileUrl?: string;
   updatedAt?: string;
+  qualifications?: string[];
+  safeguardingVerified?: boolean;
 }
 
 export const tutors: Tutor[] = [

@@ -58,6 +58,16 @@ export function TutorCard({ tutor, index = 0 }: { tutor: Tutor, index?: number }
           Languages: {tutor.languages.join(', ')}
         </p>
       )}
+      {tutor.qualifications && tutor.qualifications.length > 0 && (
+        <p className="mt-3 text-xs leading-relaxed text-slate-500 line-clamp-2">
+          Qualifications: {tutor.qualifications.join(', ')}
+        </p>
+      )}
+      {tutor.safeguardingVerified && (
+        <p className="mt-3 text-xs font-medium text-teal-700">
+          Safeguarding checks completed
+        </p>
+      )}
       {formattedUpdatedDate && (
         <p className="mt-1 text-xs text-slate-500">
           Profile updated {formattedUpdatedDate}

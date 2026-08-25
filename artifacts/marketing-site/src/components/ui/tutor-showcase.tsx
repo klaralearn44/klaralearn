@@ -4,7 +4,11 @@ import { useLiveTutors } from '@/hooks/use-live-tutors';
 
 interface TutorShowcaseProps {
   filter?: (tutor: Tutor) => boolean;
-  fallbackTutors: Tutor[];
+  /**
+   * Kept optional for existing page call sites. Unreviewed static cards are
+   * intentionally never rendered as a fallback for a live discovery surface.
+   */
+  fallbackTutors?: Tutor[];
   limit?: number;
   emptyMessage?: string;
 }
@@ -55,13 +59,17 @@ export function TutorShowcase({
     return (
       <div className="space-y-5">
         <p role="alert" className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
-          Live tutor listings are temporarily unavailable. Showing a small sample while we reconnect.
+          Live tutor listings are temporarily unavailable. We are not showing
+          unreviewed profiles while we reconnect.{' '}
+          <a
+            href="https://app.klaralearn.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold underline underline-offset-2"
+          >
+            Open KlaraLearn
+          </a>
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {fallbackTutors.slice(0, limit).map((tutor, index) => (
-            <TutorCard key={tutor.id} tutor={tutor} index={index} />
-          ))}
-        </div>
       </div>
     );
   }
