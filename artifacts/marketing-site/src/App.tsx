@@ -1,4 +1,4 @@
-import { type ReactNode } from 'react';
+import { type ReactNode, useEffect } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
@@ -40,6 +40,7 @@ const queryClient = new QueryClient();
 function Router() {
   return (
     <RoutedErrorBoundary>
+      <ScrollToTop />
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/subjects/11-plus" component={Subject11Plus} />
@@ -62,6 +63,7 @@ function Router() {
         <Route path="/blog/grammar-school-vs-comprehensive" component={BlogGrammarVsComprehensive} />
         <Route path="/parents" component={ParentsPage} />
         <Route path="/find-a-tutor" component={FindATutor} />
+        <Route path="/finder-a-tutor" component={FindATutor} />
         <Route path="/parents/tools" component={ParentTools} />
 
         {/* Placeholders for pages not yet built */}
@@ -76,6 +78,16 @@ function Router() {
       </Switch>
     </RoutedErrorBoundary>
   );
+}
+
+function ScrollToTop() {
+  const [location] = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  }, [location]);
+
+  return null;
 }
 
 function RoutedErrorBoundary({ children }: { children: ReactNode }) {

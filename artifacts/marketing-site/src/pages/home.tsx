@@ -5,7 +5,6 @@ import { TutorShowcase } from '@/components/ui/tutor-showcase';
 import { SubjectCard } from '@/components/ui/subject-card';
 import { TrustStats } from '@/components/ui/trust-stats';
 import { HowItWorksSteps } from '@/components/ui/how-it-works';
-import { tutors } from '@/data/tutors';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { BookOpen, Calculator, PenTool, Beaker, CheckCircle2, ArrowRight, Search, Target, CalendarCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -41,12 +40,58 @@ export function Home() {
     }
   ];
 
+  const homepageSchema = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "KlaraLearn",
+      "url": "https://klaralearn.com/",
+      "logo": "https://klaralearn.com/brand/logo-full.png",
+      "description": "Affordable online tutoring for UK families, including 11 Plus, GCSE and SATs support."
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Online tutoring for UK students",
+      "serviceType": "Online private tutoring",
+      "provider": {
+        "@type": "Organization",
+        "name": "KlaraLearn",
+        "url": "https://klaralearn.com/"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United Kingdom"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "15",
+        "priceCurrency": "GBP",
+        "unitText": "HOUR",
+        "url": "https://klaralearn.com/find-a-tutor"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqs.map((faq) => ({
+        "@type": "Question",
+        "name": faq.q,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": faq.a
+        }
+      }))
+    }
+  ];
+
   return (
     <Layout>
       <SEOHead 
         title="Affordable Private Tutors | 11 Plus, GCSE & SATs | KlaraLearn"
         description="Connect with professional private tutors from £15/hr. Expert online tuition for 11 Plus, GCSE Maths, English & Science. Book a free trial today."
         path="/"
+        schema={homepageSchema}
       />
 
       {/* Hero Section */}
@@ -99,6 +144,26 @@ export function Home() {
               </div>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Reviewed Tutors */}
+      <section className="py-16 md:py-20 bg-white border-b">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+            <div className="max-w-2xl">
+              <p className="text-sm font-bold tracking-[0.16em] uppercase text-primary mb-3">Available tutors</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-4">Meet tutors ready to help</h2>
+              <p className="text-lg text-slate-600">
+                Compare reviewed profiles, teaching experience and hourly rates before choosing who feels right for your child.
+              </p>
+            </div>
+            <Button asChild variant="outline" className="rounded-full border-primary text-primary hover:bg-primary hover:text-white font-semibold px-7 self-start md:self-auto">
+              <Link href="/find-a-tutor">View all available tutors <ArrowRight className="ml-2 w-4 h-4" /></Link>
+            </Button>
+          </div>
+
+          <TutorShowcase limit={3} emptyMessage="No reviewed tutor profiles are available at the moment. Please check again shortly." />
         </div>
       </section>
 
@@ -213,21 +278,6 @@ export function Home() {
       </section>
 
       <HowItWorksSteps />
-
-      {/* Featured Tutors */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-6">Meet some of our expert tutors</h2>
-            <p className="text-lg text-slate-600 mb-8">Passionate educators from around the world, rigorously vetted to teach the UK curriculum.</p>
-            <Button asChild variant="outline" className="rounded-full border-primary text-primary hover:bg-primary hover:text-white font-semibold px-8">
-               <Link href="/find-a-tutor">Browse All Tutors</Link>
-            </Button>
-          </div>
-
-          <TutorShowcase fallbackTutors={tutors} limit={6} />
-        </div>
-      </section>
 
       {/* FAQ */}
       <section className="py-24 bg-slate-50 border-t">

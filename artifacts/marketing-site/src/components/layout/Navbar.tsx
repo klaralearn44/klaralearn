@@ -22,9 +22,9 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex flex-1 items-center justify-center gap-7 ml-8 pl-8 pr-6 border-l border-slate-200">
           <div className="relative group">
-            <button aria-haspopup="true" className="flex items-center gap-1 text-slate-600 hover:text-primary font-medium py-2">
+            <button aria-haspopup="true" className="flex items-center gap-1 text-secondary hover:text-primary font-semibold py-2">
               Tuition <ChevronDown className="w-4 h-4 opacity-50 group-hover:rotate-180 transition-transform" />
             </button>
             <div className="absolute top-full left-0 w-[400px] bg-white border rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 p-4 grid grid-cols-2 gap-2">
@@ -50,30 +50,37 @@ export function Navbar() {
             <button aria-haspopup="true" className="flex items-center gap-1 text-slate-600 hover:text-primary font-medium py-2">
               Resources <ChevronDown className="w-4 h-4 opacity-50 group-hover:rotate-180 transition-transform" />
             </button>
-            <div className="absolute top-full left-0 w-[450px] bg-white border rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 p-4 grid grid-cols-2 gap-4">
-              <div>
-                <div className="px-2 py-1 text-xs font-bold uppercase tracking-wider text-slate-400">Parents</div>
-                <Link href="/parents" className="block px-2 py-1.5 hover:bg-slate-50 hover:text-primary rounded-md text-sm">For Parents</Link>
-                <Link href="/parents/tools" className="block px-2 py-1.5 hover:bg-slate-50 hover:text-primary rounded-md text-sm">Parent Tools</Link>
-
-                <div className="mt-3 px-2 py-1 text-xs font-bold uppercase tracking-wider text-slate-400">11 Plus Guides</div>
-                <Link href="/blog/what-is-the-11-plus" className="block px-2 py-1.5 hover:bg-slate-50 hover:text-primary rounded-md text-sm">What Is the 11 Plus?</Link>
-                <Link href="/blog/how-to-prepare-for-11-plus" className="block px-2 py-1.5 hover:bg-slate-50 hover:text-primary rounded-md text-sm">How to Prepare</Link>
-                <Link href="/blog/11-plus-verbal-reasoning" className="block px-2 py-1.5 hover:bg-slate-50 hover:text-primary rounded-md text-sm">Verbal & Non-Verbal</Link>
-                <Link href="/blog/11-plus-practice-papers" className="block px-2 py-1.5 hover:bg-slate-50 hover:text-primary rounded-md text-sm">Practice Papers</Link>
+            <div className="absolute top-full right-0 w-[430px] bg-white border rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 p-4">
+              <div className="grid grid-cols-2 gap-2 pb-4 mb-4 border-b">
+                <Link href="/parents" className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2.5 hover:border-primary/50 hover:text-primary transition-colors">
+                  <span className="block text-sm font-semibold text-secondary">For Parents</span>
+                  <span className="block mt-0.5 text-xs text-slate-500">How tutoring works</span>
+                </Link>
+                <Link href="/parents/tools" className="rounded-lg border border-primary/20 bg-primary/5 px-3 py-2.5 hover:border-primary/50 hover:text-primary transition-colors">
+                  <span className="block text-sm font-semibold text-secondary">Parent Tools</span>
+                  <span className="block mt-0.5 text-xs text-slate-500">Free planning resources</span>
+                </Link>
               </div>
-              <div>
-                <div className="px-2 py-1 text-xs font-bold uppercase tracking-wider text-slate-400">Grammar Schools</div>
-                <Link href="/blog/what-is-a-grammar-school" className="block px-2 py-1.5 hover:bg-slate-50 hover:text-primary rounded-md text-sm">What Is a Grammar School?</Link>
-                <Link href="/blog/grammar-school-admissions" className="block px-2 py-1.5 hover:bg-slate-50 hover:text-primary rounded-md text-sm">Admissions Guide</Link>
-                <Link href="/blog/best-grammar-schools-uk" className="block px-2 py-1.5 hover:bg-slate-50 hover:text-primary rounded-md text-sm">Best Grammar Schools</Link>
-                <Link href="/blog/grammar-school-fees" className="block px-2 py-1.5 hover:bg-slate-50 hover:text-primary rounded-md text-sm">Grammar School Fees</Link>
-                <Link href="/blog/grammar-school-vs-comprehensive" className="block px-2 py-1.5 hover:bg-slate-50 hover:text-primary rounded-md text-sm">Grammar vs Comprehensive</Link>
-
-                <div className="mt-3 px-2 py-1 text-xs font-bold uppercase tracking-wider text-slate-400">Tutoring</div>
-                <Link href="/blog/how-much-does-tutoring-cost" className="block px-2 py-1.5 hover:bg-slate-50 hover:text-primary rounded-md text-sm">Tutoring Costs</Link>
-
-                <Link href="/blog" className="block px-2 py-1.5 mt-2 text-primary font-medium hover:bg-slate-50 rounded-md text-sm">View All Articles →</Link>
+              <div className="grid grid-cols-2 gap-5">
+                <div>
+                  <div className="px-2 py-1 text-xs font-bold uppercase tracking-wider text-slate-400">11 Plus Guides</div>
+                  <Link href="/blog/what-is-the-11-plus" className="block px-2 py-1.5 hover:bg-slate-50 hover:text-primary rounded-md text-sm">What Is the 11 Plus?</Link>
+                  <Link href="/blog/how-to-prepare-for-11-plus" className="block px-2 py-1.5 hover:bg-slate-50 hover:text-primary rounded-md text-sm">How to Prepare</Link>
+                  <Link href="/blog/11-plus-verbal-reasoning" className="block px-2 py-1.5 hover:bg-slate-50 hover:text-primary rounded-md text-sm">Verbal & Non-Verbal</Link>
+                  <Link href="/blog/11-plus-practice-papers" className="block px-2 py-1.5 hover:bg-slate-50 hover:text-primary rounded-md text-sm">Practice Papers</Link>
+                </div>
+                <div>
+                  <div className="px-2 py-1 text-xs font-bold uppercase tracking-wider text-slate-400">Grammar Schools</div>
+                  <Link href="/blog/what-is-a-grammar-school" className="block px-2 py-1.5 hover:bg-slate-50 hover:text-primary rounded-md text-sm">What Is a Grammar School?</Link>
+                  <Link href="/blog/grammar-school-admissions" className="block px-2 py-1.5 hover:bg-slate-50 hover:text-primary rounded-md text-sm">Admissions Guide</Link>
+                  <Link href="/blog/best-grammar-schools-uk" className="block px-2 py-1.5 hover:bg-slate-50 hover:text-primary rounded-md text-sm">Best Grammar Schools</Link>
+                  <Link href="/blog/grammar-school-fees" className="block px-2 py-1.5 hover:bg-slate-50 hover:text-primary rounded-md text-sm">Grammar School Fees</Link>
+                  <Link href="/blog/grammar-school-vs-comprehensive" className="block px-2 py-1.5 hover:bg-slate-50 hover:text-primary rounded-md text-sm">Grammar vs Comprehensive</Link>
+                </div>
+              </div>
+              <div className="flex items-center justify-between mt-4 pt-3 border-t px-2">
+                <Link href="/blog/how-much-does-tutoring-cost" className="text-sm text-slate-600 hover:text-primary">Tutoring Costs</Link>
+                <Link href="/blog" className="text-sm text-primary font-semibold hover:underline">View All Articles →</Link>
               </div>
             </div>
           </div>
