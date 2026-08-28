@@ -22,7 +22,7 @@ const approvedRecord = {
   subjects: ["Mathematics"],
   hourly_rate: 22,
   headline: "GCSE maths tutor",
-  bio: "Patient support for GCSE learners.",
+  bio: "Patient, structured support for GCSE learners who want to build lasting confidence.",
   tutoring_experience: "Ten years of online maths tutoring.",
   qualifications: ["PhD Mathematics"],
   public_discovery_approved: true,
@@ -59,13 +59,13 @@ test("allows only fully reviewed records in the explicit public inventory", () =
   );
 });
 
-test("accepts only the canonical production source", () => {
+test("accepts only the exact KlaraLearn production or version-test source", () => {
   assert.equal(
     getPublicTutorConfig({
       BUBBLE_PUBLIC_TUTORS_SOURCE_URL:
         "https://edubridgegloballearning.com/version-test/api/1.1/obj/publictutorcard",
-    }),
-    null,
+    })?.requiresReview,
+    false,
   );
   assert.equal(
     getPublicTutorConfig({
@@ -80,6 +80,30 @@ test("accepts only the canonical production source", () => {
         "https://edubridgegloballearning.com/api/1.1/obj/other-record",
     }),
     null,
+  );
+});
+
+test("uses the version-test feed as available, not reviewed, inventory", () => {
+  const availableConfig = getPublicTutorConfig({});
+  if (!availableConfig) throw new Error("Available inventory must create a config.");
+
+  assert.equal(availableConfig.requiresReview, false);
+  assert.equal(
+    availableConfig.sourceUrl,
+    "https://edubridgegloballearning.com/version-test/api/1.1/obj/publictutorcard",
+  );
+  assert.equal(
+    isPublishableTutorRecord(
+      {
+        ...approvedRecord,
+        bio: "Patient, structured support for GCSE learners who want to build lasting confidence.",
+        public_discovery_approved: undefined,
+        safeguarding_verified: undefined,
+        qualifications: undefined,
+      },
+      availableConfig,
+    ),
+    true,
   );
 });
 

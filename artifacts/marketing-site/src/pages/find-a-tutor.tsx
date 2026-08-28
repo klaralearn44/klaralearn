@@ -315,12 +315,12 @@ export function FindATutor() {
           {/* Results Grid */}
           <div className="w-full md:flex-1">
             <div className="mb-7">
-              <p className="text-xs font-bold tracking-[0.16em] uppercase text-primary mb-2">Reviewed profiles</p>
+              <p className="text-xs font-bold tracking-[0.16em] uppercase text-primary mb-2">Available profiles</p>
               <h2 className="text-2xl font-bold text-secondary">
                 {isLoading ? 'Loading available tutors' : `${filteredTutors.length} tutors available`}
               </h2>
               <p className="text-sm text-slate-500 mt-2">
-                Only approved profiles that meet KlaraLearn’s public discovery and safeguarding checks appear here.
+                Profiles shown here are currently available through KlaraLearn. Review each tutor’s experience and details before booking.
               </p>
             </div>
 

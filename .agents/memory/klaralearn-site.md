@@ -16,12 +16,12 @@ description: Page inventory, brand, routing conventions, and GEO/AEO content sta
 
 **How to apply:** When extending the tutor taxonomy, make each routing-relevant label resilient to incomplete source metadata and ensure it survives visual tag limits. Tutor profile links use `https://app.klaralearn.com/publictutorcard/{slug}`.
 
-## Public discovery safety
-- Fail closed when no production inventory is configured: do not replace unavailable listings with static marketing samples.
+## Tutor inventory status
+- Use the Bubble version-test feed as current availability inventory, but never describe those profiles as reviewed, vetted, approved, or safeguarding-verified.
 
-**Why:** The only reachable Bubble source was a `/version-test/` feed containing test-quality profiles, while the production Data API was unavailable. Publishing those records would make vetting, safeguarding, pricing, and qualification claims unreliable.
+**Why:** The production Bubble Data API is unavailable. The user explicitly chose to show suitable version-test records as “Available tutors” so real profiles remain visible without making unsupported review claims.
 
-**How to apply:** Configure the proxy only with its canonical production Bubble endpoint. It must return explicit discovery approval, safeguarding confirmation, qualifications, complete profile details, and an in-range hourly rate; use an explicit allowlist when the inventory needs further restriction. Public responses must not be cached because approval can be withdrawn.
+**How to apply:** Proxy only the exact KlaraLearn Bubble tutor endpoints, sanitise fields, and require complete profile copy plus an in-range rate. Keep static samples out of discovery. If production is enabled later, restore explicit approval/safeguarding checks and reviewed wording only for records that pass them. Public responses must not be cached.
 
 ## Artifact
 - Dir: artifacts/marketing-site

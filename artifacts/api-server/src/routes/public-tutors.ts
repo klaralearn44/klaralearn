@@ -50,7 +50,7 @@ router.get("/public-tutors", async (_req, res) => {
 
     if (approvedRecords.length === 0) {
       res.status(503).json({
-        error: "No approved tutor profiles are currently available.",
+        error: "No suitable tutor profiles are currently available.",
       });
       return;
     }

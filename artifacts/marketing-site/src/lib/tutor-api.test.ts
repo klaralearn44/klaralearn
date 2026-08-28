@@ -133,19 +133,16 @@ test('normalises protocol-relative profile photo URLs', () => {
   assert.equal(tutor.photoUrl, 'https://cdn.example.com/profile.png');
 });
 
-test('requires explicit approval and reviewed profile data before a tutor is public', () => {
+test('requires complete, credible availability data before a tutor is public', () => {
   const record: BubbleTutorRecord = {
-    _id: 'reviewed-tutor',
+    _id: 'available-tutor',
     fullname: 'Amara Smith',
     Slug: 'amara-smith',
     subjects: ['Mathematics'],
     hourly_rate: 22,
     headline: 'GCSE maths tutor',
-    bio: 'Patient support for GCSE learners.',
+    bio: 'Patient, structured support for GCSE learners who want to build lasting confidence.',
     tutoring_experience: 'Ten years of online maths tutoring.',
-    qualifications: ['PhD Mathematics'],
-    public_discovery_approved: true,
-    safeguarding_verified: true,
   };
 
   assert.equal(isPublishableBubbleTutorRecord(record), true);
@@ -153,15 +150,16 @@ test('requires explicit approval and reviewed profile data before a tutor is pub
     isPublishableBubbleTutorRecord({
       ...record,
       public_discovery_approved: false,
+      safeguarding_verified: false,
     }),
-    false,
+    true,
   );
   assert.equal(
     isPublishableBubbleTutorRecord({ ...record, hourly_rate: 6 }),
     false,
   );
   assert.equal(
-    isPublishableBubbleTutorRecord({ ...record, qualifications: [] }),
+    isPublishableBubbleTutorRecord({ ...record, bio: 'Too short.' }),
     false,
   );
 });

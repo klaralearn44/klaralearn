@@ -27,7 +27,7 @@ export function Navbar() {
             <button aria-haspopup="true" className="flex items-center gap-1 text-secondary hover:text-primary font-semibold py-2">
               Tuition <ChevronDown className="w-4 h-4 opacity-50 group-hover:rotate-180 transition-transform" />
             </button>
-            <div className="absolute top-full left-0 w-[400px] bg-white border rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 p-4 grid grid-cols-2 gap-2">
+            <div className="absolute top-full left-0 w-[400px] bg-white border rounded-xl shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto transition-all duration-200 p-4 grid grid-cols-2 gap-2">
               <div>
                 <div className="px-2 py-1 text-xs font-bold uppercase tracking-wider text-slate-400">Subjects</div>
                 <Link href="/subjects/11-plus" className="block px-2 py-1.5 hover:bg-slate-50 hover:text-primary rounded-md text-sm">11 Plus</Link>
@@ -50,7 +50,7 @@ export function Navbar() {
             <button aria-haspopup="true" className="flex items-center gap-1 text-slate-600 hover:text-primary font-medium py-2">
               Resources <ChevronDown className="w-4 h-4 opacity-50 group-hover:rotate-180 transition-transform" />
             </button>
-            <div className="absolute top-full right-0 w-[430px] bg-white border rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all duration-200 p-4">
+            <div className="absolute top-full right-0 w-[430px] bg-white border rounded-xl shadow-lg opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto group-focus-within:opacity-100 group-focus-within:pointer-events-auto transition-all duration-200 p-4">
               <div className="grid grid-cols-2 gap-2 pb-4 mb-4 border-b">
                 <Link href="/parents" className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2.5 hover:border-primary/50 hover:text-primary transition-colors">
                   <span className="block text-sm font-semibold text-secondary">For Parents</span>

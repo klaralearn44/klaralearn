@@ -29,13 +29,17 @@ export interface PublicTutorConfig {
   approvalField: string;
   minRate: number;
   maxRate: number;
+  requiresReview: boolean;
 }
 
 const DEFAULT_APPROVAL_FIELD = "public_discovery_approved";
 const DEFAULT_MIN_RATE = 15;
 const DEFAULT_MAX_RATE = 80;
 const APPROVED_SOURCE_HOST = "edubridgegloballearning.com";
-const APPROVED_SOURCE_PATH = "/api/1.1/obj/publictutorcard";
+const PRODUCTION_SOURCE_PATH = "/api/1.1/obj/publictutorcard";
+const AVAILABLE_SOURCE_PATH = "/version-test/api/1.1/obj/publictutorcard";
+const DEFAULT_AVAILABLE_SOURCE_URL =
+  `https://${APPROVED_SOURCE_HOST}${AVAILABLE_SOURCE_PATH}`;
 
 function text(value: unknown) {
   return typeof value === "string" ? value.replace(/\s+/g, " ").trim() : "";
@@ -80,8 +84,9 @@ function isTutorRecord(value: unknown): value is BubblePublicTutorRecord {
 export function getPublicTutorConfig(
   env: NodeJS.ProcessEnv = process.env,
 ): PublicTutorConfig | null {
-  const sourceUrl = env["BUBBLE_PUBLIC_TUTORS_SOURCE_URL"]?.trim();
-  if (!sourceUrl) return null;
+  const sourceUrl =
+    env["BUBBLE_PUBLIC_TUTORS_SOURCE_URL"]?.trim() ||
+    DEFAULT_AVAILABLE_SOURCE_URL;
 
   let parsedUrl: URL;
   try {
@@ -90,12 +95,12 @@ export function getPublicTutorConfig(
     return null;
   }
 
-  // The only approved upstream is the canonical production Bubble Data API.
-  // Do not permit an arbitrary configured URL to become a public-data proxy.
+  // Only KlaraLearn's exact Bubble tutor endpoints may be proxied. The
+  // version-test feed is treated as available inventory, never reviewed.
   if (
     parsedUrl.protocol !== "https:" ||
     parsedUrl.hostname.toLowerCase() !== APPROVED_SOURCE_HOST ||
-    parsedUrl.pathname !== APPROVED_SOURCE_PATH
+    ![PRODUCTION_SOURCE_PATH, AVAILABLE_SOURCE_PATH].includes(parsedUrl.pathname)
   ) {
     return null;
   }
@@ -108,6 +113,7 @@ export function getPublicTutorConfig(
       env["PUBLIC_TUTOR_APPROVAL_FIELD"]?.trim() || DEFAULT_APPROVAL_FIELD,
     minRate: boundedNumber(env["PUBLIC_TUTOR_MIN_RATE"], DEFAULT_MIN_RATE),
     maxRate: boundedNumber(env["PUBLIC_TUTOR_MAX_RATE"], DEFAULT_MAX_RATE),
+    requiresReview: parsedUrl.pathname === PRODUCTION_SOURCE_PATH,
   };
 }
 
@@ -125,22 +131,25 @@ export function isPublishableTutorRecord(
   const rate = numeric(record.hourly_rate);
   const approval = record[config.approvalField as keyof BubblePublicTutorRecord];
 
-  const hasExplicitInventoryApproval =
-    truthyApproval(approval) &&
-    (config.approvedSlugs.size === 0 && config.approvedIds.size === 0
-      ? true
-      : config.approvedSlugs.has(slug) || config.approvedIds.has(id));
+  const hasExplicitInventoryApproval = config.requiresReview
+    ? truthyApproval(approval) &&
+      (config.approvedSlugs.size === 0 && config.approvedIds.size === 0
+        ? true
+        : config.approvedSlugs.has(slug) || config.approvedIds.has(id))
+    : true;
+  const hasRequiredReviewData =
+    !config.requiresReview ||
+    (record.safeguarding_verified === true && qualifications.length > 0);
 
   return (
     hasExplicitInventoryApproval &&
+    hasRequiredReviewData &&
     name.length >= 2 &&
     Boolean(slug) &&
     subjects.length > 0 &&
-    Boolean(text(record.headline)) &&
-    Boolean(text(record.bio)) &&
-    Boolean(text(record.tutoring_experience)) &&
-    qualifications.length > 0 &&
-    record.safeguarding_verified === true &&
+    text(record.headline).length >= 8 &&
+    text(record.bio).length >= 40 &&
+    text(record.tutoring_experience).length >= 20 &&
     rate !== null &&
     rate >= config.minRate &&
     rate <= config.maxRate
@@ -164,8 +173,6 @@ export function toPublicTutorRecord(record: BubblePublicTutorRecord) {
     languages: record.languages,
     Slug: text(record.Slug),
     "Modified Date": text(record["Modified Date"]) || undefined,
-    public_discovery_approved: true,
-    safeguarding_verified: true,
     qualifications: list(record.qualifications ?? record.qualification_summary),
   };
 }

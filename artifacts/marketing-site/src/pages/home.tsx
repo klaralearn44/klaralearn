@@ -155,7 +155,7 @@ export function Home() {
               <p className="text-sm font-bold tracking-[0.16em] uppercase text-primary mb-3">Available tutors</p>
               <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-4">Meet tutors ready to help</h2>
               <p className="text-lg text-slate-600">
-                Compare reviewed profiles, teaching experience and hourly rates before choosing who feels right for your child.
+                Compare available profiles, teaching experience and hourly rates before choosing who feels right for your child.
               </p>
             </div>
             <Button asChild variant="outline" className="rounded-full border-primary text-primary hover:bg-primary hover:text-white font-semibold px-7 self-start md:self-auto">
@@ -163,7 +163,7 @@ export function Home() {
             </Button>
           </div>
 
-          <TutorShowcase limit={3} emptyMessage="No reviewed tutor profiles are available at the moment. Please check again shortly." />
+          <TutorShowcase limit={3} emptyMessage="No tutor profiles are available at the moment. Please check again shortly." />
         </div>
       </section>
 

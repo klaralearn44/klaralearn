@@ -70,21 +70,15 @@ function normaliseQualifications(value?: string | string[] | null) {
 
 export function isPublishableBubbleTutorRecord(record: BubbleTutorRecord) {
   const rate = toNumber(record.hourly_rate);
-  const qualifications = normaliseQualifications(
-    record.qualifications ?? record.qualification_summary,
-  );
 
   return (
-    record.public_discovery_approved === true &&
-    record.safeguarding_verified === true &&
     Boolean(cleanText(record._id)) &&
     Boolean(cleanText(record.Slug)) &&
     cleanText(record.fullname).length >= 2 &&
-    cleanText(record.headline).length > 0 &&
-    cleanText(record.bio).length > 0 &&
-    cleanText(record.tutoring_experience).length > 0 &&
+    cleanText(record.headline).length >= 8 &&
+    cleanText(record.bio).length >= 40 &&
+    cleanText(record.tutoring_experience).length >= 20 &&
     (record.subjects ?? []).some((subject) => Boolean(cleanText(subject))) &&
-    qualifications.length > 0 &&
     rate >= 15 &&
     rate <= 80
   );
@@ -229,13 +223,13 @@ export async function fetchPublicTutors(signal?: AbortSignal): Promise<Tutor[]> 
     throw new Error('Tutor listings returned an unexpected response.');
   }
 
-  const approvedRecords = records.filter(isPublishableBubbleTutorRecord);
+  const availableRecords = records.filter(isPublishableBubbleTutorRecord);
 
-  if (approvedRecords.length === 0) {
-    throw new Error('No approved tutor profiles are currently available.');
+  if (availableRecords.length === 0) {
+    throw new Error('No suitable tutor profiles are currently available.');
   }
 
-  return approvedRecords
+  return availableRecords
     .map(mapBubbleTutor)
     .filter((tutor) => Boolean(tutor.profileUrl));
 }
