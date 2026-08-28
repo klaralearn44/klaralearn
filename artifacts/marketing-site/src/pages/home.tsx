@@ -98,7 +98,7 @@ export function Home() {
       <section className="relative pt-24 pb-32 md:pt-32 md:pb-40 overflow-hidden bg-[#1B3D5C]">
         <img
           src={heroImageSrc}
-          alt="Secondary school students and a teacher in a spacious classroom, representing supportive learning"
+          alt="Student taking an online lesson with a tutor on a laptop"
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-[#1B3D5C]/70 mix-blend-multiply" />
