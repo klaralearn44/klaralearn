@@ -1,7 +1,8 @@
 import type { Tutor } from '@/data/tutors';
+import { PUBLIC_API_ORIGIN } from '@/site-config';
 
 export const PUBLIC_TUTORS_API_URL =
-  '/api/public-tutors';
+  `${PUBLIC_API_ORIGIN}/api/public-tutors`;
 
 export interface BubbleTutorRecord {
   _id?: string;

@@ -4,12 +4,15 @@ SEO-optimised marketing website for KlaraLearn (https://klaralearn.com) — a tu
 
 ## Run & Operate
 
-- `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
+- `pnpm --filter @workspace/marketing-site run dev` — run the marketing site
+- `pnpm --filter @workspace/api-server run dev` — run the API server on `PORT`
 - `pnpm run typecheck` — full typecheck across all packages
 - `pnpm run build` — typecheck + build all packages
+- `pnpm --filter @workspace/marketing-site run build` — build and validate all prerendered marketing routes
 - `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
 - `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- Required env: `DATABASE_URL` — Postgres connection string
+- External deployment instructions: `docs/deployment/vercel.md`
+- Environment variable names and safe placeholders: `.env.example`
 
 ## Stack
 
@@ -26,7 +29,10 @@ _Populate as you build — short repo map plus pointers to the source-of-truth f
 
 ## Architecture decisions
 
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
+- The marketing site is a static Vite artifact with build-time prerendering; do not add a catch-all rewrite that replaces route-specific HTML.
+- Production canonicals use `VITE_SITE_URL`; Vercel production is indexable, while preview and development builds fail closed to no-index.
+- Browser tutor requests are same-origin by default and can use `VITE_PUBLIC_API_ORIGIN` for a separately hosted API.
+- The production API requires an exact `PUBLIC_CORS_ORIGINS` allowlist.
 
 ## Product
 

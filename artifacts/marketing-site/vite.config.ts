@@ -14,9 +14,15 @@ if (Number.isNaN(port) || port <= 0) {
 }
 
 const basePath = process.env.BASE_PATH ?? '/';
+const indexableBuild =
+  process.env.VITE_INDEXABLE_BUILD ??
+  (process.env.VERCEL_ENV === 'production' ? 'true' : 'false');
 
 export default defineConfig({
   base: basePath,
+  define: {
+    'import.meta.env.VITE_INDEXABLE_BUILD': JSON.stringify(indexableBuild),
+  },
   plugins: [
     react(),
     tailwindcss(),

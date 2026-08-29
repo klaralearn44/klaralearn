@@ -18,7 +18,8 @@ const vite = await createServer({
 });
 
 try {
-  const { appRoutes, publicRoutes, SITE_URL } = await vite.ssrLoadModule('/src/route-manifest.tsx');
+  const { appRoutes, publicRoutes, SITE_URL, SITEMAP_URL, IS_INDEXABLE_BUILD } =
+    await vite.ssrLoadModule('/src/route-manifest.tsx');
   const { render } = await vite.ssrLoadModule('/src/entry-server.tsx');
   const template = await readFile(path.join(outDir, 'index.html'), 'utf8');
 
@@ -39,6 +40,12 @@ try {
   await writeFile(
     path.join(outDir, 'sitemap.xml'),
     `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>\n`,
+  );
+  await writeFile(
+    path.join(outDir, 'robots.txt'),
+    IS_INDEXABLE_BUILD
+      ? `User-agent: *\nAllow: /\nSitemap: ${SITEMAP_URL}\n`
+      : 'User-agent: *\nDisallow: /\n',
   );
 } finally {
   await vite.close();

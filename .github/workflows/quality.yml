@@ -1,0 +1,48 @@
+name: Quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.26.1
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Typecheck
+        run: pnpm run typecheck
+
+      - name: Build and validate prerendered SEO output
+        run: pnpm --filter @workspace/marketing-site run build
+        env:
+          VITE_SITE_URL: https://klaralearn.com
+          VITE_INDEXABLE_BUILD: "true"
+
+      - name: Build deployable API bundle
+        run: pnpm --filter @workspace/api-server run build
+
+      - name: Run marketing and API policy tests
+        run: |
+          pnpm --filter @workspace/marketing-site run test
+          pnpm --filter @workspace/marketing-site exec tsx --test ../api-server/src/lib/public-tutors.test.ts

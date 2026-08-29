@@ -5,6 +5,7 @@ dist
 tmp
 out-tsc
 *.tsbuildinfo
+*.log
 .expo
 .expo-shared
 
@@ -47,3 +48,8 @@ Thumbs.db
 # Replit
 .cache/
 .local/
+
+# Local environment files
+.env
+.env.*
+!.env.example

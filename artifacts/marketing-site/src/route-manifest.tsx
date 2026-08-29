@@ -26,9 +26,13 @@ import { SubjectEnglish } from './pages/subject-english';
 import { SubjectGcseMaths } from './pages/subject-gcse-maths';
 import { SubjectMaths } from './pages/subject-maths';
 import { SubjectScience } from './pages/subject-science';
-import { SITE_URL } from './site-config';
+import {
+  IS_INDEXABLE_BUILD,
+  SITEMAP_URL,
+  SITE_URL,
+} from './site-config';
 
-export { SITE_URL };
+export { IS_INDEXABLE_BUILD, SITEMAP_URL, SITE_URL };
 
 export interface PublicRoute {
   path: string;

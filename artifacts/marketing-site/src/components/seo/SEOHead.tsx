@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'wouter';
-import { SITE_URL } from '@/site-config';
+import { IS_INDEXABLE_BUILD, SITE_URL } from '@/site-config';
 import { setServerSeo } from '@/seo-server-state';
 
 interface SEOHeadProps {
@@ -28,7 +28,7 @@ export function SEOHead({ title, description, path, schema }: SEOHeadProps) {
       title,
       description,
       canonical: url,
-      noindex: isFinderAlias,
+      noindex: !IS_INDEXABLE_BUILD || isFinderAlias,
       image,
       schema: structuredData,
     });
@@ -40,7 +40,7 @@ export function SEOHead({ title, description, path, schema }: SEOHeadProps) {
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={url} />
-      {isFinderAlias && <meta name="robots" content="noindex, follow" />}
+      {(!IS_INDEXABLE_BUILD || isFinderAlias) && <meta name="robots" content="noindex, follow" />}
       
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />

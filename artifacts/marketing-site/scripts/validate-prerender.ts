@@ -17,9 +17,14 @@ const vite = await createServer({
 });
 
 try {
-  const { appRoutes, publicRoutes, SITE_URL } = await vite.ssrLoadModule('/src/route-manifest.tsx');
+  const { appRoutes, publicRoutes, SITE_URL, IS_INDEXABLE_BUILD } =
+    await vite.ssrLoadModule('/src/route-manifest.tsx');
   for (const route of appRoutes as { path: string; sitemap: boolean }[]) {
     const html = await readFile(routeFile(route.path), 'utf8');
+    const canonicalCount = html.match(/rel="canonical"/g)?.length ?? 0;
+    if (canonicalCount !== 1) {
+      throw new Error(`${route.path}: expected exactly one canonical URL, found ${canonicalCount}`);
+    }
     required(html, /<div id="root" data-ssr="true">[\s\S]*?<h1[\s >]/, 'visible server-rendered H1', route.path);
     required(html, /<title[^>]*>[^<]+<\/title>/, 'title', route.path);
     required(html, /<meta[^>]+name="description"[^>]+content="[^"]+"/, 'description', route.path);
@@ -42,6 +47,16 @@ try {
     required(sitemap, new RegExp(`<loc>${SITE_URL}${route.path}</loc>`), 'sitemap URL', route.path);
   }
   if (sitemap.includes('/finder-a-tutor')) throw new Error('sitemap must not include /finder-a-tutor');
+  const robots = await readFile(path.join(outDir, 'robots.txt'), 'utf8');
+  if (IS_INDEXABLE_BUILD) {
+    required(robots, new RegExp(`Sitemap: ${SITE_URL.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}/sitemap\\.xml`), 'production sitemap directive', 'robots.txt');
+  } else {
+    required(robots, /^Disallow: \/$/m, 'preview no-index directive', 'robots.txt');
+  }
+  const builtFiles = await readFile(path.join(outDir, 'index.html'), 'utf8');
+  if (/replit\.dev|localhost(?::\d+)?/i.test(builtFiles)) {
+    throw new Error('index.html contains a development-only origin');
+  }
   const alias = await readFile(routeFile('/finder-a-tutor'), 'utf8');
   required(alias, /name="robots" content="noindex, follow"/, 'noindex alias directive', '/finder-a-tutor');
   console.log(`Validated ${appRoutes.length} prerendered routes and ${publicRoutes.length} sitemap URLs.`);
