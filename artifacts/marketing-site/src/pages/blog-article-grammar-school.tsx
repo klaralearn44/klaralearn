@@ -196,7 +196,7 @@ export function BlogArticleGrammarSchool() {
 
             <div className="mt-16 p-8 bg-slate-50 rounded-2xl border border-primary/20 text-center">
               <h3 className="text-2xl font-bold text-secondary mb-4 mt-0">Ready to start preparing?</h3>
-              <p className="mb-6">Give your child the best chance of securing a grammar school place with our affordable, vetted 11 Plus tutors.</p>
+              <p className="mb-6">Explore available 11 Plus tutor profiles for grammar school entrance preparation, with rates from £15 per hour.</p>
               <Link href="/subjects/11-plus" className="inline-block bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full no-underline transition-colors">
                 Find an 11 Plus Tutor from £15/hr
               </Link>

@@ -59,7 +59,7 @@ export function BlogTutoringCost() {
         "name": "Are tutoring agencies worth the extra cost?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Traditional agencies provide vetting and matching services for an additional 20–30% premium. KlaraLearn provides the same — DBS checks, identity verification, tutor assessment, and matching — within our platform cost, which is reflected in our competitive tutor rates from £15/hr."
+          "text": "Agency pricing can include services beyond the tutor's hourly rate. On KlaraLearn, families can compare available tutor profiles and listed rates from £15/hr, then review the details before booking."
         }
       },
       {
@@ -214,7 +214,7 @@ export function BlogTutoringCost() {
               Tutoring agencies handle all vetting and matching for a premium, which is embedded in the tutor's hourly rate. The main risk with agencies is that vetting standards vary widely.
             </p>
             <p>
-              <strong>KlaraLearn's model:</strong> we provide agency-level vetting (identity verification, DBS checks, tutor assessment) combined with a global tutor pool, which means we can offer agency-level reliability at independent tutor prices — from £15/hr.
+              <strong>KlaraLearn's model:</strong> families can compare available tutor profiles, listed experience and rates from £15/hr, then decide which tutor may suit their needs.
             </p>
 
             <h2>11 Plus Tutoring Costs</h2>

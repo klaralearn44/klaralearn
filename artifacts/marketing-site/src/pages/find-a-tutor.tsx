@@ -33,8 +33,7 @@ function SkeletonCard() {
 
 export function FindATutor() {
   const { data: liveTutors, isLoading, error } = useLiveTutors();
-  // Never substitute unreviewed marketing samples into a public discovery
-  // surface. The API and fetch adapter both enforce the approved inventory.
+  // Public discovery surfaces only show currently available live profiles.
   const baseTutors = liveTutors ?? [];
 
   // Filter State
@@ -108,7 +107,7 @@ export function FindATutor() {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Find a UK Tutor",
-    "description": "Browse our vetted UK tutors for 11 Plus, GCSE, SATs, and core subjects.",
+    "description": "Browse available online tutor profiles for 11 Plus, GCSE, SATs, and core subjects.",
     "mainEntity": {
       "@type": "ItemList",
       "itemListElement": filteredTutors.map((tutor, index) => ({
@@ -126,8 +125,8 @@ export function FindATutor() {
 
   const faqs = [
     {
-      q: "Are KlaraLearn tutors vetted?",
-      a: "Yes, every KlaraLearn tutor undergoes a rigorous vetting process including identity verification, qualification checks, and an assessment of their teaching methodology to ensure safeguarding and quality."
+      q: "How do I choose a tutor?",
+      a: "Compare the available tutor profiles by subject, school stage, experience, qualifications where listed, rate and availability. Parents should review profile details and ask questions before booking."
     },
     {
       q: "Can I get a free trial lesson?",
@@ -159,8 +158,8 @@ export function FindATutor() {
   return (
     <Layout>
       <SEOHead
-        title="Find a Tutor — 11 Plus, GCSE & SATs | KlaraLearn"
-        description="Search our directory of affordable, vetted online tutors. Find specialists for the UK curriculum, from 11 Plus to GCSEs, starting from just £15/hr."
+        title="Find a Tutor | Private Tutors Online | KlaraLearn"
+        description="Find available private tutors online for 11 Plus, GCSE, SATs and core subjects. Compare profiles and rates to find a tutor for your child from £15/hr."
         path="/find-a-tutor"
         schema={[breadcrumbSchema, collectionSchema, faqSchema]}
       />
@@ -175,10 +174,10 @@ export function FindATutor() {
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold text-secondary mb-4">
-            Find Your Perfect UK Tutor
+            Find a Tutor: Available Private Tutors Online
           </h1>
           <p className="text-lg text-slate-600 max-w-2xl">
-            Browse our hand-picked network of subject specialists. Whether you're preparing for the 11 Plus or supporting GCSEs, find the right fit for your child's learning journey.
+            Looking for private tutors near you? Browse available online tutor profiles for 11 Plus, GCSEs and core subjects, then review their details to find a suitable fit for your child.
           </p>
         </div>
       </section>
@@ -204,8 +203,8 @@ export function FindATutor() {
             </div>
             <div className="px-4 mt-6 md:mt-0">
               <ShieldCheck className="w-6 h-6 text-primary mx-auto mb-3" />
-              <h4 className="font-bold text-secondary text-sm">Fully Vetted</h4>
-              <p className="text-xs text-slate-500 mt-1">Identity & safeguarding checked</p>
+              <h4 className="font-bold text-secondary text-sm">Profile Details</h4>
+              <p className="text-xs text-slate-500 mt-1">Review experience and subjects</p>
             </div>
           </div>
         </div>
@@ -330,8 +329,7 @@ export function FindATutor() {
                   <ShieldCheck className="w-4 h-4 text-amber-600" />
                 </div>
                 <p>
-                  Live tutor availability is temporarily offline. We are not
-                  showing unreviewed profiles.{' '}
+                  Live tutor availability is temporarily offline.{' '}
                   <a
                     href="https://app.klaralearn.com"
                     target="_blank"
@@ -354,11 +352,10 @@ export function FindATutor() {
                 <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-5 shadow-sm border border-slate-100">
                   <ShieldCheck className="w-6 h-6 text-slate-300" />
                 </div>
-                <h3 className="text-xl font-bold text-secondary mb-2">Tutor profiles are being checked</h3>
+                <h3 className="text-xl font-bold text-secondary mb-2">Tutor profiles are temporarily unavailable</h3>
                 <p className="text-slate-500 max-w-md mx-auto">
-                  We’ll show profiles here once the approved live inventory is
-                  available. Your search is not being filled with test or
-                  unreviewed data.
+                  Please check again shortly, or open KlaraLearn to enquire
+                  about current tutor availability.
                 </p>
               </div>
             ) : filteredTutors.length === 0 ? (

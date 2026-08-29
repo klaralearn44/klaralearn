@@ -6,7 +6,7 @@ export function HowItWorksSteps() {
     {
       icon: <Search className="w-8 h-8" />,
       title: "Search & filter",
-      description: "Browse our vetted global tutors by subject, level, and hourly rate. Read real reviews from other parents."
+      description: "Browse available tutor profiles by subject, level and hourly rate. Review each profile's details before choosing."
     },
     {
       icon: <CalendarCheck className="w-8 h-8" />,

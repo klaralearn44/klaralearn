@@ -2,15 +2,15 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { Layout } from '@/components/layout/Layout';
 import { HowItWorksSteps } from '@/components/ui/how-it-works';
 import { Button } from '@/components/ui/button';
-import { CheckCircle2, ShieldCheck, CreditCard, Video } from 'lucide-react';
+import { CheckCircle2, CreditCard, Search } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export function HowItWorksPage() {
   return (
     <Layout>
       <SEOHead 
-        title="How KlaraLearn Works | Vetted Global Tutors"
-        description="See how easy it is to find, book, and learn with KlaraLearn's affordable online tutors. Free trials and secure payments included."
+        title="How KlaraLearn Works | Find Available Tutors"
+        description="See how to compare available online tutor profiles, arrange an introductory session and book affordable private tuition from £15/hr."
         path="/how-it-works"
       />
 
@@ -36,31 +36,31 @@ export function HowItWorksPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl font-bold text-secondary mb-6">Rigorous vetting you can trust</h2>
+              <h2 className="text-3xl font-bold text-secondary mb-6">Choose a tutor with confidence</h2>
               <p className="text-lg text-slate-600 mb-8 leading-relaxed">
-                We don't let just anyone tutor on KlaraLearn. Our multi-stage vetting process ensures only the most capable, reliable, and safe educators make it onto the platform.
+                Start by comparing available tutor profiles. Parents should review a tutor's listed subjects, experience, qualifications where provided and hourly rate, then ask questions before booking.
               </p>
               
               <ul className="space-y-6">
                 <li className="flex gap-4">
-                  <div className="mt-1"><ShieldCheck className="w-6 h-6 text-primary" /></div>
+                  <div className="mt-1"><CheckCircle2 className="w-6 h-6 text-primary" /></div>
                   <div>
-                    <h4 className="font-bold text-secondary text-lg">ID & Background Checks</h4>
-                    <p className="text-slate-600">Every tutor undergoes strict identity verification and background checks equivalent to a UK DBS check.</p>
+                    <h4 className="font-bold text-secondary text-lg">Profile details</h4>
+                    <p className="text-slate-600">Use profile information to compare subjects, school stages, experience and qualifications where listed.</p>
                   </div>
                 </li>
                 <li className="flex gap-4">
                   <div className="mt-1"><CheckCircle2 className="w-6 h-6 text-primary" /></div>
                   <div>
-                    <h4 className="font-bold text-secondary text-lg">Qualifications Verified</h4>
-                    <p className="text-slate-600">We manually check university degrees, teaching certificates, and professional credentials.</p>
+                    <h4 className="font-bold text-secondary text-lg">Ask your questions</h4>
+                    <p className="text-slate-600">Use an introductory session to discuss your child's needs, learning goals and the tutor's approach.</p>
                   </div>
                 </li>
                 <li className="flex gap-4">
-                  <div className="mt-1"><Video className="w-6 h-6 text-primary" /></div>
+                  <div className="mt-1"><Search className="w-6 h-6 text-primary" /></div>
                   <div>
-                    <h4 className="font-bold text-secondary text-lg">Trial Lesson Assessment</h4>
-                    <p className="text-slate-600">Tutors must pass a mock teaching session with our team to prove their communication skills and subject knowledge.</p>
+                    <h4 className="font-bold text-secondary text-lg">Choose what suits you</h4>
+                    <p className="text-slate-600">Compare other available profiles if a tutor's subjects, schedule or rate do not suit your family.</p>
                   </div>
                 </li>
               </ul>
@@ -76,20 +76,20 @@ export function HowItWorksPage() {
               <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-sm border mb-6">
                 <CreditCard className="w-8 h-8 text-accent" />
               </div>
-              <h3 className="text-2xl font-bold text-secondary mb-4">Our Guarantees</h3>
+              <h3 className="text-2xl font-bold text-secondary mb-4">Before you book</h3>
               
               <div className="space-y-6">
                 <div>
-                  <h4 className="font-bold text-lg text-secondary mb-2">Free Trial Session</h4>
-                  <p className="text-slate-600">Message any tutor and book a 15-minute free video chat to see if they're a good fit before you spend a penny.</p>
+                  <h4 className="font-bold text-lg text-secondary mb-2">Review the profile</h4>
+                  <p className="text-slate-600">Check the tutor's listed details and current hourly rate, and decide whether they are relevant to your child's needs.</p>
                 </div>
                 <div>
-                  <h4 className="font-bold text-lg text-secondary mb-2">Money-Back Promise</h4>
-                  <p className="text-slate-600">Not happy with your first paid lesson? Let us know, and we'll refund you entirely and help you find a better match.</p>
+                  <h4 className="font-bold text-lg text-secondary mb-2">Talk before committing</h4>
+                  <p className="text-slate-600">An introductory conversation can help you decide whether a tutor is a suitable fit.</p>
                 </div>
                 <div>
-                  <h4 className="font-bold text-lg text-secondary mb-2">Secure Payments</h4>
-                  <p className="text-slate-600">All payments are handled securely via Stripe. Tutors are only paid once the lesson is successfully completed.</p>
+                  <h4 className="font-bold text-lg text-secondary mb-2">Check booking details</h4>
+                  <p className="text-slate-600">Review the booking and payment details shown when you arrange a lesson.</p>
                 </div>
               </div>
             </motion.div>

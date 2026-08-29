@@ -35,7 +35,7 @@ export function SubjectMaths() {
     },
     {
       q: "How do I choose the right maths tutor?",
-      a: "Look for: demonstrated experience with your child's specific exam format (KS2 SATs, 11 plus GL/CEM, or GCSE), strong reviews from families with similar children, and a tutor who runs a diagnostic first session rather than immediately starting from Chapter 1. KlaraLearn tutors all complete a trial lesson so you can assess fit before committing."
+      a: "Review available tutor profiles for experience with your child's specific exam format (KS2 SATs, 11 Plus GL/CEM or GCSE), listed qualifications and hourly rate. Ask questions before booking to decide whether a tutor's approach suits your child."
     }
   ];
 
@@ -253,7 +253,7 @@ export function SubjectMaths() {
         <div className="container mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <h2 className="text-3xl font-bold text-secondary mb-4">Our Top Maths Tutors</h2>
-            <p className="text-slate-600">Browse highly rated maths tutors available for online sessions.</p>
+            <p className="text-slate-600">Browse available maths tutor profiles for online sessions and review the details before booking.</p>
           </div>
 
           <div className="mb-12">

@@ -16,7 +16,7 @@ export function Home() {
   const faqs = [
     {
       q: "How are KlaraLearn tutors so affordable?",
-      a: "By connecting you directly with vetted international educators—many of whom are qualified teachers in their home countries—we bypass the high local agency fees. This global model brings the price down from £35-£80/hr to as low as £15/hr, while maintaining rigorous quality standards."
+      a: "KlaraLearn lets families compare available tutor profiles and hourly rates directly. This online marketplace model can make it easier to find tuition from £15/hr; review each profile to decide whether a tutor is right for your child."
     },
     {
       q: "Is online tutoring as effective as in-person?",
@@ -24,19 +24,19 @@ export function Home() {
     },
     {
       q: "Are the tutors familiar with the UK curriculum?",
-      a: "Absolutely. All tutors on our platform who teach UK students have been specifically vetted for their knowledge of the UK system, including the 11 Plus, GCSEs, and SATs. Many specialise exclusively in these exams."
+      a: "Tutor profiles list subjects, experience and qualifications where provided. Use these details to identify tutors whose experience is relevant to the UK curriculum, including the 11 Plus, GCSEs and SATs."
     },
     {
-      q: "How do I know my child is safe?",
-      a: "Safeguarding is our top priority. Every single tutor undergoes a comprehensive background and identity check (equivalent to a DBS check). All lessons take place within our secure platform and are recorded for safety and review."
+      q: "How should I choose a tutor for my child?",
+      a: "Read the available tutor's profile carefully, including their subjects, experience, qualifications and hourly rate. Ask questions during an introductory session and make sure you are comfortable with the arrangement before booking further lessons."
     },
     {
       q: "Can we try a tutor before committing?",
       a: "Yes! We offer a 15-minute free trial session with any tutor so you and your child can make sure they're the right fit before booking a full lesson."
     },
     {
-      q: "What if we're not happy with the tutor?",
-      a: "We offer a money-back guarantee on your first paid lesson. If you don't feel it's working out, we'll refund the cost and help you find a better match."
+      q: "What if a tutor is not the right fit?",
+      a: "You can compare other available tutor profiles and choose a tutor who better suits your child's needs, schedule and budget."
     }
   ];
 
@@ -89,7 +89,7 @@ export function Home() {
     <Layout>
       <SEOHead 
         title="Affordable Private Tutors | 11 Plus, GCSE & SATs | KlaraLearn"
-        description="Connect with professional private tutors from £15/hr. Expert online tuition for 11 Plus, GCSE Maths, English & Science. Book a free trial today."
+        description="Find available private tutors online for 11 Plus, GCSE Maths, English and Science. Compare tutor profiles and hourly rates, with tuition from £15/hr."
         path="/"
         schema={homepageSchema}
       />
@@ -116,7 +116,7 @@ export function Home() {
             >
               <div className="mb-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/20 text-white/90 text-sm font-medium backdrop-blur-md">
                 <span className="w-2 h-2 rounded-full bg-[#4DE1C1]"></span>
-                Trusted UK Curriculum Experts
+                Available online tutors
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white mb-6 leading-[1.15] tracking-tight">
@@ -125,7 +125,7 @@ export function Home() {
               </h1>
 
               <p className="text-lg md:text-xl text-white/90 mb-10 leading-relaxed max-w-2xl font-light">
-                World-class education shouldn't be a luxury. Connect with highly-rated global tutors who understand the UK curriculum—<span className="font-semibold text-white">at a fraction of the cost.</span>
+                Private tutoring connects your child with an available tutor for one-to-one online support in the subjects and school stages they need. <span className="font-semibold text-white">Compare profiles, experience and rates before you choose.</span>
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
@@ -138,7 +138,7 @@ export function Home() {
               </div>
               
               <div className="mt-10 flex items-center gap-4 text-sm text-white/80 font-medium flex-wrap">
-                <span className="flex items-center gap-1.5"><CheckCircle2 className="w-5 h-5 text-[#4DE1C1]" /> DBS Checked</span>
+                <span className="flex items-center gap-1.5"><CheckCircle2 className="w-5 h-5 text-[#4DE1C1]" /> Compare profiles</span>
                 <span className="flex items-center gap-1.5"><CheckCircle2 className="w-5 h-5 text-[#4DE1C1]" /> Free Trial</span>
                 <span className="flex items-center gap-1.5"><CheckCircle2 className="w-5 h-5 text-[#4DE1C1]" /> No Commitments</span>
               </div>
@@ -147,7 +147,7 @@ export function Home() {
         </div>
       </section>
 
-      {/* Reviewed Tutors */}
+      {/* Available Tutors */}
       <section className="py-16 md:py-20 bg-white border-b">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">

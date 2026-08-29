@@ -8,7 +8,7 @@ export function AboutPage() {
     <Layout>
       <SEOHead 
         title="About KlaraLearn | Affordable Private Tutoring Mission"
-        description="Learn about KlaraLearn's mission to make high-quality private tutoring affordable for every UK family through a global network of vetted educators."
+        description="Learn about KlaraLearn's mission to make private tutoring more affordable for UK families through an online tutor marketplace."
         path="/about"
       />
 
@@ -48,22 +48,22 @@ export function AboutPage() {
               </div>
             </div>
 
-            <h2 className="text-3xl font-bold text-secondary mb-6 mt-16 text-center">How we ensure quality</h2>
+            <h2 className="text-3xl font-bold text-secondary mb-6 mt-16 text-center">Making an informed choice</h2>
             <p className="mb-8">
-              Affordability means nothing without quality and safety. We are obsessive about the tutors we allow onto the platform.
+              Parents can use the information on an available tutor profile to compare options and decide what suits their child.
             </p>
             <ul className="space-y-4 mb-16">
               <li className="flex items-start gap-3">
                 <Heart className="w-6 h-6 text-accent shrink-0 mt-1" />
-                <span><strong>Rigorous Vetting:</strong> Every tutor must pass identity verification, background checks, and a live teaching assessment.</span>
+                <span><strong>Profile details:</strong> Browse listed subjects, experience, qualifications where provided and hourly rates.</span>
               </li>
               <li className="flex items-start gap-3">
                 <Heart className="w-6 h-6 text-accent shrink-0 mt-1" />
-                <span><strong>Transparent Reviews:</strong> You see real, unedited reviews from other parents who have booked lessons.</span>
+                <span><strong>Compare tutors:</strong> Look across available profiles for support relevant to your child's school stage and goals.</span>
               </li>
               <li className="flex items-start gap-3">
                 <Heart className="w-6 h-6 text-accent shrink-0 mt-1" />
-                <span><strong>Secure Classroom:</strong> All lessons happen in our purpose-built virtual classroom, which is safe, monitored, and recorded for safeguarding.</span>
+                <span><strong>Ask before booking:</strong> Arrange an introductory conversation to discuss your needs and questions.</span>
               </li>
             </ul>
 
@@ -72,7 +72,7 @@ export function AboutPage() {
               Founded in 2026, KlaraLearn was born out of the personal frustrations of parents navigating the UK grammar school system. Facing local tutor rates of up to £80 per hour, the founders realised that the traditional tutoring agency model was fundamentally broken—serving only those who could afford the highest premiums.
             </p>
             <p>
-              By applying a modern marketplace model to online education, KlaraLearn has grown to host over 500 verified tutors, helping thousands of students across the UK achieve their academic goals. We remain proudly independent and fiercely committed to our mission of accessible education.
+              By applying a modern marketplace model to online education, KlaraLearn helps UK families find available tutors and compare profile details before booking. We remain proudly independent and committed to making education more accessible.
             </p>
           </div>
         </div>

@@ -2,7 +2,6 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { TutorShowcase } from '@/components/ui/tutor-showcase';
-import { tutors } from '@/data/tutors';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { TrustStats } from '@/components/ui/trust-stats';
 import { Link } from 'wouter';
@@ -10,12 +9,10 @@ import { CheckCircle2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export function Subject11Plus() {
-  const elevenPlusTutors = tutors.filter(t => t.tags.includes("11 Plus"));
-
   const faqs = [
     {
       q: "How much does 11 plus tuition cost?",
-      a: "The UK market average for a specialist 11 plus tutor is between £40 and £80 per hour. At KlaraLearn, our global marketplace model means you can access highly qualified, vetted 11 plus tutors starting from just £15 per hour — a fraction of what most local agencies charge."
+      a: "KlaraLearn 11 Plus tutor profiles list rates from £15 per hour. Compare each available profile's experience, subjects and rate before choosing a tutor."
     },
     {
       q: "When should I start 11 plus tutoring?",
@@ -34,8 +31,8 @@ export function Subject11Plus() {
       a: "While it varies slightly by grammar school and region (GL Assessment vs CEM), the 11 plus exam generally covers four areas: Verbal Reasoning, Non-Verbal Reasoning, Maths, and English. GL Assessment — used in Kent, Essex, and Hertfordshire — tests these in separate papers. CEM integrates subjects."
     },
     {
-      q: "Are KlaraLearn 11 plus tutors qualified?",
-      a: "Absolutely. Our 11 plus tutors undergo a rigorous vetting process, including identity verification, enhanced DBS checks, and a trial lesson assessment. Many of our 11 plus specialists hold degrees from top universities and have years of experience preparing students specifically for UK grammar school admissions."
+      q: "How do I choose an 11 Plus tutor?",
+      a: "Review available tutor profiles for experience with verbal reasoning, non-verbal reasoning, maths, English and the relevant exam format. Parents should verify profile details and discuss their target grammar schools and learning goals before booking."
     },
     {
       q: "How can I get my child to pass the 11 plus?",
@@ -47,7 +44,7 @@ export function Subject11Plus() {
     },
     {
       q: "How much does 11 plus tutoring cost at KlaraLearn?",
-      a: "KlaraLearn's 11 plus tutors start from £15 per hour. Compared to local specialist tutor rates of £40–£80/hr and London agency rates of £55–£90/hr, this represents a saving of up to 80%. Your first lesson is free, with no commitment until you're satisfied."
+      a: "Available 11 Plus tutor profiles on KlaraLearn start from £15 per hour. Rates vary by tutor, so review the profile and current rate before booking."
     },
     {
       q: "Can my child have 11 plus tuition even if we're not near a grammar school area?",
@@ -87,8 +84,8 @@ export function Subject11Plus() {
   return (
     <Layout>
       <SEOHead
-        title="11 Plus & Grammar School Tutors — Affordable UK-Wide & Online | KlaraLearn"
-        description="Find expert 11 Plus tutors for grammar school admissions. Master the 11 Plus exam with our affordable online tutors from £15/hr. Book a free trial today."
+        title="11 Plus Tutors for Grammar School Entry | KlaraLearn"
+        description="Find available online 11 Plus tutors for grammar school entrance preparation. Compare profiles for verbal reasoning, maths, English and more from £15/hr."
         path="/subjects/11-plus"
         schema={[schema, faqSchema]}
       />
@@ -102,7 +99,7 @@ export function Subject11Plus() {
           </div>
 
           <h1 className="text-4xl md:text-5xl font-bold text-secondary mb-6 leading-tight">
-            11 Plus &amp; Grammar School Tutors — Affordable UK-Wide &amp; Online
+            11 Plus Tutors for Grammar School Entrance
           </h1>
 
           <div className="prose prose-lg text-slate-600 mb-8 max-w-none">
@@ -110,7 +107,7 @@ export function Subject11Plus() {
               The 11 plus is a highly competitive selective entrance exam that determines admission to grammar schools across England. For many parents, it represents a crucial stepping stone in their child's educational journey. However, the preparation can be daunting, and the cost of local specialist 11 plus tutors is often prohibitive — particularly in London and Kent, where agencies charge £55–90/hr.
             </p>
             <p>
-              At KlaraLearn, we believe every child deserves a fair chance at grammar school entry. Our platform connects you with exceptional, vetted 11 plus tutors who specialise in verbal reasoning, non-verbal reasoning, maths, and English. By leveraging a global pool of talent, we provide professional-quality grammar school entrance exam preparation at significantly lower prices than the UK market average.
+              KlaraLearn helps families compare available 11 Plus tutor profiles for verbal reasoning, non-verbal reasoning, maths and English. Review each tutor's profile details, experience and hourly rate to decide who may suit your child's grammar school entrance preparation.
             </p>
           </div>
 
@@ -131,7 +128,7 @@ export function Subject11Plus() {
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-secondary mb-4">Quality 11 Plus Tuition, Fairly Priced</h2>
+            <h2 className="text-3xl font-bold text-secondary mb-4">11 Plus Tuition Pricing</h2>
             <p className="text-lg text-slate-600">See how we compare against traditional local tutors and agencies.</p>
           </div>
 
@@ -151,8 +148,8 @@ export function Subject11Plus() {
                 <h3 className="text-xl font-bold mb-6 text-primary">KlaraLearn 11 Plus Tutors</h3>
                 <ul className="space-y-4">
                   <li className="flex items-center gap-3 font-medium text-secondary"><CheckCircle2 className="w-5 h-5 text-primary" /> From £15–£35 per hour</li>
-                  <li className="flex items-center gap-3 font-medium text-secondary"><CheckCircle2 className="w-5 h-5 text-primary" /> GL Assessment and CEM format specialists</li>
-                  <li className="flex items-center gap-3 font-medium text-secondary"><CheckCircle2 className="w-5 h-5 text-primary" /> Access to global experts</li>
+                  <li className="flex items-center gap-3 font-medium text-secondary"><CheckCircle2 className="w-5 h-5 text-primary" /> Compare tutor profile details</li>
+                  <li className="flex items-center gap-3 font-medium text-secondary"><CheckCircle2 className="w-5 h-5 text-primary" /> Online tutors available across the UK</li>
                   <li className="flex items-center gap-3 font-medium text-secondary"><CheckCircle2 className="w-5 h-5 text-primary" /> Zero hidden fees</li>
                   <li className="flex items-center gap-3 font-medium text-secondary"><CheckCircle2 className="w-5 h-5 text-primary" /> Free trial lesson</li>
                 </ul>
@@ -166,13 +163,12 @@ export function Subject11Plus() {
       <section className="py-20 bg-slate-50 border-y">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="text-3xl font-bold text-secondary mb-4">Our Top 11 Plus Specialists</h2>
-            <p className="text-slate-600">Browse a selection of our highly rated 11 plus tutors ready to help your child succeed.</p>
+            <h2 className="text-3xl font-bold text-secondary mb-4">Available 11 Plus Tutor Profiles</h2>
+            <p className="text-slate-600">Browse available 11 Plus tutor profiles and review the details before choosing a tutor for your child.</p>
           </div>
 
           <div className="mb-12">
             <TutorShowcase
-              fallbackTutors={elevenPlusTutors}
               filter={(tutor) => tutor.tags.includes('11 Plus')}
               limit={3}
               emptyMessage="Our next 11 Plus tutor profiles are being added. Browse all tutors to find the right specialist."
@@ -196,9 +192,9 @@ export function Subject11Plus() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { step: "1", title: "Tell us what you need", desc: "Share your child's year group, target schools, and which exam format (GL or CEM) — we'll match you with appropriate 11 plus tutors." },
-              { step: "2", title: "Meet your matched tutor", desc: "Browse matched tutor profiles and book a free trial lesson. Assess their teaching style and how they connect with your child before committing." },
-              { step: "3", title: "Start preparing", desc: "Regular sessions from £15/hr, tailored to your child's specific weak areas. Tutors set homework between sessions and report progress to parents." }
+              { step: "1", title: "Tell us what you need", desc: "Consider your child's year group, target schools and exam format, such as GL or CEM." },
+              { step: "2", title: "Review available profiles", desc: "Browse available tutor profiles and review their experience, subjects and rate before arranging an introductory session." },
+              { step: "3", title: "Start preparing", desc: "Book sessions at the tutor's listed rate and agree a preparation approach that suits your child's needs." }
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -226,7 +222,7 @@ export function Subject11Plus() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-secondary mb-4">11 Plus Tutors by Region</h2>
             <p className="text-slate-600 max-w-2xl mx-auto">
-              Our online 11 plus tutors serve families across England. Different regions use different exam formats — our tutors are matched to your specific area.
+              Available online 11 Plus tutors can support families across England. Different regions use different exam formats, so review profiles for relevant experience.
             </p>
           </div>
 

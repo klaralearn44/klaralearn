@@ -95,8 +95,8 @@ export function LocationOnline() {
       <section className="py-20 bg-slate-50 border-y">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="text-3xl font-bold text-secondary mb-4">Featured Online Tutors</h2>
-            <p className="text-slate-600">Highly rated professionals ready to start teaching.</p>
+            <h2 className="text-3xl font-bold text-secondary mb-4">Available Online Tutor Profiles</h2>
+            <p className="text-slate-600">Review available tutor profiles, subjects and rates before choosing.</p>
           </div>
           
           <div className="mb-12">

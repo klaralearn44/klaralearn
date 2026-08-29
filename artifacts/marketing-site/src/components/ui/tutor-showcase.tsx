@@ -5,8 +5,8 @@ import { useLiveTutors } from '@/hooks/use-live-tutors';
 interface TutorShowcaseProps {
   filter?: (tutor: Tutor) => boolean;
   /**
-   * Kept optional for existing page call sites. Unreviewed static cards are
-   * intentionally never rendered as a fallback for a live discovery surface.
+   * Kept optional for existing page call sites. Public discovery surfaces
+   * intentionally render only currently available live tutor profiles.
    */
   fallbackTutors?: Tutor[];
   limit?: number;
@@ -59,8 +59,7 @@ export function TutorShowcase({
     return (
       <div className="space-y-5">
         <p role="alert" className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
-          Live tutor listings are temporarily unavailable. We are not showing
-          unreviewed profiles while we reconnect.{' '}
+          Live tutor listings are temporarily unavailable.{' '}
           <a
             href="https://app.klaralearn.com"
             target="_blank"

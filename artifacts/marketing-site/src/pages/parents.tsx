@@ -3,34 +3,34 @@ import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Link } from 'wouter';
-import { CheckCircle2, Shield, Star } from 'lucide-react';
+import { CheckCircle2, Search } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export function ParentsPage() {
   const faqs = [
     {
       q: "How does KlaraLearn match tutors to my child?",
-      a: "When you tell us what your child needs — subject, level, exam format (e.g. GL Assessment for Kent), and preferred schedule — our platform presents you with matched tutors who meet those criteria. You can review each tutor's profile, subject specialisms, and reviews before selecting. You then book a free trial lesson with your preferred tutor."
+      a: "Use the available tutor profiles to compare subject, level, exam format, schedule, experience, qualifications where listed and rate. Parents should review these details and contact a tutor to discuss their child's needs before booking."
     },
     {
-      q: "Are KlaraLearn tutors DBS checked?",
-      a: "Yes. All tutors on the KlaraLearn platform go through identity verification and enhanced DBS (Disclosure and Barring Service) check before they can teach. For tutors based outside the UK, we carry out equivalent background checks through accredited providers. All vetting documentation is held on file."
+      q: "What should I check before booking a tutor?",
+      a: "Review the available tutor's profile details, including subjects, experience, qualifications where listed, rate and availability. Ask questions about the support your child needs before making a booking."
     },
     {
       q: "How much does KlaraLearn cost?",
-      a: "Tutoring starts from £15 per hour. There is no subscription or membership fee — you pay per session. Your first trial lesson is free, so you can assess the tutor before making any financial commitment."
+      a: "Available tutoring rates start from £15 per hour. Check the tutor's current profile and booking details for the applicable rate."
     },
     {
       q: "What if my child doesn't get on with their tutor?",
-      a: "Tutor-student fit is crucial. If, after the trial lesson or early sessions, your child is not connecting well with their tutor, simply contact us and we will match you with another tutor at no charge. We want long-term relationships that produce results — not one-off sessions."
+      a: "You can review other available tutor profiles and choose a tutor whose subjects, experience, schedule and rate better suit your child."
     },
     {
-      q: "Is online tutoring safe for children?",
-      a: "Yes. All KlaraLearn sessions take place on our secure, moderated platform. Sessions are conducted via video with a shared interactive whiteboard. Parents can request session recordings for review. We require parental consent for all child accounts and sessions are never one-to-one without our platform's oversight layer."
+      q: "How can parents choose a suitable online tutor?",
+      a: "Parents should review a tutor's available profile details, discuss expectations before booking and remain involved in decisions about their child's tuition."
     },
     {
       q: "How quickly can we start?",
-      a: "In most cases within 48 hours. Once you've completed registration and told us your child's needs, we present matched tutors immediately. Most tutors have availability within a few days. Free trial lessons can typically be booked within 24–48 hours of registration."
+      a: "Start by browsing currently available tutor profiles. Availability varies, so check each profile and discuss suitable times directly before booking."
     }
   ];
 
@@ -55,36 +55,18 @@ export function ParentsPage() {
     },
     {
       num: "2",
-      title: "We match you with 3 qualified tutors",
-      desc: "Our matching system presents tutors who meet your exact requirements — right subject specialisms, right exam format, right availability."
+      title: "Review available tutor profiles",
+      desc: "Compare tutor profiles by subject, exam format, experience, qualifications where listed, availability and rate."
     },
     {
       num: "3",
-      title: "Book a free trial lesson",
-      desc: "Meet your matched tutor in a live 45-minute session. No cost. Assess their teaching style and whether they connect with your child."
+      title: "Arrange an introductory session",
+      desc: "Talk with a tutor about your child's goals and decide whether their approach is a suitable fit."
     },
     {
       num: "4",
       title: "Book and pay securely, session by session",
-      desc: "No subscription. No lock-in. Pay per session from £15/hr. Sessions are held on our secure platform with all safety measures in place."
-    }
-  ];
-
-  const testimonials = [
-    {
-      text: "My daughter went from predicted Band 1 to getting a place at our first-choice grammar school. Her KlaraLearn tutor found the exact question types she was losing marks on and targeted those for six months. Genuinely life-changing — and at a price we could actually afford.",
-      name: "Rachel M.",
-      detail: "Mother of Year 6 pupil, Tonbridge"
-    },
-    {
-      text: "We'd tried a local agency tutor at £65 an hour and didn't see much progress. KlaraLearn matched us with a specialist at £22/hr who was honestly better. My son found out he'd qualified for two grammar schools in October — we were so relieved. The saving on tutoring fees was significant too.",
-      name: "David K.",
-      detail: "Father of Year 6 pupil, Barnet"
-    },
-    {
-      text: "I was sceptical about online tutoring — my daughter had struggled with screen time and I worried she wouldn't engage. But her tutor is fantastic at keeping her focused and she looks forward to sessions every week. Her maths has improved two levels in four months.",
-      name: "Priya S.",
-      detail: "Mother of Year 5 pupil, Birmingham"
+      desc: "Check the tutor's current rate and booking details before you arrange each session."
     }
   ];
 
@@ -92,7 +74,7 @@ export function ParentsPage() {
     <Layout>
       <SEOHead
         title="For Parents: How KlaraLearn Works | KlaraLearn"
-        description="KlaraLearn helps UK parents find qualified, affordable tutors for 11 plus, GCSE, and SATs. Learn how matching works, what safeguarding measures are in place, and how to get started."
+        description="KlaraLearn helps UK parents compare available online tutor profiles for 11 Plus, GCSE and SATs support. Learn what to review before booking."
         path="/parents"
         schema={faqSchema}
       />
@@ -104,7 +86,7 @@ export function ParentsPage() {
             For Parents: Everything You Need to Know About KlaraLearn
           </h1>
           <p className="text-xl text-slate-600 mb-8 max-w-2xl">
-            We exist for one reason: to make expert tutoring accessible to every UK family, regardless of budget. Here's how we work, what we do to keep children safe, and how to get started.
+            Compare available online tutor profiles for your child's needs, then review the details and arrange tuition when you find a suitable fit.
           </p>
           <div className="flex flex-wrap gap-4">
             <Button asChild size="lg" className="bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white rounded-full px-8">
@@ -152,44 +134,44 @@ export function ParentsPage() {
         </div>
       </section>
 
-      {/* Safeguarding */}
+      {/* Choosing a tutor */}
       <section className="py-20 bg-slate-50 border-y">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-12">
             <div className="flex justify-center mb-4">
-              <Shield className="w-12 h-12 text-[#00A896]" />
+              <Search className="w-12 h-12 text-[#00A896]" />
             </div>
-            <h2 className="text-3xl font-bold text-secondary mb-4">Safeguarding: How We Protect Your Child</h2>
+            <h2 className="text-3xl font-bold text-secondary mb-4">What to Review Before Booking</h2>
             <p className="text-slate-600 max-w-2xl mx-auto">
-              Online safeguarding is something we take seriously. Here are the specific measures we have in place.
+              Review profile information and discuss your child's needs with a tutor before deciding whether to book.
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
             {[
               {
-                title: "DBS Checks for All UK Tutors",
-                desc: "Every UK-based tutor completes an enhanced DBS (Disclosure and Barring Service) check before their first session. Certificates are reviewed and stored by our compliance team."
+                title: "Subjects and school stage",
+                desc: "Check that the tutor lists the subject, year group or exam preparation your child needs."
               },
               {
-                title: "Equivalent International Background Checks",
-                desc: "Tutors based outside the UK complete equivalent background checks through accredited providers, verified against their national criminal record systems."
+                title: "Relevant experience",
+                desc: "Read the experience and qualifications included on the available tutor profile."
               },
               {
-                title: "Identity Verification",
-                desc: "All tutors submit photo ID (passport or driving licence) and proof of qualifications. These are manually reviewed by our team before onboarding."
+                title: "Teaching approach",
+                desc: "Ask how the tutor would support your child's goals, confidence and areas for development."
               },
               {
-                title: "Parental Consent Required",
-                desc: "All child accounts require verified parental consent. Parents set up and manage their child's account and have full visibility of session history and tutor communication."
+                title: "Schedule and rate",
+                desc: "Confirm the tutor's availability and current hourly rate before booking."
               },
               {
-                title: "Session Recording Available",
-                desc: "Parents can request that sessions are recorded for review. This is an opt-in feature that provides an additional layer of oversight."
+                title: "Introductory conversation",
+                desc: "Use an introductory conversation to ask questions and decide whether a tutor is a suitable fit."
               },
               {
-                title: "Platform Moderation",
-                desc: "All communication between tutors and pupils happens within the KlaraLearn platform. Direct communication outside the platform is against our terms of service."
+                title: "Your decision",
+                desc: "Compare other available profiles if you would like to consider different subjects, experience or rates."
               }
             ].map((item, i) => (
               <motion.div
@@ -248,39 +230,6 @@ export function ParentsPage() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-20 bg-slate-50 border-y">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-secondary mb-4">What Parents Say</h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-white rounded-2xl p-8 border shadow-sm"
-              >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, j) => (
-                    <Star key={j} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-slate-700 text-sm leading-relaxed mb-6 italic">"{testimonial.text}"</p>
-                <div>
-                  <p className="font-bold text-secondary text-sm">{testimonial.name}</p>
-                  <p className="text-slate-500 text-xs">{testimonial.detail}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* FAQ */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4 max-w-3xl">
@@ -302,7 +251,7 @@ export function ParentsPage() {
       <section className="py-20 bg-[#1B3D5C]">
         <div className="container mx-auto px-4 text-center max-w-2xl">
           <h2 className="text-3xl font-bold text-white mb-4">Ready to Find the Right Tutor?</h2>
-          <p className="text-white/80 mb-8">Free trial lesson. Expert tutors from £15/hr. No commitment until you're happy.</p>
+          <p className="text-white/80 mb-8">Available tutor profiles with rates from £15/hr. Review the details before booking.</p>
           <Button asChild size="lg" className="bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white rounded-full px-10">
             <a href="https://app.klaralearn.com" target="_blank" rel="noopener noreferrer">Find a Tutor Today</a>
           </Button>

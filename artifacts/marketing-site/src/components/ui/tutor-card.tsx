@@ -1,5 +1,4 @@
 import { Tutor } from '@/data/tutors';
-import { Star } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
@@ -31,15 +30,7 @@ export function TutorCard({ tutor, index = 0 }: { tutor: Tutor, index?: number }
               <span>{tutor.flag}</span>
               <span className="truncate max-w-[120px]">{tutor.country}</span>
             </div>
-            {tutor.rating > 0 ? (
-              <div className="flex items-center gap-1 mt-1 text-sm font-medium">
-                <Star className="w-4 h-4 fill-accent text-accent" />
-                <span>{tutor.rating.toFixed(1)}</span>
-                <span className="text-slate-400">({tutor.reviews})</span>
-              </div>
-            ) : (
-              <p className="mt-1 text-sm font-medium text-primary">New on KlaraLearn</p>
-            )}
+            <p className="mt-1 text-sm font-medium text-primary">Available tutor profile</p>
           </div>
         </div>
         <div className="text-right">
@@ -61,11 +52,6 @@ export function TutorCard({ tutor, index = 0 }: { tutor: Tutor, index?: number }
       {tutor.qualifications && tutor.qualifications.length > 0 && (
         <p className="mt-3 text-xs leading-relaxed text-slate-500 line-clamp-2">
           Qualifications: {tutor.qualifications.join(', ')}
-        </p>
-      )}
-      {tutor.safeguardingVerified && (
-        <p className="mt-3 text-xs font-medium text-teal-700">
-          Safeguarding checks completed
         </p>
       )}
       {formattedUpdatedDate && (
