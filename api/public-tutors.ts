@@ -26,21 +26,14 @@ export default async function handler(
     return;
   }
 
-  // The production function must never silently fall back to the Bubble
-  // version-test feed. Configure the exact production public-tutor endpoint
-  // in Vercel as a server-only environment variable.
-  if (!process.env.BUBBLE_PUBLIC_TUTORS_SOURCE_URL?.trim()) {
-    res.status(503).json({
-      error: "Tutor listings are not configured with an approved production source.",
-    });
-    return;
-  }
-
   const config = getPublicTutorConfig();
 
-  if (!config || !config.requiresReview) {
+  // Only the two exact KlaraLearn Bubble feed paths accepted by the shared
+  // policy may be used. The version-test path is temporary available
+  // inventory and receives no verification treatment.
+  if (!config) {
     res.status(503).json({
-      error: "Tutor listings are not configured with an approved production source.",
+      error: "Tutor listings are not configured with an approved Bubble source.",
     });
     return;
   }
