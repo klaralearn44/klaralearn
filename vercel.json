@@ -4,6 +4,12 @@
   "buildCommand": "pnpm --filter @workspace/marketing-site run build",
   "outputDirectory": "artifacts/marketing-site/dist/public",
   "trailingSlash": false,
+  "rewrites": [
+    {
+      "source": "/api/public-tutors",
+      "destination": "https://klaralearn.replit.app/api/public-tutors"
+    }
+  ],
   "headers": [
     {
       "source": "/assets/(.*)",

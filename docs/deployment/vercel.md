@@ -14,6 +14,7 @@ Create the Vercel project from the repository root, not from
 - Output directory: `artifacts/marketing-site/dist/public`
 - Framework: Vite
 - Node: the version in `.nvmrc` (also constrained in the root `package.json`)
+- `/api/public-tutors` is reverse-proxied to the separately hosted API service.
 
 The build prerenders every route in the shared route manifest. Do not add a
 catch-all rewrite to `index.html`: that would replace the route-specific HTML
@@ -27,7 +28,7 @@ Set these for the **marketing site**:
 | Variable | Production value | Preview value |
 | --- | --- | --- |
 | `VITE_SITE_URL` | `https://klaralearn.com` | `https://klaralearn.com` |
-| `VITE_PUBLIC_API_ORIGIN` | empty for same-origin `/api`, or the HTTPS API origin | the API origin available to preview |
+| `VITE_PUBLIC_API_ORIGIN` | empty when using the same-origin proxy | the API origin available to preview |
 | `VITE_INDEXABLE_BUILD` | `true` (recommended explicit setting) | unset or `false` |
 
 Vercel production builds are detected from `VERCEL_ENV=production`; preview
@@ -39,11 +40,16 @@ Only variables prefixed with `VITE_` are included in browser code. Never put
 database credentials, Bubble credentials, session secrets, or API tokens in
 these variables.
 
-If the API is separately hosted, set `VITE_PUBLIC_API_ORIGIN` to its origin
-without a trailing slash, such as `https://api.example.com`. The client will
-request `/api/public-tutors` below that origin. If the API is reverse-proxied
-under the marketing domain, leave it empty and configure the proxy at the
-hosting layer.
+The committed Vercel configuration proxies `/api/public-tutors` to
+`https://klaralearn.replit.app/api/public-tutors`. Keep
+`VITE_PUBLIC_API_ORIGIN` empty in Vercel Production so the browser requests the
+same marketing-domain path. If the API service moves, update the rewrite target
+and republish the API before changing the frontend deployment.
+
+For a preview deployment that cannot use the production proxy, set
+`VITE_PUBLIC_API_ORIGIN` to the HTTPS API origin without a trailing slash, such
+as `https://api.example.com`. The client will request `/api/public-tutors` below
+that origin.
 
 ## API service requirements
 
@@ -58,7 +64,7 @@ Set the server-only variables from `.env.example`, including:
 
 - `DATABASE_URL`
 - `SESSION_SECRET`
-- `PUBLIC_CORS_ORIGINS=https://klaralearn.com`
+- `PUBLIC_CORS_ORIGINS=https://www.klaralearn.com,https://klaralearn.com`
 - `BUBBLE_PUBLIC_TUTORS_SOURCE_URL`
 - `PUBLIC_TUTOR_SLUGS` / `PUBLIC_TUTOR_IDS` when an explicit production inventory is used
 - `PUBLIC_TUTOR_APPROVAL_FIELD`, `PUBLIC_TUTOR_MIN_RATE`, and `PUBLIC_TUTOR_MAX_RATE`
@@ -87,8 +93,8 @@ available-profile eligibility checks.
 ## Domain, DNS, and CDN
 
 1. Add `klaralearn.com` to Vercel and follow Vercel's DNS instructions.
-2. Add `www.klaralearn.com` if it will receive traffic; the committed
-   configuration permanently redirects it to the apex domain.
+2. Add `www.klaralearn.com` if it will receive traffic; keep it as the Vercel
+   primary domain and redirect the apex domain to it.
 3. Use HTTPS for both the site and API. Do not point canonical URLs at a
    Vercel preview or an API hostname.
 4. Keep hashed assets under `/assets/` cacheable for one year. HTML is
@@ -103,9 +109,9 @@ available-profile eligibility checks.
 
 After the custom domain is live:
 
-1. Confirm `https://klaralearn.com/robots.txt` contains
-   `Sitemap: https://klaralearn.com/sitemap.xml`.
-2. Confirm `https://klaralearn.com/sitemap.xml` returns XML and contains only
+1. Confirm `https://www.klaralearn.com/robots.txt` contains
+   `Sitemap: https://www.klaralearn.com/sitemap.xml`.
+2. Confirm `https://www.klaralearn.com/sitemap.xml` returns XML and contains only
    canonical public routes.
 3. Check a sample of the homepage, subject, location, blog, finder, privacy,
    and terms routes with direct requests, not only client-side navigation.
@@ -113,8 +119,9 @@ After the custom domain is live:
    route-specific title and description, and parseable JSON-LD.
 5. Confirm `/finder-a-tutor` is `noindex, follow`, canonicalizes to
    `/find-a-tutor`, and is absent from the sitemap.
-6. Add the apex property to Google Search Console and Bing Webmaster Tools,
-   submit `/sitemap.xml`, and complete any requested DNS or HTML verification.
+6. Add the primary `www` property to Google Search Console and Bing Webmaster
+   Tools, submit `/sitemap.xml`, and complete any requested DNS or HTML
+   verification.
 7. Keep preview builds non-indexable with `VITE_INDEXABLE_BUILD=false`.
 
 The build will fail if route HTML or core metadata is missing. Search Console
