@@ -36,13 +36,17 @@ jobs:
       - name: Build and validate prerendered SEO output
         run: pnpm --filter @workspace/marketing-site run build
         env:
-          VITE_SITE_URL: https://klaralearn.com
+          VITE_SITE_URL: https://www.klaralearn.com
           VITE_INDEXABLE_BUILD: "true"
 
       - name: Build deployable API bundle
         run: pnpm --filter @workspace/api-server run build
 
+      - name: Typecheck Vercel tutor function
+        run: pnpm --filter @workspace/api-server exec tsc --noEmit --target ES2022 --module NodeNext --moduleResolution NodeNext --skipLibCheck ../../api/public-tutors.ts
+
       - name: Run marketing and API policy tests
         run: |
           pnpm --filter @workspace/marketing-site run test
+          pnpm --filter @workspace/marketing-site exec tsx --test ../../api/public-tutors.test.ts
           pnpm --filter @workspace/marketing-site exec tsx --test ../api-server/src/lib/public-tutors.test.ts

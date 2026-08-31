@@ -1,8 +1,9 @@
 # KlaraLearn external deployment
 
 This repository is prepared for a GitHub-connected Vercel deployment of the
-marketing site. The tutor API remains a separate Express service unless it is
-placed behind the same production domain by the chosen hosting provider.
+marketing site and its read-only tutor-feed gateway. Bubble remains the system
+of record for tutor accounts, verification, availability, parents, bookings,
+and sessions.
 
 ## Repository and Vercel settings
 
@@ -14,7 +15,8 @@ Create the Vercel project from the repository root, not from
 - Output directory: `artifacts/marketing-site/dist/public`
 - Framework: Vite
 - Node: the version in `.nvmrc` (also constrained in the root `package.json`)
-- `/api/public-tutors` is reverse-proxied to the separately hosted API service.
+- `/api/public-tutors` is a Vercel Function that reads the approved Bubble feed
+  server-side and returns only the public tutor fields.
 
 The build prerenders every route in the shared route manifest. Do not add a
 catch-all rewrite to `index.html`: that would replace the route-specific HTML
@@ -27,7 +29,7 @@ Set these for the **marketing site**:
 
 | Variable | Production value | Preview value |
 | --- | --- | --- |
-| `VITE_SITE_URL` | `https://klaralearn.com` | `https://klaralearn.com` |
+| `VITE_SITE_URL` | `https://www.klaralearn.com` | `https://www.klaralearn.com` |
 | `VITE_PUBLIC_API_ORIGIN` | empty when using the same-origin proxy | the API origin available to preview |
 | `VITE_INDEXABLE_BUILD` | `true` (recommended explicit setting) | unset or `false` |
 
@@ -40,55 +42,45 @@ Only variables prefixed with `VITE_` are included in browser code. Never put
 database credentials, Bubble credentials, session secrets, or API tokens in
 these variables.
 
-The committed Vercel configuration proxies `/api/public-tutors` to
-`https://klaralearn.replit.app/api/public-tutors`. Keep
-`VITE_PUBLIC_API_ORIGIN` empty in Vercel Production so the browser requests the
-same marketing-domain path. If the API service moves, update the rewrite target
-and republish the API before changing the frontend deployment.
+Keep `VITE_PUBLIC_API_ORIGIN` empty in Vercel Production so the browser
+requests the same marketing-domain path. Vercel's root `api/public-tutors.ts`
+Function handles that path; no Replit API deployment is required.
 
 For a preview deployment that cannot use the production proxy, set
 `VITE_PUBLIC_API_ORIGIN` to the HTTPS API origin without a trailing slash, such
 as `https://api.example.com`. The client will request `/api/public-tutors` below
 that origin.
 
-## API service requirements
+## Vercel tutor gateway requirements
 
-Run the API as a separate Node service with:
+Set these variables in the Vercel project's Production environment. They are
+server-only and must not use the `VITE_` prefix:
 
-```sh
-pnpm --filter @workspace/api-server run build
-PORT=8080 NODE_ENV=production node artifacts/api-server/dist/index.mjs
-```
-
-Set the server-only variables from `.env.example`, including:
-
-- `DATABASE_URL`
-- `SESSION_SECRET`
-- `PUBLIC_CORS_ORIGINS=https://www.klaralearn.com,https://klaralearn.com`
 - `BUBBLE_PUBLIC_TUTORS_SOURCE_URL`
 - `PUBLIC_TUTOR_SLUGS` / `PUBLIC_TUTOR_IDS` when an explicit production inventory is used
 - `PUBLIC_TUTOR_APPROVAL_FIELD`, `PUBLIC_TUTOR_MIN_RATE`, and `PUBLIC_TUTOR_MAX_RATE`
 
-`PUBLIC_CORS_ORIGINS` is required in production and must contain the exact
-frontend origins that may call the API, comma-separated. If preview deployments
-need live tutor data, use a stable preview/custom domain and add that exact
-origin to the allowlist; arbitrary generated preview hostnames are intentionally
-not wildcarded. Requests without an `Origin` header remain usable for health
-checks. Confirm the service before connecting the frontend:
+`BUBBLE_PUBLIC_TUTORS_SOURCE_URL` must be the exact HTTPS production Bubble
+public-tutor endpoint. The Function rejects the version-test feed and fails
+closed when the production source is missing or invalid. The endpoint applies
+the existing approval, safeguarding, qualification, rate, and public-field
+rules before returning data.
+
+Confirm the deployed Function after publishing:
 
 ```sh
-curl -fsS https://api.example.com/api/healthz
+curl -fsS https://www.klaralearn.com/api/public-tutors
 ```
 
-Expected response:
+Expected response shape:
 
 ```json
-{"status":"ok"}
+{"response":{"results":[{"_id":"...","fullname":"..."}]}}
 ```
 
-Do not expose the Bubble source directly to the browser. The marketing site
-must use the API proxy and the API must retain its source-host and
-available-profile eligibility checks.
+Do not expose the Bubble source directly to the browser. The Vercel Function
+keeps the Bubble source URL and all server-only configuration out of browser
+code.
 
 ## Domain, DNS, and CDN
 
@@ -135,7 +127,7 @@ From a fresh checkout:
 ```sh
 corepack enable
 pnpm install --frozen-lockfile
-VITE_SITE_URL=https://klaralearn.com \
+VITE_SITE_URL=https://www.klaralearn.com \
 VITE_PUBLIC_API_ORIGIN=https://api.example.com \
 VITE_INDEXABLE_BUILD=true \
 pnpm --filter @workspace/marketing-site run build

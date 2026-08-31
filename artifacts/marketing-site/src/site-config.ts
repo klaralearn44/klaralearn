@@ -18,7 +18,7 @@ const viteEnv = import.meta.env ?? {};
 const configuredSiteUrl = viteEnv.VITE_SITE_URL?.trim();
 
 export const SITE_URL = normaliseOrigin(
-  configuredSiteUrl || 'https://klaralearn.com',
+  configuredSiteUrl || 'https://www.klaralearn.com',
   'VITE_SITE_URL',
 );
 
