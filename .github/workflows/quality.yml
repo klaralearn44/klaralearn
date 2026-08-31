@@ -48,5 +48,5 @@ jobs:
       - name: Run marketing and API policy tests
         run: |
           pnpm --filter @workspace/marketing-site run test
-          pnpm --filter @workspace/marketing-site exec tsx --test ../../api/public-tutors.test.ts
+          pnpm --filter @workspace/marketing-site exec tsx --test ../../tests/vercel-public-tutors.test.ts
           pnpm --filter @workspace/marketing-site exec tsx --test ../api-server/src/lib/public-tutors.test.ts

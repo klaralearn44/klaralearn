@@ -1,6 +1,6 @@
 import { strict as assert } from "node:assert";
 import test from "node:test";
-import handler from "./public-tutors";
+import handler from "../api/public-tutors";
 
 type TestResponse = {
   statusCode: number;
