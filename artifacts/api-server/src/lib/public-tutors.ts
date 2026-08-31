@@ -1,5 +1,3 @@
-import { URL } from "node:url";
-
 export interface BubblePublicTutorRecord {
   _id?: unknown;
   fullname?: unknown;
@@ -31,6 +29,8 @@ export interface PublicTutorConfig {
   maxRate: number;
   requiresReview: boolean;
 }
+
+type RuntimeEnvironment = Record<string, string | undefined>;
 
 const DEFAULT_APPROVAL_FIELD = "public_discovery_approved";
 const DEFAULT_MIN_RATE = 15;
@@ -81,8 +81,16 @@ function isTutorRecord(value: unknown): value is BubblePublicTutorRecord {
   return Boolean(value) && typeof value === "object" && !Array.isArray(value);
 }
 
+function runtimeEnvironment(): RuntimeEnvironment {
+  const runtime = globalThis as typeof globalThis & {
+    process?: { env?: RuntimeEnvironment };
+  };
+
+  return runtime.process?.env ?? {};
+}
+
 export function getPublicTutorConfig(
-  env: NodeJS.ProcessEnv = process.env,
+  env: RuntimeEnvironment = runtimeEnvironment(),
 ): PublicTutorConfig | null {
   const sourceUrl =
     env["BUBBLE_PUBLIC_TUTORS_SOURCE_URL"]?.trim() ||
