@@ -1,4 +1,4 @@
-import { type ReactNode, useEffect } from 'react';
+import { Suspense, type ReactNode, useEffect } from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ErrorBoundary } from '@/components/error-boundary';
 import { Toaster } from '@/components/ui/toaster';
@@ -15,13 +15,15 @@ function Router() {
   return (
     <RoutedErrorBoundary>
       <ScrollToTop />
-      <Switch>
-        {appRoutes.map(({ path, component }) => (
-          <Route key={path} path={path} component={component} />
-        ))}
+      <Suspense fallback={<div className="min-h-screen bg-white" aria-busy="true" />}>
+        <Switch>
+          {appRoutes.map(({ path, component }) => (
+            <Route key={path} path={path} component={component} />
+          ))}
 
-        <Route component={NotFound} />
-      </Switch>
+          <Route component={NotFound} />
+        </Switch>
+      </Suspense>
     </RoutedErrorBoundary>
   );
 }
@@ -46,7 +48,7 @@ function App({ ssrPath, helmetContext }: { ssrPath?: string; helmetContext?: { h
     <HelmetProvider context={helmetContext}>
       <QueryClientProvider client={queryClient}>
         <TooltipProvider>
-            <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')} ssrPath={ssrPath}>
+          <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, '')} ssrPath={ssrPath}>
             <Router />
           </WouterRouter>
           <Toaster />

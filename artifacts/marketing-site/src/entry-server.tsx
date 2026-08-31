@@ -1,5 +1,6 @@
 import { renderToString } from 'react-dom/server';
 import App from './App';
+import { preloadRoute } from './route-manifest';
 import { consumeServerSeo, resetServerSeo } from './seo-server-state';
 
 const escapeAttribute = (value: string) =>
@@ -9,7 +10,8 @@ const escapeAttribute = (value: string) =>
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;');
 
-export function render(url: string) {
+export async function render(url: string) {
+  await preloadRoute(url);
   resetServerSeo();
   const appHtml = renderToString(<App ssrPath={url} />);
   const seo = consumeServerSeo();

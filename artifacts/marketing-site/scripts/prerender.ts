@@ -24,7 +24,7 @@ try {
   const template = await readFile(path.join(outDir, 'index.html'), 'utf8');
 
   for (const { path: route } of appRoutes) {
-    const { appHtml, head } = render(route);
+    const { appHtml, head } = await render(route);
     const html = template
       .replace('<!--ssr-head-->', head)
       .replace('<div id="root"></div>', `<div id="root" data-ssr="true">${appHtml}</div>`);
