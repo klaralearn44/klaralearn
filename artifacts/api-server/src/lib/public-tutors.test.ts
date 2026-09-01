@@ -8,8 +8,7 @@ import {
 
 const environment = {
   BUBBLE_PUBLIC_TUTORS_SOURCE_URL:
-    "https://edubridgegloballearning.com/api/1.1/obj/publictutorcard",
-  PUBLIC_TUTOR_SLUGS: "approved-maths-tutor",
+    "https://app.klaralearn.com/api/1.1/obj/publictutorcard",
 };
 
 const config = getPublicTutorConfig(environment);
@@ -29,43 +28,22 @@ const approvedRecord = {
   safeguarding_verified: true,
 };
 
-test("allows only fully reviewed records in the explicit public inventory", () => {
+test("allows complete records from the public production inventory", () => {
   assert.equal(isPublishableTutorRecord(approvedRecord, config), true);
   assert.equal(
-    isPublishableTutorRecord(
-      { ...approvedRecord, public_discovery_approved: false },
-      config,
-    ),
-    false,
-  );
-  assert.equal(
-    isPublishableTutorRecord(
-      { ...approvedRecord, safeguarding_verified: false },
-      config,
-    ),
-    false,
-  );
-  assert.equal(
-    isPublishableTutorRecord({ ...approvedRecord, qualifications: [] }, config),
-    false,
-  );
-  assert.equal(
     isPublishableTutorRecord({ ...approvedRecord, hourly_rate: 6 }, config),
-    false,
+    true,
   );
-  assert.equal(
-    isPublishableTutorRecord({ ...approvedRecord, Slug: "other-tutor" }, config),
-    false,
-  );
+  assert.equal(isPublishableTutorRecord({ ...approvedRecord, bio: "Short." }, config), false);
 });
 
-test("accepts only the exact KlaraLearn production or version-test source", () => {
+test("accepts only the exact KlaraLearn production source", () => {
   assert.equal(
     getPublicTutorConfig({
       BUBBLE_PUBLIC_TUTORS_SOURCE_URL:
-        "https://edubridgegloballearning.com/version-test/api/1.1/obj/publictutorcard",
-    })?.requiresReview,
-    false,
+        "https://app.klaralearn.com/api/1.1/obj/publictutorcard",
+    })?.sourceUrl,
+    "https://app.klaralearn.com/api/1.1/obj/publictutorcard",
   );
   assert.equal(
     getPublicTutorConfig({
@@ -77,20 +55,19 @@ test("accepts only the exact KlaraLearn production or version-test source", () =
   assert.equal(
     getPublicTutorConfig({
       BUBBLE_PUBLIC_TUTORS_SOURCE_URL:
-        "https://edubridgegloballearning.com/api/1.1/obj/other-record",
+        "https://app.klaralearn.com/api/1.1/obj/other-record",
     }),
     null,
   );
 });
 
-test("uses the version-test feed as available, not reviewed, inventory", () => {
+test("defaults to the production feed and does not infer review fields", () => {
   const availableConfig = getPublicTutorConfig({});
   if (!availableConfig) throw new Error("Available inventory must create a config.");
 
-  assert.equal(availableConfig.requiresReview, false);
   assert.equal(
     availableConfig.sourceUrl,
-    "https://edubridgegloballearning.com/version-test/api/1.1/obj/publictutorcard",
+    "https://app.klaralearn.com/api/1.1/obj/publictutorcard",
   );
   assert.equal(
     isPublishableTutorRecord(

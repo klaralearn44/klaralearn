@@ -103,6 +103,7 @@ test('keeps routing tags available even when a tutor has many visual tags', () =
   assert.ok(tutor.tags.includes('11 Plus'));
   assert.ok(tutor.tags.includes('Maths'));
   assert.ok(tutor.tags.includes('GCSE Maths'));
+  assert.ok(tutor.tags.includes('Science'));
   assert.ok(tutor.tags.slice(0, 5).includes('11 Plus'));
   assert.ok(tutor.tags.slice(0, 5).includes('Maths'));
   assert.ok(tutor.tags.includes('11 Plus')); // 11 Plus page predicate
@@ -156,7 +157,7 @@ test('requires complete, credible availability data before a tutor is public', (
   );
   assert.equal(
     isPublishableBubbleTutorRecord({ ...record, hourly_rate: 6 }),
-    false,
+    true,
   );
   assert.equal(
     isPublishableBubbleTutorRecord({ ...record, bio: 'Too short.' }),

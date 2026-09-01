@@ -1,0 +1,81 @@
+Review the following feedback: 
+
+1.	Safeguarding page is missing. It’s not in the nav or footer, despite being on the migration list. For a UK parent handing a child to an overseas tutor, this is the number one objection, and DBS checks don’t apply to tutors outside the UK, so you need to say explicitly what you do instead: ID verification, interview, curriculum test, recorded sessions, trial lesson. This page is a moat page, not a compliance page.
+2.	Session recording isn’t mentioned anywhere. “Secure online classroom” is the only hint. “Every lesson is recorded and available to parents” is something most UK marketplaces don’t offer, and it directly answers the safeguarding objection. Put it on the homepage, How It Works, and the Safeguarding page.
+3.	No tutor-side entry point. There’s no “Become a tutor” page. Supply is your moat, and right now the site can’t grow it. This also opens a second SEO channel (“online tutoring jobs” in Nigeria, Ghana, Kenya).
+
+
+Right now the website essentially says:
+
+“Find an affordable tutor.”
+
+I think it needs to say:
+
+“Give your child high-quality tutoring at an affordable price—with the safety, transparency and progress visibility parents expect.”
+
+Every lesson is designed with transparency in mind.
+
+Lessons are conducted through secure learning environment, with session recording and parent visibility built into the experience.
+
+1. Find your tutor
+
+Match based on:
+
+Subject + age + curriculum + learning goal + availability + budget
+
+2. Meet your tutor
+
+15-minute introductory session.
+
+3. Learn securely
+
+Lessons happen through KlaraLearn.
+
+4. Stay informed
+
+Sessions are recorded and learning activity is documented.
+
+5. Track progress
+
+Parents can see:
+
+* lessons completed
+* topics covered
+* tutor feedback
+* areas for improvement
+* progress over time
+
+6. Keep improving
+
+KlaraLearn helps identify when a tutor, learning plan or subject support needs to change.
+
+KlaraLearn connects UK families with carefully selected educators in the UK, Africa and other international locations who are experienced in teaching the UK curriculum.
+
+High-quality tutoring without the traditional UK price premium.
+
+
+Why parents choose KlaraLearn
+
+🛡️ Verified tutors
+
+Every tutor goes through KlaraLearn’s verification and safeguarding process.
+
+🎥 Transparent lessons
+
+Lessons are conducted through our secure online classroom, with session recording available for transparency.
+
+📈 See your child’s progress
+
+Parents can understand what their child is learning, where they’re improving and where they need more support.
+
+🌍 Global teaching talent
+
+Access experienced UK-curriculum educators from Nigeria, the UK and around the world.
+
+💷 Better value
+
+International delivery allows KlaraLearn to offer high-quality tutoring without the traditional UK price premium.
+
+🔄 No long-term commitment
+
+Try a tutor before committing.

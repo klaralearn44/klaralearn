@@ -16,7 +16,7 @@ export function Home() {
   const faqs = [
     {
       q: "How are KlaraLearn tutors so affordable?",
-      a: "KlaraLearn lets families compare available tutor profiles and hourly rates directly. This online marketplace model can make it easier to find tuition from £15/hr; review each profile to decide whether a tutor is right for your child."
+      a: "KlaraLearn lets families compare available tutor profiles and current hourly rates directly. Access to international teaching talent can offer better value than traditional local agencies; review each profile to decide whether a tutor is right for your child."
     },
     {
       q: "Is online tutoring as effective as in-person?",
@@ -63,13 +63,7 @@ export function Home() {
         "@type": "Country",
         "name": "United Kingdom"
       },
-      "offers": {
-        "@type": "Offer",
-        "price": "15",
-        "priceCurrency": "GBP",
-        "unitText": "HOUR",
-        "url": "https://klaralearn.com/find-a-tutor"
-      }
+      "url": "https://klaralearn.com/find-a-tutor"
     },
     {
       "@context": "https://schema.org",
@@ -89,7 +83,7 @@ export function Home() {
     <Layout>
       <SEOHead 
         title="Affordable Private Tutors | 11 Plus, GCSE & SATs | KlaraLearn"
-        description="Find available private tutors online for 11 Plus, GCSE Maths, English and Science. Compare tutor profiles and hourly rates, with tuition from £15/hr."
+        description="Find available private tutors online for Maths, English, Science, GCSE and A-Level support. Compare live profiles, experience and current hourly rates."
         path="/"
         schema={homepageSchema}
       />
@@ -120,12 +114,11 @@ export function Home() {
               </div>
 
               <h1 className="text-4xl md:text-5xl lg:text-[3.5rem] font-bold text-white mb-6 leading-[1.15] tracking-tight">
-                Affordable private tutors <br className="hidden md:block" />
-                for <span className="text-[#4DE1C1]">11 Plus, GCSE & SATs</span>
+                Give your child high-quality tutoring at an affordable price
               </h1>
 
               <p className="text-lg md:text-xl text-white/90 mb-10 leading-relaxed max-w-2xl font-light">
-                Private tutoring connects your child with an available tutor for one-to-one online support in the subjects and school stages they need. <span className="font-semibold text-white">Compare profiles, experience and rates before you choose.</span>
+                KlaraLearn connects UK families with carefully selected educators in the UK, Africa and other international locations who are experienced in teaching the UK curriculum. <span className="font-semibold text-white">Experience the safety, transparency, and progress visibility parents expect.</span>
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
@@ -169,13 +162,73 @@ export function Home() {
 
       <TrustStats />
 
+      {/* Why parents choose KlaraLearn */}
+      <section className="py-24 bg-white border-b">
+        <div className="container mx-auto px-4">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-6">Why parents choose KlaraLearn</h2>
+            <p className="text-lg text-slate-600">We connect UK families with exceptional international educators, combining affordable rates with uncompromising safety and transparency.</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.1 }} className="p-8 rounded-2xl bg-slate-50 border">
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+              </div>
+              <h3 className="text-xl font-bold text-secondary mb-3">Verified tutors</h3>
+              <p className="text-slate-600">Every tutor goes through KlaraLearn’s verification and safeguarding process, ensuring high standards.</p>
+            </motion.div>
+
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.2 }} className="p-8 rounded-2xl bg-slate-50 border">
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>
+              </div>
+              <h3 className="text-xl font-bold text-secondary mb-3">Transparent lessons</h3>
+              <p className="text-slate-600">Lessons are conducted through our secure online classroom, with session recording available for transparency.</p>
+            </motion.div>
+
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.3 }} className="p-8 rounded-2xl bg-slate-50 border">
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="12" x2="12" y1="20" y2="10"/><line x1="18" x2="18" y1="20" y2="4"/><line x1="6" x2="6" y1="20" y2="16"/></svg>
+              </div>
+              <h3 className="text-xl font-bold text-secondary mb-3">See your child’s progress</h3>
+              <p className="text-slate-600">Parents can understand what their child is learning, where they’re improving and where they need more support.</p>
+            </motion.div>
+
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.4 }} className="p-8 rounded-2xl bg-slate-50 border">
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+              </div>
+              <h3 className="text-xl font-bold text-secondary mb-3">Global teaching talent</h3>
+              <p className="text-slate-600">Access experienced UK-curriculum educators from Nigeria, the UK, Ghana, Kenya and around the world.</p>
+            </motion.div>
+
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.5 }} className="p-8 rounded-2xl bg-slate-50 border">
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 8h.01"/><path d="M2 4v16"/><path d="M22 4v16"/><path d="M15.5 15h.01"/><path d="M8.5 15h.01"/><path d="M8 8h.01"/><path d="M22 10H2"/><path d="M22 14H2"/></svg>
+              </div>
+              <h3 className="text-xl font-bold text-secondary mb-3">Better value</h3>
+              <p className="text-slate-600">International delivery allows KlaraLearn to offer high-quality tutoring without the traditional UK price premium.</p>
+            </motion.div>
+
+            <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.6 }} className="p-8 rounded-2xl bg-slate-50 border">
+              <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 2v6h-6"/><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 2v6h6"/></svg>
+              </div>
+              <h3 className="text-xl font-bold text-secondary mb-3">No long-term commitment</h3>
+              <p className="text-slate-600">Try a 15-minute introductory session to ensure a tutor is the right fit before committing to paid lessons.</p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing Comparison Snippet */}
       <section className="py-12 bg-primary/5 border-b border-primary/10">
         <div className="container mx-auto px-4 text-center">
           <p className="text-lg md:text-xl text-secondary font-medium flex flex-col md:flex-row justify-center items-center gap-2 md:gap-6">
             <span className="opacity-70 line-through decoration-destructive decoration-2">Local UK tutors: £35-£80/hr</span>
             <span className="hidden md:inline text-primary/30">|</span>
-            <span className="text-primary font-bold">KlaraLearn tutors: from £15/hr</span>
+            <span className="text-primary font-bold">KlaraLearn tutors: compare current profile rates</span>
           </p>
         </div>
       </section>

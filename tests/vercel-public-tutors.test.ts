@@ -65,7 +65,7 @@ test("fails closed when the Bubble source is outside the approved allowlist", as
   }
 });
 
-test("uses the temporary version-test feed as unverified available inventory", async () => {
+test("uses the live production feed as available public inventory", async () => {
   const previousSource = process.env.BUBBLE_PUBLIC_TUTORS_SOURCE_URL;
   const previousFetch = globalThis.fetch;
   delete process.env.BUBBLE_PUBLIC_TUTORS_SOURCE_URL;
@@ -73,7 +73,7 @@ test("uses the temporary version-test feed as unverified available inventory", a
   globalThis.fetch = async (input) => {
     assert.equal(
       input,
-      "https://edubridgegloballearning.com/version-test/api/1.1/obj/publictutorcard",
+      "https://app.klaralearn.com/api/1.1/obj/publictutorcard",
     );
 
     return new Response(
@@ -86,7 +86,7 @@ test("uses the temporary version-test feed as unverified available inventory", a
               headline: "Experienced mathematics tutor",
               bio: "A detailed public biography that is long enough for the tutor directory.",
               subjects: ["Mathematics"],
-              hourly_rate: 25,
+              hourly_rate: 5,
               tutoring_experience:
                 "More than five years supporting secondary-school learners.",
               Slug: "available-tutor",
@@ -122,11 +122,11 @@ test("uses the temporary version-test feed as unverified available inventory", a
   }
 });
 
-test("returns only approved public fields from the production Bubble feed", async () => {
+test("returns complete records with only public fields from the production Bubble feed", async () => {
   const previousSource = process.env.BUBBLE_PUBLIC_TUTORS_SOURCE_URL;
   const previousFetch = globalThis.fetch;
   process.env.BUBBLE_PUBLIC_TUTORS_SOURCE_URL =
-    "https://edubridgegloballearning.com/api/1.1/obj/publictutorcard";
+    "https://app.klaralearn.com/api/1.1/obj/publictutorcard";
 
   globalThis.fetch = async () =>
     new Response(
@@ -134,37 +134,31 @@ test("returns only approved public fields from the production Bubble feed", asyn
         response: {
           results: [
             {
-              _id: "approved-1",
-              fullname: "Approved Tutor",
+              _id: "available-1",
+              fullname: "Available Tutor",
               headline: "Experienced mathematics tutor",
               bio: "A detailed public biography that is long enough for the tutor directory.",
               country: "United Kingdom",
               subjects: ["Mathematics"],
               curricula: ["GCSE"],
-              hourly_rate: 25,
+              hourly_rate: 5,
               average_rating: 4.9,
               total_reviews: 18,
               tutoring_experience:
                 "More than five years supporting secondary-school learners.",
-              Slug: "approved-tutor",
-              public_discovery_approved: true,
-              safeguarding_verified: true,
-              qualifications: ["BSc Mathematics"],
+              Slug: "available-tutor",
               private_email: "must-not-be-returned@example.com",
             },
             {
-              _id: "unapproved-1",
-              fullname: "Unapproved Tutor",
+              _id: "incomplete-1",
+              fullname: "Incomplete Tutor",
               headline: "Experienced mathematics tutor",
-              bio: "A detailed public biography that is long enough for the tutor directory.",
+              bio: "Too short.",
               subjects: ["Mathematics"],
-              hourly_rate: 25,
+              hourly_rate: 6,
               tutoring_experience:
                 "More than five years supporting secondary-school learners.",
-              Slug: "unapproved-tutor",
-              public_discovery_approved: false,
-              safeguarding_verified: true,
-              qualifications: ["BSc Mathematics"],
+              Slug: "incomplete-tutor",
             },
           ],
         },
@@ -186,7 +180,7 @@ test("returns only approved public fields from the production Bubble feed", asyn
       response: { results: Array<Record<string, unknown>> };
     };
     assert.equal(body.response.results.length, 1);
-    assert.equal(body.response.results[0]?.fullname, "Approved Tutor");
+    assert.equal(body.response.results[0]?.fullname, "Available Tutor");
     assert.equal("private_email" in body.response.results[0]!, false);
     assert.equal("public_discovery_approved" in body.response.results[0]!, false);
     assert.equal("safeguarding_verified" in body.response.results[0]!, false);

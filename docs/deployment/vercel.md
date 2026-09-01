@@ -57,21 +57,14 @@ Set these variables in the Vercel project's Production environment. They are
 server-only and must not use the `VITE_` prefix:
 
 - `BUBBLE_PUBLIC_TUTORS_SOURCE_URL`
-- `PUBLIC_TUTOR_SLUGS` / `PUBLIC_TUTOR_IDS` when an explicit production inventory is used
-- `PUBLIC_TUTOR_APPROVAL_FIELD`, `PUBLIC_TUTOR_MIN_RATE`, and `PUBLIC_TUTOR_MAX_RATE`
+- `PUBLIC_TUTOR_MIN_RATE` and `PUBLIC_TUTOR_MAX_RATE` when deployment-specific
+  rate bounds are required
 
-The temporary deployment intentionally leaves
-`BUBBLE_PUBLIC_TUTORS_SOURCE_URL` empty, which selects the exact allowlisted
-Bubble version-test tutor feed. That feed does not currently include approval,
-safeguarding, or qualification fields, so it is treated only as available
-inventory: the gateway applies completeness and rate checks, returns a strict
-public-field projection, and does not mark profiles as verified.
-
-When Bubble's production Data API is enabled, set
-`BUBBLE_PUBLIC_TUTORS_SOURCE_URL` to the exact HTTPS production public-tutor
-endpoint. The same Function will then require the approval, safeguarding,
-qualification, rate, and optional explicit-inventory rules before returning a
-profile. Any source outside the two exact KlaraLearn Bubble paths fails closed.
+The Function defaults to the exact allowlisted production feed:
+`https://app.klaralearn.com/api/1.1/obj/publictutorcard`. It applies public
+profile completeness checks, returns a strict public-field projection, and
+does not infer or expose per-profile safeguarding or qualification status when
+those fields are absent. Any other source host or path fails closed.
 
 Confirm the deployed Function after publishing:
 

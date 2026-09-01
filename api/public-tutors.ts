@@ -37,19 +37,14 @@ type BubblePublicTutorRecord = {
 
 type PublicTutorConfig = {
   sourceUrl: string;
-  approvedSlugs: Set<string>;
-  approvedIds: Set<string>;
-  approvalField: string;
   minRate: number;
   maxRate: number;
-  requiresReview: boolean;
 };
 
-const APPROVED_SOURCE_HOST = "edubridgegloballearning.com";
+const APPROVED_SOURCE_HOST = "app.klaralearn.com";
 const PRODUCTION_SOURCE_PATH = "/api/1.1/obj/publictutorcard";
-const AVAILABLE_SOURCE_PATH = "/version-test/api/1.1/obj/publictutorcard";
-const DEFAULT_AVAILABLE_SOURCE_URL =
-  `https://${APPROVED_SOURCE_HOST}${AVAILABLE_SOURCE_PATH}`;
+const DEFAULT_PRODUCTION_SOURCE_URL =
+  `https://${APPROVED_SOURCE_HOST}${PRODUCTION_SOURCE_PATH}`;
 
 function runtimeEnvironment(): RuntimeEnvironment {
   const runtime = globalThis as typeof globalThis & {
@@ -77,15 +72,6 @@ function numeric(value: unknown) {
   return Number.isFinite(parsed) ? parsed : null;
 }
 
-function csvSet(value: string | undefined) {
-  return new Set(
-    (value ?? "")
-      .split(",")
-      .map((item) => item.trim().toLowerCase())
-      .filter(Boolean),
-  );
-}
-
 function boundedNumber(value: string | undefined, fallback: number) {
   const parsed = Number(value);
   return Number.isFinite(parsed) && parsed >= 0 ? parsed : fallback;
@@ -99,7 +85,7 @@ function getPublicTutorConfig(): PublicTutorConfig | null {
   const env = runtimeEnvironment();
   const sourceUrl =
     env.BUBBLE_PUBLIC_TUTORS_SOURCE_URL?.trim() ||
-    DEFAULT_AVAILABLE_SOURCE_URL;
+    DEFAULT_PRODUCTION_SOURCE_URL;
 
   let parsedUrl: URL;
   try {
@@ -111,20 +97,15 @@ function getPublicTutorConfig(): PublicTutorConfig | null {
   if (
     parsedUrl.protocol !== "https:" ||
     parsedUrl.hostname.toLowerCase() !== APPROVED_SOURCE_HOST ||
-    ![PRODUCTION_SOURCE_PATH, AVAILABLE_SOURCE_PATH].includes(parsedUrl.pathname)
+    parsedUrl.pathname !== PRODUCTION_SOURCE_PATH
   ) {
     return null;
   }
 
   return {
     sourceUrl: parsedUrl.toString(),
-    approvedSlugs: csvSet(env.PUBLIC_TUTOR_SLUGS),
-    approvedIds: csvSet(env.PUBLIC_TUTOR_IDS),
-    approvalField:
-      env.PUBLIC_TUTOR_APPROVAL_FIELD?.trim() || "public_discovery_approved",
-    minRate: boundedNumber(env.PUBLIC_TUTOR_MIN_RATE, 15),
-    maxRate: boundedNumber(env.PUBLIC_TUTOR_MAX_RATE, 80),
-    requiresReview: parsedUrl.pathname === PRODUCTION_SOURCE_PATH,
+    minRate: boundedNumber(env.PUBLIC_TUTOR_MIN_RATE, 0),
+    maxRate: boundedNumber(env.PUBLIC_TUTOR_MAX_RATE, 500),
   };
 }
 
@@ -136,31 +117,11 @@ function isPublishableTutorRecord(
   const slug = text(record.Slug).toLowerCase();
   const id = text(record._id).toLowerCase();
   const subjects = list(record.subjects);
-  const qualifications = list(
-    record.qualifications ?? record.qualification_summary,
-  );
   const rate = numeric(record.hourly_rate);
-  const approval = record[
-    config.approvalField as keyof BubblePublicTutorRecord
-  ];
-  const isApproved =
-    approval === true ||
-    (typeof approval === "string" && approval.toLowerCase() === "true");
-
-  const hasExplicitInventoryApproval = config.requiresReview
-    ? isApproved &&
-      (config.approvedSlugs.size === 0 && config.approvedIds.size === 0
-        ? true
-        : config.approvedSlugs.has(slug) || config.approvedIds.has(id))
-    : true;
-  const hasRequiredReviewData =
-    !config.requiresReview ||
-    (record.safeguarding_verified === true && qualifications.length > 0);
 
   return (
-    hasExplicitInventoryApproval &&
-    hasRequiredReviewData &&
     name.length >= 2 &&
+    Boolean(id) &&
     Boolean(slug) &&
     subjects.length > 0 &&
     text(record.headline).length >= 8 &&
@@ -213,9 +174,7 @@ export default async function handler(
 
   const config = getPublicTutorConfig();
 
-  // Only the two exact KlaraLearn Bubble feed paths accepted by the shared
-  // policy may be used. The version-test path is temporary available
-  // inventory and receives no verification treatment.
+  // Only KlaraLearn's exact production public-tutor feed may be used.
   if (!config) {
     res.status(503).json({
       error: "Tutor listings are not configured with an approved Bubble source.",
@@ -250,21 +209,20 @@ export default async function handler(
       return;
     }
 
-    const approvedRecords = records
+    const availableRecords = records
       .filter((record) => isPublishableTutorRecord(record, config))
       .map(toPublicTutorRecord);
 
-    if (approvedRecords.length === 0) {
+    if (availableRecords.length === 0) {
       res.status(503).json({
         error: "No suitable tutor profiles are currently available.",
       });
       return;
     }
 
-    // Tutor approval changes must be visible immediately; do not let Vercel
-    // or an intermediary CDN retain a withdrawn profile.
+    // Availability changes must be visible immediately.
     res.setHeader("Cache-Control", "no-store");
-    res.json({ response: { results: approvedRecords } });
+    res.json({ response: { results: availableRecords } });
   } catch (error) {
     console.warn("Tutor source could not be reached", error);
     res.status(502).json({

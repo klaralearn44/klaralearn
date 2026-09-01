@@ -60,6 +60,10 @@ export function Navbar() {
                   <span className="block text-sm font-semibold text-secondary">Parent Tools</span>
                   <span className="block mt-0.5 text-xs text-slate-500">Free planning resources</span>
                 </Link>
+                <Link href="/safeguarding" className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2.5 hover:border-primary/50 hover:text-primary transition-colors col-span-2">
+                  <span className="block text-sm font-semibold text-secondary">Safeguarding</span>
+                  <span className="block mt-0.5 text-xs text-slate-500">How we keep lessons safe and transparent</span>
+                </Link>
               </div>
               <div className="grid grid-cols-2 gap-5">
                 <div>
@@ -90,6 +94,9 @@ export function Navbar() {
           </Link>
           <Link href="/find-a-tutor" className={`font-medium ${isCurrent('/find-a-tutor') ? 'text-primary' : 'text-slate-600 hover:text-primary'}`}>
             Find a Tutor
+          </Link>
+          <Link href="/become-a-tutor" className={`font-medium ${isCurrent('/become-a-tutor') ? 'text-primary' : 'text-slate-600 hover:text-primary'}`}>
+            Become a Tutor
           </Link>
         </nav>
 
@@ -148,6 +155,8 @@ export function Navbar() {
             <Link href="/how-it-works" onClick={() => setIsOpen(false)} className="block px-2 py-2 text-slate-900 font-medium">How It Works</Link>
             <Link href="/parents" onClick={() => setIsOpen(false)} className="block px-2 py-2 text-slate-900 font-medium">For Parents</Link>
             <Link href="/parents/tools" onClick={() => setIsOpen(false)} className="block px-2 py-2 text-slate-900 font-medium">Parent Tools</Link>
+            <Link href="/safeguarding" onClick={() => setIsOpen(false)} className="block px-2 py-2 text-slate-900 font-medium">Safeguarding</Link>
+            <Link href="/become-a-tutor" onClick={() => setIsOpen(false)} className="block px-2 py-2 text-slate-900 font-medium">Become a Tutor</Link>
             <Link href="/blog" onClick={() => setIsOpen(false)} className="block px-2 py-2 text-slate-900 font-medium">All Blog Articles</Link>
             <div className="flex flex-col gap-3 pt-4">
               <a href="https://app.klaralearn.com/login" className="w-full text-center py-3 font-medium border rounded-full">Login</a>

@@ -80,8 +80,8 @@ export function isPublishableBubbleTutorRecord(record: BubbleTutorRecord) {
     cleanText(record.bio).length >= 40 &&
     cleanText(record.tutoring_experience).length >= 20 &&
     (record.subjects ?? []).some((subject) => Boolean(cleanText(subject))) &&
-    rate >= 15 &&
-    rate <= 80
+    rate > 0 &&
+    rate <= 500
   );
 }
 
@@ -116,6 +116,10 @@ function tutorTags(record: BubbleTutorRecord) {
       tags.add(subject);
     }
   });
+
+  if (['Biology', 'Chemistry', 'Physics'].some((subject) => tags.has(subject))) {
+    tags.add('Science');
+  }
 
   curricula.forEach((curriculum) => {
     const lower = curriculum.toLowerCase();

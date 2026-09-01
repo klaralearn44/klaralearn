@@ -42,7 +42,20 @@ export function FindATutor() {
   const [selectedGoals, setSelectedGoals] = useState<string[]>([]);
   const [maxPrice, setMaxPrice] = useState<number | null>(null);
 
-  const subjectsList = ['Maths', 'English', 'Science', 'Verbal Reasoning', 'Non-Verbal Reasoning'];
+  const subjectsList = [
+    'Maths',
+    'English',
+    'Science',
+    'Biology',
+    'Chemistry',
+    'Physics',
+    'Computer Science',
+    'History',
+    'Geography',
+    'Languages',
+    'Verbal Reasoning',
+    'Non-Verbal Reasoning',
+  ];
   const levelsList = ['Primary', '11 Plus', 'KS3', 'GCSE', 'A-Level'];
   const goalsList = [
     { label: 'Build confidence', matches: ['confidence', 'primary', 'sats', 'foundation'] },
@@ -159,7 +172,7 @@ export function FindATutor() {
     <Layout>
       <SEOHead
         title="Find a Tutor | Private Tutors Online | KlaraLearn"
-        description="Find available private tutors online for 11 Plus, GCSE, SATs and core subjects. Compare profiles and rates to find a tutor for your child from £15/hr."
+        description="Find available private tutors online for Maths, English, Science, GCSE, A-Level and other subjects. Compare live profiles, experience and current hourly rates."
         path="/find-a-tutor"
         schema={[breadcrumbSchema, collectionSchema, faqSchema]}
       />
@@ -189,7 +202,7 @@ export function FindATutor() {
             <div className="px-4">
               <CreditCard className="w-6 h-6 text-accent mx-auto mb-3" />
               <h4 className="font-bold text-secondary text-sm">Affordable Rates</h4>
-              <p className="text-xs text-slate-500 mt-1">Starting from just £15/hr</p>
+              <p className="text-xs text-slate-500 mt-1">Compare current profile rates</p>
             </div>
             <div className="px-4">
               <RotateCcw className="w-6 h-6 text-primary mx-auto mb-3" />

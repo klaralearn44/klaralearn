@@ -10,7 +10,7 @@ export function HowItWorksPage() {
     <Layout>
       <SEOHead 
         title="How KlaraLearn Works | Find Available Tutors"
-        description="See how to compare available online tutor profiles, arrange an introductory session and book affordable private tuition from £15/hr."
+        description="See how to compare available online tutor profiles, arrange an introductory session, learn securely and track your child’s progress."
         path="/how-it-works"
       />
 
@@ -57,10 +57,10 @@ export function HowItWorksPage() {
                   </div>
                 </li>
                 <li className="flex gap-4">
-                  <div className="mt-1"><Search className="w-6 h-6 text-primary" /></div>
+                  <div className="mt-1"><CheckCircle2 className="w-6 h-6 text-primary" /></div>
                   <div>
-                    <h4 className="font-bold text-secondary text-lg">Choose what suits you</h4>
-                    <p className="text-slate-600">Compare other available profiles if a tutor's subjects, schedule or rate do not suit your family.</p>
+                    <h4 className="font-bold text-secondary text-lg">Full visibility</h4>
+                    <p className="text-slate-600">Every lesson is recorded and stored securely so you can monitor progress and ensure quality.</p>
                   </div>
                 </li>
               </ul>
