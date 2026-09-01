@@ -75,7 +75,7 @@ export function BlogGrammarSchoolFees() {
         "name": "How much does the 11 plus cost?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Sitting the 11 plus exam itself is free. However, most families invest in preparation: 11 plus tutors cost £35–£80/hr locally, though KlaraLearn offers specialist tutors from £15/hr. Over a 12–18 month preparation period, total tutoring costs typically range from £500 to £4,000 depending on frequency and tutor rate."
+          "text": "Sitting the 11 plus exam itself is free. However, most families invest in preparation: 11 plus tutors cost £35–£80/hr locally. On KlaraLearn, families can compare available specialist tutor profiles and current rates. Over a 12–18 month preparation period, total tutoring costs depend on frequency and tutor rate."
         }
       }
     ]
@@ -212,7 +212,7 @@ export function BlogGrammarSchoolFees() {
               <li><strong>Mock exam sessions:</strong> £20–£50 per session at local test centres.</li>
             </ul>
             <p>
-              <strong>KlaraLearn significantly reduces this hidden cost.</strong> By working with highly qualified global tutors, we offer the same specialist preparation from £15 per hour — meaning a full 12-month preparation programme costs £600–£1,500 rather than £3,000–£7,000+. This makes the grammar school pathway accessible to families who previously couldn't afford competitive local tuition rates.
+              <strong>KlaraLearn can help families compare this hidden cost.</strong> By working with global tutors, the platform lets families review specialist profiles and current rates before planning a full 12-month preparation programme. This helps parents choose an option that fits their budget alongside local tuition comparisons.
             </p>
 
             <h2>Bursaries and Financial Support at Independent Grammar Schools</h2>
@@ -229,14 +229,14 @@ export function BlogGrammarSchoolFees() {
 
             <div className="not-prose mt-8 mb-10 p-8 bg-[#1B3D5C] rounded-2xl text-center">
               <h3 className="text-2xl font-bold text-white mb-4">Make Grammar School Preparation Affordable</h3>
-              <p className="text-white/80 mb-6">Expert 11 plus tutors from £15/hr. Don't let local tuition rates stand between your child and a grammar school place.</p>
+              <p className="text-white/80 mb-6">Compare expert 11 plus tutor profiles and current rates. Don't let local tuition rates stand between your child and a grammar school place.</p>
               <a
                 href="https://app.klaralearn.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white font-bold py-3 px-8 rounded-full transition-colors no-underline"
               >
-                Find an 11 Plus Tutor from £15/hr
+                Find an 11 Plus Tutor
               </a>
             </div>
 
@@ -251,7 +251,7 @@ export function BlogGrammarSchoolFees() {
                 { q: "Are private grammar schools worth it?", a: "Schools like Manchester Grammar School and King Edward's Birmingham have outstanding academic reputations. Whether fees are worth paying depends on individual circumstances. Both offer substantial means-tested bursaries — in some cases 100% fee remission." },
                 { q: "Do grammar schools charge for extras?", a: "State grammar schools may charge for optional extras (trips, music tuition, sports tours) but these are not mandatory. Core education is free. Some grammars have more expensive uniform requirements than comprehensives." },
                 { q: "What is the difference between a grammar school and a private school?", a: "State grammar schools are free and government-funded. Private (independent) schools charge tuition fees of £14,000–£45,000/yr. Some private schools are called 'grammar schools' historically but this is not a legal category — they are fully independent fee-paying schools." },
-                { q: "How much does the 11 plus cost?", a: "Sitting the 11 plus exam is free. However, preparation costs money: local specialist tutors charge £35–£80/hr. KlaraLearn offers the same expertise from £15/hr, making quality preparation much more accessible." }
+                { q: "How much does the 11 plus cost?", a: "Sitting the 11 plus exam is free. However, preparation costs money: local specialist tutors charge £35–£80/hr. KlaraLearn profiles show current rates for available tutors, so families can compare options before booking." }
               ].map((faq, i) => (
                 <div key={i} className="border-b border-slate-100 pb-6">
                   <h4 className="font-bold text-lg text-secondary mb-2">{faq.q}</h4>
@@ -264,7 +264,7 @@ export function BlogGrammarSchoolFees() {
               <h3 className="text-xl font-bold text-secondary mb-4">Related Guides</h3>
               <ul className="space-y-3">
                 <li><Link href="/blog/what-is-a-grammar-school" className="text-primary font-medium hover:underline">→ What Is a Grammar School?</Link></li>
-                <li><Link href="/subjects/11-plus" className="text-primary font-medium hover:underline">→ Find an 11 Plus Tutor from £15/hr</Link></li>
+                <li><Link href="/subjects/11-plus" className="text-primary font-medium hover:underline">→ Find an 11 Plus Tutor</Link></li>
                 <li><Link href="/blog/how-much-does-tutoring-cost" className="text-primary font-medium hover:underline">→ How Much Does Private Tutoring Cost?</Link></li>
                 <li><Link href="/blog/grammar-school-vs-comprehensive" className="text-primary font-medium hover:underline">→ Grammar School vs Comprehensive: Which Is Better?</Link></li>
               </ul>

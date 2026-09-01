@@ -50,7 +50,7 @@ export function BlogIndex() {
     },
     {
       title: "How Much Does Private Tutoring Cost in the UK? (2025 Prices)",
-      excerpt: "Private tutoring costs £25–£80/hr on average in the UK. We break down prices by subject, level, and location — and show how to get expert tuition from £15/hr.",
+      excerpt: "Private tutoring costs £25–£80/hr on average in the UK. We break down prices by subject, level, and location — and explain how to compare current tutor profile rates.",
       date: "September 1, 2025",
       href: "/blog/how-much-does-tutoring-cost",
       category: "Pricing"

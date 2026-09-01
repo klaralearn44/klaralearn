@@ -19,7 +19,7 @@ export function SubjectMaths() {
     },
     {
       q: "How much does a maths tutor cost?",
-      a: "Private maths tutors in the UK typically charge £25–£55/hr for KS2, and £35–£60/hr for GCSE. London agency rates reach £50–£90/hr. KlaraLearn maths tutors start from £15/hr — accessible expertise without the premium."
+      a: "Private maths tutors in the UK typically charge £25–£55/hr for KS2, and £35–£60/hr for GCSE. London agency rates reach £50–£90/hr. KlaraLearn lets families compare available maths tutor profiles and current rates."
     },
     {
       q: "Can tutoring improve my child's maths grade?",
@@ -47,12 +47,7 @@ export function SubjectMaths() {
       "@type": "Organization",
       "name": "KlaraLearn"
     },
-    "description": "Affordable private maths tutors for KS2, 11 plus, and GCSE. Expert online tutors from £15/hr.",
-    "offers": {
-      "@type": "Offer",
-      "price": "15.00",
-      "priceCurrency": "GBP"
-    }
+    "description": "Affordable private maths tutors for KS2, 11 plus, and GCSE. Compare expert online tutor profiles and current rates."
   };
 
   const faqSchema = {
@@ -71,8 +66,8 @@ export function SubjectMaths() {
   return (
     <Layout>
       <SEOHead
-        title="Private Maths Tutors UK — KS2, GCSE & 11 Plus from £15/hr | KlaraLearn"
-        description="Find affordable private maths tutors for KS2, 11 plus, and GCSE. Experienced online tutors from £15/hr. Free trial lesson. Trusted by 5,000+ UK families."
+        title="Private Maths Tutors UK — KS2, GCSE & 11 Plus | KlaraLearn"
+        description="Find affordable private maths tutors for KS2, 11 plus, and GCSE. Compare experienced online tutor profiles and current rates. Free trial lesson."
         path="/subjects/maths"
         schema={[schema, faqSchema]}
       />
@@ -96,7 +91,7 @@ export function SubjectMaths() {
           <div className="border-l-4 border-[#00A896] bg-[#00A896]/8 p-6 rounded-r-xl mb-8">
             <p className="text-sm font-bold uppercase tracking-wider text-[#00A896] mb-2">Quick Answer</p>
             <p className="text-slate-800 leading-relaxed">
-              KlaraLearn connects families with qualified maths tutors for KS2, 11 plus, and GCSE. Our tutors specialise in the UK national curriculum and are available online from £15/hr — significantly less than average UK tuition rates of £35–£60/hr.
+              KlaraLearn connects families with maths tutors for KS2, 11 plus, and GCSE. Compare available profiles, UK curriculum experience and current rates with average UK tuition rates of £35–£60/hr.
             </p>
           </div>
 
@@ -200,8 +195,8 @@ export function SubjectMaths() {
                 <div className="absolute top-0 right-0 bg-[#E05C2A] text-white text-xs font-bold px-3 py-1 rounded-bl-lg">Better Value</div>
                 <h3 className="text-xl font-bold mb-6 text-primary">KlaraLearn Tutors</h3>
                 <ul className="space-y-4">
-                  <li className="flex items-center gap-3 font-medium text-secondary"><CheckCircle2 className="w-5 h-5 text-primary" /> From £15/hr (KS2 & 11 plus)</li>
-                  <li className="flex items-center gap-3 font-medium text-secondary"><CheckCircle2 className="w-5 h-5 text-primary" /> From £15/hr (GCSE maths)</li>
+                  <li className="flex items-center gap-3 font-medium text-secondary"><CheckCircle2 className="w-5 h-5 text-primary" /> Current rates shown on each profile (KS2 & 11 plus)</li>
+                  <li className="flex items-center gap-3 font-medium text-secondary"><CheckCircle2 className="w-5 h-5 text-primary" /> Current rates shown on each profile (GCSE maths)</li>
                   <li className="flex items-center gap-3 font-medium text-secondary"><CheckCircle2 className="w-5 h-5 text-primary" /> Global expert pool</li>
                   <li className="flex items-center gap-3 font-medium text-secondary"><CheckCircle2 className="w-5 h-5 text-primary" /> Free trial lesson</li>
                 </ul>

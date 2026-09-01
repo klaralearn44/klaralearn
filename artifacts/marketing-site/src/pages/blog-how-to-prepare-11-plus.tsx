@@ -117,7 +117,7 @@ export function BlogHowToPrepare11Plus() {
         "name": "Is 11 plus tutoring worth the money?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "For families targeting grammar schools, structured tutoring has a strong track record. The Education Endowment Foundation research shows tutoring adds on average 5 months of additional academic progress. For a grammar school place worth potentially £14,000/yr in saved independent school fees, professional tutoring from £15/hr at KlaraLearn represents exceptional return on investment."
+          "text": "For families targeting grammar schools, structured tutoring has a strong track record. The Education Endowment Foundation research shows tutoring adds on average 5 months of additional academic progress. For a grammar school place worth potentially £14,000/yr in saved independent school fees, compare current KlaraLearn tutor rates with your preparation budget when assessing the potential return."
         }
       }
     ]
@@ -302,7 +302,7 @@ export function BlogHowToPrepare11Plus() {
               <li><strong>Exam technique coaching</strong> — time management, when to skip, how to use the multiple-choice format strategically</li>
             </ul>
             <p>
-              At <strong>KlaraLearn</strong>, our globally sourced tutors are available from £15 per hour — compared to the £55–80/hr charged by local London agencies. The same expertise at a fraction of the price means more families can access professional support throughout the full 12–18 month preparation period.
+              At <strong>KlaraLearn</strong>, families can compare globally sourced tutor profiles with the £55–80/hr charged by local London agencies. Reviewing each tutor's current rate helps families choose professional support that fits their budget throughout the full 12–18 month preparation period.
             </p>
 
             <h2>Building an 11 Plus Study Timetable</h2>
@@ -384,7 +384,7 @@ export function BlogHowToPrepare11Plus() {
                     ["London agency tutor", "£55–£90/hr"],
                     ["Group tuition (4–6 pupils)", "£10–£20 per pupil per session"],
                     ["Major tutoring platform (Tutorful, MyTutor)", "£25–£50/hr"],
-                    ["KlaraLearn (global tutors, online)", "from £15/hr"],
+                    ["KlaraLearn (global tutors, online)", "Current profile rates"],
                   ].map(([provider, rate], i) => (
                     <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-slate-50"}>
                       <td className="p-3 border-b border-slate-100 font-medium text-slate-800">{provider}</td>
@@ -397,7 +397,7 @@ export function BlogHowToPrepare11Plus() {
 
             <div className="not-prose mt-8 mb-10 p-8 bg-[#1B3D5C] rounded-2xl text-center">
               <h3 className="text-2xl font-bold text-white mb-4">Start Preparing Today</h3>
-              <p className="text-white/80 mb-6">Expert 11 plus tutors from £15/hr. Diagnostic first session. GL and CEM specialists. Free trial lesson.</p>
+              <p className="text-white/80 mb-6">Compare current tutor profile rates. Diagnostic first session. GL and CEM specialists. Free trial lesson.</p>
               <a
                 href="https://app.klaralearn.com"
                 target="_blank"
@@ -420,7 +420,7 @@ export function BlogHowToPrepare11Plus() {
                 { q: "What is the most important subject for the 11 plus?", a: "Verbal reasoning — because it is not taught in schools and requires specific training. Maths mental arithmetic speed is also critical. Non-verbal reasoning is often underestimated and requires dedicated visual practice." },
                 { q: "How do I find out which exam board my school uses?", a: "Check the grammar school's admissions policy on their website. GL Assessment is used in Kent, Essex, Hertfordshire, Gloucestershire. CEM is used in Birmingham, Cheshire, parts of Berkshire. Contact admissions directly if unclear." },
                 { q: "What if my child fails the 11 plus?", a: "Many outstanding comprehensive schools produce excellent GCSE and A-level results. A child who does not pass can still access strong secondary education and top universities. It is worth exploring the appeals process and any Stage 2 headteacher assessment available." },
-                { q: "Is tutoring worth the money?", a: "The Education Endowment Foundation finds tutoring adds on average 5 months of additional academic progress. For a grammar school place worth £14,000/yr in independent school fees savings, even extensive KlaraLearn tutoring from £15/hr represents exceptional ROI." }
+                { q: "Is tutoring worth the money?", a: "The Education Endowment Foundation finds tutoring adds on average 5 months of additional academic progress. For a grammar school place worth £14,000/yr in independent school fees savings, compare the current KlaraLearn tutor rate and expected session frequency with your budget when assessing the potential ROI." }
               ].map((faq, i) => (
                 <div key={i} className="border-b border-slate-100 pb-6">
                   <h4 className="font-bold text-lg text-secondary mb-2">{faq.q}</h4>

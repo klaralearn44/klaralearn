@@ -18,7 +18,7 @@ export function ParentsPage() {
     },
     {
       q: "How much does KlaraLearn cost?",
-      a: "Available tutoring rates start from £15 per hour. Check the tutor's current profile and booking details for the applicable rate."
+      a: "Tutoring rates vary by tutor. Check the current profile and booking details for the applicable hourly rate before arranging a session."
     },
     {
       q: "What if my child doesn't get on with their tutor?",
@@ -198,12 +198,12 @@ export function ParentsPage() {
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-secondary mb-4">Transparent, Affordable Pricing</h2>
-            <p className="text-slate-600 max-w-2xl mx-auto">No subscriptions. No hidden fees. Pay per session from £15/hr.</p>
+            <p className="text-slate-600 max-w-2xl mx-auto">No subscriptions. No hidden fees. Review each tutor's current rate and pay per session.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { feature: "From £15/hr", desc: "Specialist tutors including 11 plus, GCSE maths, and SATs specialists." },
+              { feature: "Profile-led rates", desc: "Compare current rates for specialist tutors including 11 plus, GCSE maths, and SATs." },
               { feature: "Free trial lesson", desc: "Your first lesson is completely free — assess the tutor before you commit." },
               { feature: "Pay per session", desc: "No monthly subscription. No lock-in contracts. Book sessions individually." }
             ].map((item, i) => (
@@ -251,7 +251,7 @@ export function ParentsPage() {
       <section className="py-20 bg-[#1B3D5C]">
         <div className="container mx-auto px-4 text-center max-w-2xl">
           <h2 className="text-3xl font-bold text-white mb-4">Ready to Find the Right Tutor?</h2>
-          <p className="text-white/80 mb-8">Available tutor profiles with rates from £15/hr. Review the details before booking.</p>
+          <p className="text-white/80 mb-8">Available tutor profiles with current rates. Review the details before booking.</p>
           <Button asChild size="lg" className="bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white rounded-full px-10">
             <a href="https://app.klaralearn.com" target="_blank" rel="noopener noreferrer">Find a Tutor Today</a>
           </Button>

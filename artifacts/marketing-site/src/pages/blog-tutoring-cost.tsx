@@ -15,7 +15,7 @@ export function BlogTutoringCost() {
     },
     "datePublished": "2025-09-01",
     "dateModified": "2026-08-13",
-    "description": "Private tutoring in the UK costs £25–£80/hr on average. We break down prices by subject, level, and location — and show you how to get expert tutoring from £15/hr."
+    "description": "Private tutoring in the UK costs £25–£80/hr on average. We break down prices by subject, level, and location — and explain how to compare current tutor profile rates."
   };
 
   const faqSchema = {
@@ -27,7 +27,7 @@ export function BlogTutoringCost() {
         "name": "How much is a private tutor per hour in the UK?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Private tutors in the UK charge £22–£80 per hour on average, depending on subject, level, and location. London rates are highest (£45–£90/hr). Online tutors cost 20–40% less than in-person. KlaraLearn's global tutor network starts from £15/hr."
+          "text": "Private tutors in the UK charge £22–£80 per hour on average, depending on subject, level, and location. London rates are highest (£45–£90/hr). Online tutors cost 20–40% less than in-person. On KlaraLearn, compare available global tutor profiles and their current listed rates."
         }
       },
       {
@@ -59,7 +59,7 @@ export function BlogTutoringCost() {
         "name": "Are tutoring agencies worth the extra cost?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Agency pricing can include services beyond the tutor's hourly rate. On KlaraLearn, families can compare available tutor profiles and listed rates from £15/hr, then review the details before booking."
+          "text": "Agency pricing can include services beyond the tutor's hourly rate. On KlaraLearn, families can compare available tutor profiles and their listed rates, then review the details before booking."
         }
       },
       {
@@ -67,7 +67,7 @@ export function BlogTutoringCost() {
         "name": "How much does 11 plus tutoring cost?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Local 11 plus specialist tutors charge £35–£80/hr, with London agencies typically exceeding £60/hr. KlaraLearn offers specialist 11 plus tutors from £15/hr — allowing families to maintain 12–18 months of weekly sessions at a fraction of the traditional cost."
+          "text": "Local 11 plus specialist tutors charge £35–£80/hr, with London agencies typically exceeding £60/hr. KlaraLearn lets families compare available specialist 11 plus tutors and choose based on the current profile rate and their budget."
         }
       },
       {
@@ -85,7 +85,7 @@ export function BlogTutoringCost() {
     <Layout>
       <SEOHead
         title="How Much Does Private Tutoring Cost in the UK? (2025 Prices) | KlaraLearn"
-        description="Private tutoring in the UK costs £25–£80/hr on average. We break down prices by subject, level, and location — and show you how to get expert tutoring from £15/hr."
+        description="Private tutoring in the UK costs £25–£80/hr on average. We break down prices by subject, level, and location — and explain how to compare current tutor profile rates."
         path="/blog/how-much-does-tutoring-cost"
         schema={[articleSchema, faqSchema]}
       />
@@ -130,7 +130,7 @@ export function BlogTutoringCost() {
             >
               <p className="text-sm font-bold uppercase tracking-wider text-[#00A896] mb-2">Quick Answer</p>
               <p className="text-slate-800 leading-relaxed">
-                Private tutoring in the UK costs £25–£80 per hour on average. London rates are highest (£45–£90/hr). Online tutors cost 20–40% less than in-person. KlaraLearn global tutors start from £15/hr — making expert tuition accessible to every family.
+                Private tutoring in the UK costs £25–£80 per hour on average. London rates are highest (£45–£90/hr). Online tutors cost 20–40% less than in-person. KlaraLearn families can compare global tutor profiles and current listed rates.
               </p>
             </motion.div>
 
@@ -156,7 +156,7 @@ export function BlogTutoringCost() {
                     ["11 Plus", "£30–£60/hr", "N/A", "N/A"],
                     ["Sciences", "N/A", "£30–£60/hr", "£45–£75/hr"],
                     ["History / Humanities", "N/A", "£25–£45/hr", "£35–£60/hr"],
-                    ["KlaraLearn", "from £15/hr", "from £15/hr", "from £20/hr"],
+                    ["KlaraLearn", "Current profile rates", "Current profile rates", "Current profile rates"],
                   ].map(([subject, ks2, gcse, alevel], i) => (
                     <tr key={i} className={subject === "KlaraLearn" ? "bg-[#00A896]/10 font-bold" : i % 2 === 0 ? "bg-white" : "bg-slate-50"}>
                       <td className={`p-3 border-b border-slate-100 ${subject === "KlaraLearn" ? "text-[#1B3D5C] font-bold" : "text-slate-800 font-medium"}`}>{subject}</td>
@@ -186,7 +186,7 @@ export function BlogTutoringCost() {
                 { location: "Major cities (Manchester, Birmingham, Bristol)", rate: "£28–£50/hr", badge: "" },
                 { location: "Rest of UK", rate: "£22–£45/hr", badge: "" },
                 { location: "Online UK tutors", rate: "£20–£45/hr", badge: "" },
-                { location: "KlaraLearn (global online)", rate: "from £15/hr", badge: "Best Value" },
+                { location: "KlaraLearn (global online)", rate: "See current profile rates", badge: "Compare profiles" },
               ].map((item, i) => (
                 <div key={i} className="flex items-center justify-between p-4 bg-slate-50 rounded-lg border">
                   <span className="text-slate-700 font-medium text-sm">{item.location}</span>
@@ -214,7 +214,7 @@ export function BlogTutoringCost() {
               Tutoring agencies handle all vetting and matching for a premium, which is embedded in the tutor's hourly rate. The main risk with agencies is that vetting standards vary widely.
             </p>
             <p>
-              <strong>KlaraLearn's model:</strong> families can compare available tutor profiles, listed experience and rates from £15/hr, then decide which tutor may suit their needs.
+              <strong>KlaraLearn's model:</strong> families can compare available tutor profiles, listed experience and current rates, then decide which tutor may suit their needs.
             </p>
 
             <h2>11 Plus Tutoring Costs</h2>
@@ -222,7 +222,7 @@ export function BlogTutoringCost() {
               11 plus preparation is a specialist market, and specialist tutors command a premium. Local 11 plus tutors — particularly in London, Kent, and Buckinghamshire — charge between £35 and £80 per hour. London agencies regularly quote £55–£90/hr for experienced 11 plus specialists.
             </p>
             <p>
-              Over a 12–18 month preparation period at 1–2 sessions per week, the total cost at London rates can reach £5,000–£10,000+. KlaraLearn's 11 plus tutors from £15/hr can deliver the same preparation quality for £600–£2,000 total — representing a saving of £3,000–£8,000 for families pursuing grammar school places.
+              Over a 12–18 month preparation period at 1–2 sessions per week, the total cost at London rates can reach £5,000–£10,000+. On KlaraLearn, the total depends on the tutor rate and session frequency, so compare current profiles to estimate the cost for your family's plan.
             </p>
 
             <h2>Is Private Tutoring Worth the Cost?</h2>
@@ -247,7 +247,7 @@ export function BlogTutoringCost() {
             </ul>
 
             <div className="not-prose mt-8 mb-10 p-8 bg-[#1B3D5C] rounded-2xl text-center">
-              <h3 className="text-2xl font-bold text-white mb-4">Expert Tutoring from £15/hr</h3>
+              <h3 className="text-2xl font-bold text-white mb-4">Compare Expert Tutors and Current Rates</h3>
               <p className="text-white/80 mb-6">Free trial lesson. No subscription. Pay per session. Trusted by 5,000+ UK families.</p>
               <a
                 href="https://app.klaralearn.com"
@@ -264,12 +264,12 @@ export function BlogTutoringCost() {
             <h2>Frequently Asked Questions</h2>
             <div className="space-y-8 mt-8 not-prose">
               {[
-                { q: "How much is a private tutor per hour in the UK?", a: "UK private tutor rates range from £22/hr (KS2, regional) to £90/hr (London agency, A-level specialist). The national average is approximately £35–£50/hr. KlaraLearn tutors start from £15/hr." },
+                { q: "How much is a private tutor per hour in the UK?", a: "UK private tutor rates range from £22/hr (KS2, regional) to £90/hr (London agency, A-level specialist). The national average is approximately £35–£50/hr. KlaraLearn profiles show the current rate for each available tutor." },
                 { q: "Why is tutoring so expensive?", a: "Specialist tutors are scarce, particularly in London and the South East. Agency fees add 20–30% premium. KlaraLearn bypasses geographical scarcity through global tutor sourcing, keeping prices low without compromising quality." },
-                { q: "Is it cheaper to have online tutoring?", a: "Yes — online tutoring is typically 20–40% cheaper than in-person. Research confirms it is equally effective for most school subjects. KlaraLearn is online-only, which is how we offer expert tutoring from £15/hr." },
+                { q: "Is it cheaper to have online tutoring?", a: "Yes — online tutoring is typically 20–40% cheaper than in-person. Research confirms it is equally effective for most school subjects. KlaraLearn's online profiles let families compare current rates without local travel constraints." },
                 { q: "How many sessions does my child need?", a: "For 11 plus: 1–2 sessions/week for 12–18 months. For GCSE support: 1 session/week throughout the year. For SATs: 1 session/week in Year 6. Quality matters more than quantity — a diagnostic specialist is more efficient." },
-                { q: "Are tutoring agencies worth the extra cost?", a: "Traditional agencies charge 20–30% above independent rates for vetting and matching. KlaraLearn provides the same vetting within our platform pricing (from £15/hr), giving you agency-level reliability at independent tutor prices." },
-                { q: "How much does 11 plus tutoring cost?", a: "Local 11 plus specialist tutors charge £35–£80/hr, with London agencies exceeding £60/hr. KlaraLearn offers specialist 11 plus tutors from £15/hr, making a full 12-month programme affordable for all families." },
+                { q: "Are tutoring agencies worth the extra cost?", a: "Traditional agencies charge 20–30% above independent rates for vetting and matching. KlaraLearn lets families compare available profiles and current rates directly, then choose a tutor that fits their needs and budget." },
+                { q: "How much does 11 plus tutoring cost?", a: "Local 11 plus specialist tutors charge £35–£80/hr, with London agencies exceeding £60/hr. KlaraLearn profiles show the current rate for each available specialist, so families can compare options for a 12-month programme." },
                 { q: "Can I get free tutoring for my child?", a: "The National Tutoring Programme offers subsidised tutoring through schools. KlaraLearn offers a free trial lesson. Group tuition from £8–£15 per pupil per session is a low-cost alternative to 1:1." }
               ].map((faq, i) => (
                 <div key={i} className="border-b border-slate-100 pb-6">

@@ -99,7 +99,7 @@ export function BlogWhatIs11Plus() {
         "name": "How much does 11 plus tutoring cost?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Local specialist 11 plus tutors in the UK typically charge £35–£80 per hour, with London rates often exceeding £60/hr. KlaraLearn's global tutor marketplace offers the same expertise from £15/hr — making professional 11 plus preparation accessible to every family."
+          "text": "Local specialist 11 plus tutors in the UK typically charge £35–£80 per hour, with London rates often exceeding £60/hr. KlaraLearn's global tutor marketplace lets families compare available tutor profiles and current rates."
         }
       }
     ]
@@ -300,12 +300,12 @@ export function BlogWhatIs11Plus() {
               Research from the Sutton Trust found that 63% of grammar school pupils had received private tutoring. A specialist 11 plus tutor brings several advantages over self-study alone: they identify a child's specific weak question types rather than applying a one-size-fits-all approach, they are familiar with the exact format of GL or CEM papers for your area, they coach exam technique (time management, when to skip and return, how to handle uncertainty), and they provide accountability and motivation throughout a long preparation period.
             </p>
             <p>
-              At <strong>KlaraLearn</strong>, our 11 plus tutors are experienced with both GL Assessment and CEM formats, available online across the UK, and start from just £15 per hour — a fraction of the £40–£80/hr charged by local specialists. Every new family gets a free trial lesson.
+              At <strong>KlaraLearn</strong>, our available 11 plus tutor profiles include experience with GL Assessment and CEM formats. Families can compare the current profile rate with the £40–£80/hr charged by local specialists. Every new family gets a free trial lesson.
             </p>
 
             <div className="not-prose mt-8 mb-10 p-8 bg-[#1B3D5C] rounded-2xl text-center">
               <h3 className="text-2xl font-bold text-white mb-4">Start 11 Plus Preparation Today</h3>
-              <p className="text-white/80 mb-6">Expert tutors from £15/hr. Free trial lesson. GL and CEM specialists available.</p>
+              <p className="text-white/80 mb-6">Compare current tutor profile rates. Free trial lesson. GL and CEM specialists available.</p>
               <a
                 href="https://app.klaralearn.com"
                 target="_blank"
@@ -360,7 +360,7 @@ export function BlogWhatIs11Plus() {
                 },
                 {
                   q: "How much does 11 plus tutoring cost?",
-                  a: "Local 11 plus specialist tutors typically charge £35–£80/hr, with London rates often exceeding £60/hr. KlaraLearn offers the same quality from £15/hr by working with highly qualified tutors globally. All sessions are conducted online via a secure virtual classroom."
+                  a: "Local 11 plus specialist tutors typically charge £35–£80/hr, with London rates often exceeding £60/hr. KlaraLearn families can compare available global tutor profiles and current rates. All sessions are conducted online via a secure virtual classroom."
                 }
               ].map((faq, i) => (
                 <div key={i} className="border-b border-slate-100 pb-6">

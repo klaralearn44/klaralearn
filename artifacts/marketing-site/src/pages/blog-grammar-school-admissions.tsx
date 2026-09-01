@@ -217,7 +217,7 @@ export function BlogGrammarSchoolAdmissions() {
 
             <div className="not-prose mt-8 mb-10 p-8 bg-[#1B3D5C] rounded-2xl text-center">
               <h3 className="text-2xl font-bold text-white mb-4">Start Grammar School Preparation Today</h3>
-              <p className="text-white/80 mb-6">Expert 11 plus tutors familiar with GL Assessment and CEM formats. From £15/hr. Free trial lesson.</p>
+              <p className="text-white/80 mb-6">Expert 11 plus tutors familiar with GL Assessment and CEM formats. Compare current profile rates. Free trial lesson.</p>
               <a
                 href="https://app.klaralearn.com"
                 target="_blank"

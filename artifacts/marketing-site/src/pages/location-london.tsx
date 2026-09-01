@@ -13,7 +13,7 @@ export function LocationLondon() {
   const faqs = [
     {
       q: "How much does a tutor cost in London?",
-      a: "Traditional private tutoring in London is among the most expensive in the country, often ranging from £50 to over £80 per hour due to living costs and high demand. By using KlaraLearn, London parents can connect with highly qualified global tutors from just £15 to £35 per hour."
+      a: "Traditional private tutoring in London is among the most expensive in the country, often ranging from £50 to over £80 per hour due to living costs and high demand. KlaraLearn lets London parents compare available global tutor profiles and their current hourly rates."
     },
     {
       q: "Can London parents use online tutors?",
@@ -32,8 +32,8 @@ export function LocationLondon() {
   return (
     <Layout>
       <SEOHead 
-        title="Private Tutors in London — 11 Plus, GCSE & SATs from £15/hr | KlaraLearn"
-        description="Looking for private tutors in London? Beat the high local prices. Get expert online tutoring for grammar school admissions, GCSE & SATs from £15/hr."
+        title="Private Tutors in London — 11 Plus, GCSE & SATs | KlaraLearn"
+        description="Looking for private tutors in London? Compare available online tutor profiles for grammar school admissions, GCSE and SATs, including current hourly rates."
         path="/location/london"
       />
 
@@ -54,7 +54,7 @@ export function LocationLondon() {
           </div>
           
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-            Private Tutors in London — 11 Plus, GCSE & SATs from £15/hr
+            Private Tutors in London — 11 Plus, GCSE & SATs
           </h1>
           
           <p className="text-xl text-white/90 mb-8 max-w-2xl leading-relaxed">

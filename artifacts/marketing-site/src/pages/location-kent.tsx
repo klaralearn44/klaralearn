@@ -31,11 +31,11 @@ export function LocationKent() {
     },
     {
       q: "How do I find an 11 plus tutor in Kent?",
-      a: "KlaraLearn offers online 11 plus tutors experienced with the Kent Test GL Assessment format, available to families anywhere in Kent. Sessions from £15/hr — compared to £40–£65/hr for local Tonbridge, Maidstone, or Canterbury tutors. Book a free trial lesson to get started."
+      a: "KlaraLearn offers online 11 plus tutors experienced with the Kent Test GL Assessment format, available to families anywhere in Kent. Compare available profiles and current rates with the £40–£65/hr charged by local Tonbridge, Maidstone, or Canterbury tutors. Book a free trial lesson to get started."
     },
     {
       q: "How much does 11 plus tutoring cost in Kent?",
-      a: "Local Kent tutors typically charge £40–£65/hr for specialist 11 plus preparation. KlaraLearn offers the same quality of expert tuition from £15/hr — online, available evenings and weekends, with tutors experienced in the specific Kent Test GL format."
+      a: "Local Kent tutors typically charge £40–£65/hr for specialist 11 plus preparation. KlaraLearn lets families compare online tutors experienced in the specific Kent Test GL format, with the current rate shown on each profile."
     }
   ];
 
@@ -43,13 +43,12 @@ export function LocationKent() {
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
     "name": "KlaraLearn — Kent 11 Plus Tutors",
-    "description": "Online 11 plus tutors for Kent grammar school preparation. Expert tutors in Kent Test GL Assessment format from £15/hr.",
+    "description": "Online 11 plus tutors for Kent grammar school preparation. Compare expert tutor profiles experienced in the Kent Test GL Assessment format and their current rates.",
     "url": "https://klaralearn.com/location/kent",
     "areaServed": {
       "@type": "State",
       "name": "Kent, England"
     },
-    "priceRange": "£15–£35 per hour"
   };
 
   const faqSchema = {
@@ -68,8 +67,8 @@ export function LocationKent() {
   return (
     <Layout>
       <SEOHead
-        title="Kent 11 Plus Tutors — Grammar School Prep from £15/hr | KlaraLearn"
-        description="Expert 11 plus tutors for Kent's grammar schools. Online sessions from £15/hr — a fraction of local Kent tuition rates. Free trial lesson."
+        title="Kent 11 Plus Tutors — Grammar School Preparation | KlaraLearn"
+        description="Expert 11 plus tutors for Kent's grammar schools. Compare online profiles, Kent Test experience and current tutor rates. Free trial lesson."
         path="/location/kent"
         schema={[localBusinessSchema, faqSchema]}
       />
@@ -96,7 +95,7 @@ export function LocationKent() {
           </h1>
 
           <p className="text-xl text-white/90 mb-8 max-w-2xl leading-relaxed">
-            Kent has 36 grammar schools — more than any county in England. The Kent Test is intensely competitive. Get expert preparation from tutors who know the GL Assessment format inside out, from just £15/hr.
+            Kent has 36 grammar schools — more than any county in England. The Kent Test is intensely competitive. Compare expert preparation from tutors who know the GL Assessment format inside out, with current rates shown on each profile.
           </p>
 
           <Button asChild size="lg" className="bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white rounded-full px-8">
@@ -131,7 +130,7 @@ export function LocationKent() {
               },
               {
                 title: "Fraction of Local Rates",
-                desc: "Local Tonbridge, Maidstone, and Canterbury tutors charge £40–£65/hr. KlaraLearn tutors start from £15/hr — same expertise, global talent pool, delivered online.",
+                desc: "Local Tonbridge, Maidstone, and Canterbury tutors charge £40–£65/hr. Compare KlaraLearn's global tutor profiles and current rates for online Kent Test support.",
                 icon: "💰"
               }
             ].map((card, i) => (
@@ -290,7 +289,7 @@ export function LocationKent() {
                 <div className="absolute top-0 right-0 bg-[#E05C2A] text-white text-xs font-bold px-3 py-1 rounded-bl-lg">Better Value</div>
                 <h3 className="text-xl font-bold mb-4 text-primary">KlaraLearn</h3>
                 <ul className="space-y-3">
-                  <li className="flex items-center gap-2 font-medium text-secondary">✓ From £15/hr</li>
+                  <li className="flex items-center gap-2 font-medium text-secondary">✓ Current rate shown on each profile</li>
                   <li className="flex items-center gap-2 font-medium text-secondary">✓ Kent Test GL specialists</li>
                   <li className="flex items-center gap-2 font-medium text-secondary">✓ Online — no commute</li>
                   <li className="flex items-center gap-2 font-medium text-secondary">✓ Free trial lesson</li>

@@ -12,7 +12,7 @@ export function Subject11Plus() {
   const faqs = [
     {
       q: "How much does 11 plus tuition cost?",
-      a: "KlaraLearn 11 Plus tutor profiles list rates from £15 per hour. Compare each available profile's experience, subjects and rate before choosing a tutor."
+      a: "KlaraLearn 11 Plus tutor profiles show each tutor's current hourly rate. Compare available profiles, experience and subjects before choosing a tutor."
     },
     {
       q: "When should I start 11 plus tutoring?",
@@ -44,7 +44,7 @@ export function Subject11Plus() {
     },
     {
       q: "How much does 11 plus tutoring cost at KlaraLearn?",
-      a: "Available 11 Plus tutor profiles on KlaraLearn start from £15 per hour. Rates vary by tutor, so review the profile and current rate before booking."
+      a: "Rates vary by tutor. Review the current rate, profile details and availability for each available 11 Plus tutor before booking."
     },
     {
       q: "Can my child have 11 plus tuition even if we're not near a grammar school area?",
@@ -60,12 +60,7 @@ export function Subject11Plus() {
       "@type": "Organization",
       "name": "KlaraLearn"
     },
-    "description": "Affordable 11 plus and grammar school private tutors. Online 11 plus tuition for verbal reasoning, non-verbal reasoning, maths and English. Expert 11 plus tutors from £15/hr.",
-    "offers": {
-      "@type": "Offer",
-      "price": "15.00",
-      "priceCurrency": "GBP"
-    }
+    "description": "Affordable 11 plus and grammar school private tutors. Online 11 plus tuition for verbal reasoning, non-verbal reasoning, maths and English. Compare current tutor profile rates."
   };
 
   const faqSchema = {
@@ -85,7 +80,7 @@ export function Subject11Plus() {
     <Layout>
       <SEOHead
         title="11 Plus Tutors for Grammar School Entry | KlaraLearn"
-        description="Find available online 11 Plus tutors for grammar school entrance preparation. Compare profiles for verbal reasoning, maths, English and more from £15/hr."
+        description="Find available online 11 Plus tutors for grammar school entrance preparation. Compare profiles for verbal reasoning, maths, English and more, including current hourly rates."
         path="/subjects/11-plus"
         schema={[schema, faqSchema]}
       />
@@ -147,7 +142,7 @@ export function Subject11Plus() {
                 <div className="absolute top-0 right-0 bg-accent text-white text-xs font-bold px-3 py-1 rounded-bl-lg">Better Value</div>
                 <h3 className="text-xl font-bold mb-6 text-primary">KlaraLearn 11 Plus Tutors</h3>
                 <ul className="space-y-4">
-                  <li className="flex items-center gap-3 font-medium text-secondary"><CheckCircle2 className="w-5 h-5 text-primary" /> From £15–£35 per hour</li>
+                  <li className="flex items-center gap-3 font-medium text-secondary"><CheckCircle2 className="w-5 h-5 text-primary" /> Current rates shown on each profile</li>
                   <li className="flex items-center gap-3 font-medium text-secondary"><CheckCircle2 className="w-5 h-5 text-primary" /> Compare tutor profile details</li>
                   <li className="flex items-center gap-3 font-medium text-secondary"><CheckCircle2 className="w-5 h-5 text-primary" /> Online tutors available across the UK</li>
                   <li className="flex items-center gap-3 font-medium text-secondary"><CheckCircle2 className="w-5 h-5 text-primary" /> Zero hidden fees</li>

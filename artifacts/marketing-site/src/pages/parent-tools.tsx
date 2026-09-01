@@ -278,7 +278,7 @@ export function ParentTools() {
     },
     {
       q: "How much should I pay for an online tutor in the UK?",
-      a: "Online tutoring rates vary widely. While local agencies often charge £60-£100 per hour, platforms like KlaraLearn offer highly qualified online tutors from just £15-£30 per hour, providing significant savings."
+      a: "Online tutoring rates vary widely. While local agencies often charge £60-£100 per hour, KlaraLearn lets families compare available online tutor profiles and current rates before booking."
     },
     {
       q: "How many hours of tutoring does my child need per week?",

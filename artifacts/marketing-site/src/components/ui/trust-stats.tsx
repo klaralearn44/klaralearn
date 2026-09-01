@@ -12,7 +12,7 @@ export function TrustStats() {
             <div className="text-primary-foreground/80 text-sm md:text-base font-medium uppercase tracking-wider">Details to Review</div>
           </div>
           <div className="flex flex-col items-center">
-            <div className="text-3xl md:text-4xl font-bold text-accent">£15+</div>
+            <div className="text-3xl md:text-4xl font-bold text-accent">Live</div>
             <div className="text-primary-foreground/80 text-sm md:text-base font-medium uppercase tracking-wider">Hourly Rates</div>
           </div>
           <div className="flex flex-col items-center">

@@ -28,8 +28,8 @@ export function LocationOnline() {
   return (
     <Layout>
       <SEOHead 
-        title="Online Tutors UK — 11 Plus, GCSE & SATs from £15/hr | KlaraLearn"
-        description="Find expert online tutors in the UK. Flexible, affordable online tutoring for 11 Plus, GCSE and SATs. Connect with global educators from £15/hr."
+        title="Online Tutors UK — 11 Plus, GCSE & SATs | KlaraLearn"
+        description="Find expert online tutors in the UK. Flexible online tutoring for 11 Plus, GCSE and SATs. Compare global educator profiles and current hourly rates."
         path="/location/online"
       />
 
@@ -51,7 +51,7 @@ export function LocationOnline() {
           </div>
           
           <h1 className="text-4xl md:text-5xl font-bold text-secondary mb-6 leading-tight">
-            Online Tutors UK — 11 Plus, GCSE & SATs from £15/hr
+            Online Tutors UK — 11 Plus, GCSE & SATs
           </h1>
           
           <p className="text-xl text-slate-600 mb-8 max-w-2xl leading-relaxed">

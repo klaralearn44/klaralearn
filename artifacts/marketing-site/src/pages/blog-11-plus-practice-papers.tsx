@@ -293,12 +293,12 @@ export function Blog11PlusPracticePapers() {
               A skilled tutor transforms practice papers from tests into lessons. When a child completes a paper, a KlaraLearn tutor reviews every wrong answer with them — not by telling them the correct answer, but by working through the reasoning together so the child understands the underlying logic. This understanding is what prevents the same mistake from recurring.
             </p>
             <p>
-              Our tutors also track error patterns across multiple papers to identify systematic weaknesses — something that is very difficult for a parent to do without specialist training. "A tutor turns a practice paper from a test into a lesson." Expert 11 plus tutors from £15 per hour. Free trial lesson.
+              Our tutors also track error patterns across multiple papers to identify systematic weaknesses — something that is very difficult for a parent to do without specialist training. "A tutor turns a practice paper from a test into a lesson." Compare available 11 plus tutor profiles and current rates. Free trial lesson.
             </p>
 
             <div className="not-prose mt-8 mb-10 p-8 bg-[#1B3D5C] rounded-2xl text-center">
               <h3 className="text-2xl font-bold text-white mb-4">Turn Practice Papers Into Progress</h3>
-              <p className="text-white/80 mb-6">Expert 11 plus tutors from £15/hr review your child's papers and target their exact weak areas.</p>
+              <p className="text-white/80 mb-6">Available 11 plus tutors review your child's papers and target their exact weak areas. Compare current profile rates.</p>
               <a
                 href="https://app.klaralearn.com"
                 target="_blank"

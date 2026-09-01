@@ -349,12 +349,12 @@ export function Blog11PlusVerbalReasoning() {
               A specialist 11 plus tutor from KlaraLearn will begin with a diagnostic session that identifies exactly which verbal and non-verbal reasoning question types your child finds difficult. Rather than working through everything systematically from scratch, they create a personalised programme targeting the areas where improvement will have the most impact on the standardised score.
             </p>
             <p>
-              Our tutors are trained in both GL Assessment and CEM formats, understand the specific requirements of grammar schools in different regions, and use interactive online whiteboards to work through visual NVR questions in real-time. Sessions start from £15 per hour. Every new family gets a free trial lesson.
+              Our tutors are trained in both GL Assessment and CEM formats, understand the specific requirements of grammar schools in different regions, and use interactive online whiteboards to work through visual NVR questions in real-time. Compare each available tutor's current profile rate. Every new family gets a free trial lesson.
             </p>
 
             <div className="not-prose mt-8 mb-10 p-8 bg-[#1B3D5C] rounded-2xl text-center">
               <h3 className="text-2xl font-bold text-white mb-4">Expert 11 Plus Verbal Reasoning Tutors</h3>
-              <p className="text-white/80 mb-6">Diagnostic first session · GL and CEM formats · from £15/hr</p>
+              <p className="text-white/80 mb-6">Diagnostic first session · GL and CEM formats · current profile rates</p>
               <a
                 href="https://app.klaralearn.com"
                 target="_blank"

@@ -301,7 +301,7 @@ export function BlogBestGrammarSchools() {
 
             <div className="not-prose mt-8 mb-10 p-8 bg-[#1B3D5C] rounded-2xl text-center">
               <h3 className="text-2xl font-bold text-white mb-4">Prepare for Any Grammar School</h3>
-              <p className="text-white/80 mb-6">Whether you're targeting a local grammar or a super-selective London school, KlaraLearn tutors know the specific requirements. From £15/hr.</p>
+              <p className="text-white/80 mb-6">Whether you're targeting a local grammar or a super-selective London school, compare KlaraLearn tutor profiles familiar with the specific requirements and their current rates.</p>
               <a
                 href="https://app.klaralearn.com"
                 target="_blank"

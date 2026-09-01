@@ -165,7 +165,7 @@ export function BlogGrammarVsComprehensive() {
               <li>Even in areas where grammar schools are located, they admit FSM-eligible pupils at less than half the rate of their comprehensive neighbours</li>
             </ul>
             <p>
-              This is a genuine tension. State grammar schools are free to attend — but access is effectively mediated through the ability to pay for 11 plus preparation, which cost an average of £2,000–£5,000 in London and Kent. This is precisely why KlaraLearn exists: to make that preparation accessible at £15/hr rather than £55–80/hr, reducing (though not eliminating) the financial barrier to grammar school preparation.
+              This is a genuine tension. State grammar schools are free to attend — but access is effectively mediated through the ability to pay for 11 plus preparation, which cost an average of £2,000–£5,000 in London and Kent. This is precisely why comparing available KlaraLearn tutor profiles and current rates can help families assess the financial barrier to grammar school preparation.
             </p>
 
             <h2>Pressure and Wellbeing</h2>
@@ -241,7 +241,7 @@ export function BlogGrammarVsComprehensive() {
 
             <div className="not-prose mt-8 mb-10 p-8 bg-[#1B3D5C] rounded-2xl text-center">
               <h3 className="text-2xl font-bold text-white mb-4">Explore the Grammar School Option</h3>
-              <p className="text-white/80 mb-6">If you're considering grammar school for your child, KlaraLearn's 11 plus tutors can help you explore whether it's the right fit — without financial barriers. From £15/hr.</p>
+              <p className="text-white/80 mb-6">If you're considering grammar school for your child, KlaraLearn's 11 plus tutors can help you explore whether it's the right fit. Compare available profiles and current rates before booking.</p>
               <a
                 href="https://app.klaralearn.com"
                 target="_blank"
