@@ -123,10 +123,10 @@ export function Home() {
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button asChild size="lg" className="bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white border-none text-lg h-14 px-8 rounded-full shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5">
-                   <Link href="/find-a-tutor">Browse Live Tutors</Link>
+                   <a href="https://app.klaralearn.com/version-test?view=signup">Sign Up for Tutoring</a>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="bg-white/10 hover:bg-white/20 text-white border-white/30 text-lg h-14 px-8 rounded-full backdrop-blur-sm transition-all">
-                  <a href="https://app.klaralearn.com">Book a Free Trial</a>
+                  <Link href="/find-a-tutor">Browse Live Tutors</Link>
                 </Button>
               </div>
               
@@ -360,7 +360,7 @@ export function Home() {
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Give them the confidence to succeed</h2>
           <p className="text-xl text-white/90 mb-10">Start your journey today with a free 15-minute trial session.</p>
           <Button asChild size="lg" className="bg-[#1B3D5C] hover:bg-[#1B3D5C]/90 text-white text-lg h-14 px-10 rounded-full shadow-xl">
-            <a href="https://app.klaralearn.com">Find Your Perfect Tutor <ArrowRight className="ml-2 w-5 h-5" /></a>
+            <a href="https://app.klaralearn.com/version-test?view=signup">Sign Up for Tutoring <ArrowRight className="ml-2 w-5 h-5" /></a>
           </Button>
         </div>
       </section>

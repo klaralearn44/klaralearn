@@ -303,7 +303,7 @@ export function BlogBestGrammarSchools() {
               <h3 className="text-2xl font-bold text-white mb-4">Prepare for Any Grammar School</h3>
               <p className="text-white/80 mb-6">Whether you're targeting a local grammar or a super-selective London school, compare KlaraLearn tutor profiles familiar with the specific requirements and their current rates.</p>
               <a
-                href="https://app.klaralearn.com"
+                href="/find-a-tutor"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white font-bold py-3 px-8 rounded-full transition-colors no-underline"

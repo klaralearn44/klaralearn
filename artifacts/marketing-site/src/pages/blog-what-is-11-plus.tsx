@@ -307,7 +307,7 @@ export function BlogWhatIs11Plus() {
               <h3 className="text-2xl font-bold text-white mb-4">Start 11 Plus Preparation Today</h3>
               <p className="text-white/80 mb-6">Compare current tutor profile rates. Free trial lesson. GL and CEM specialists available.</p>
               <a
-                href="https://app.klaralearn.com"
+                href="/find-a-tutor"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white font-bold py-3 px-8 rounded-full transition-colors no-underline"

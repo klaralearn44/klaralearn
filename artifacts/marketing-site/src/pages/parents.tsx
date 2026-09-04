@@ -90,7 +90,7 @@ export function ParentsPage() {
           </p>
           <div className="flex flex-wrap gap-4">
             <Button asChild size="lg" className="bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white rounded-full px-8">
-              <a href="https://app.klaralearn.com" target="_blank" rel="noopener noreferrer">Start with a Free Trial Lesson</a>
+              <a href="https://app.klaralearn.com/version-test?view=signup" target="_blank" rel="noopener noreferrer">Start with a Free Trial Lesson</a>
             </Button>
             <Button asChild size="lg" variant="outline" className="rounded-full px-8 border-secondary text-secondary hover:bg-secondary hover:text-white">
               <Link href="/find-a-tutor">Browse tutors first</Link>
@@ -128,7 +128,7 @@ export function ParentsPage() {
 
           <div className="text-center mt-10">
             <Button asChild className="bg-[#00A896] hover:bg-[#00A896]/90 text-white rounded-full px-8">
-              <a href="https://app.klaralearn.com" target="_blank" rel="noopener noreferrer">Get Started — Free Trial</a>
+              <a href="https://app.klaralearn.com/version-test?view=signup" target="_blank" rel="noopener noreferrer">Get Started — Free Trial</a>
             </Button>
           </div>
         </div>
@@ -253,7 +253,7 @@ export function ParentsPage() {
           <h2 className="text-3xl font-bold text-white mb-4">Ready to Find the Right Tutor?</h2>
           <p className="text-white/80 mb-8">Available tutor profiles with current rates. Review the details before booking.</p>
           <Button asChild size="lg" className="bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white rounded-full px-10">
-            <a href="https://app.klaralearn.com" target="_blank" rel="noopener noreferrer">Find a Tutor Today</a>
+            <Link href="/find-a-tutor">Find a Tutor Today</Link>
           </Button>
         </div>
       </section>

@@ -62,7 +62,7 @@ export function LocationLondon() {
           </p>
 
           <Button asChild size="lg" className="bg-[#00A896] hover:bg-[#00A896]/90 text-white rounded-full px-8">
-            <a href="https://app.klaralearn.com">Find a London Tutor</a>
+            <Link href="/find-a-tutor">Find a London Tutor</Link>
           </Button>
         </div>
       </section>
@@ -80,7 +80,7 @@ export function LocationLondon() {
           
           <div className="text-center">
             <Button asChild variant="outline" className="rounded-full font-semibold px-8 border-primary text-primary hover:bg-primary hover:text-white">
-              <a href="https://app.klaralearn.com">Browse All Tutors</a>
+              <Link href="/find-a-tutor">Browse All Tutors</Link>
             </Button>
           </div>
         </div>

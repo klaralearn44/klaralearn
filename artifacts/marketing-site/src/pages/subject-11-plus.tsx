@@ -108,7 +108,7 @@ export function Subject11Plus() {
 
           <div className="flex flex-wrap gap-4">
             <Button asChild size="lg" className="bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white rounded-full px-8">
-              <a href="https://app.klaralearn.com" target="_blank" rel="noopener noreferrer">Find an 11 Plus Tutor</a>
+              <Link href="/find-a-tutor">Find an 11 Plus Tutor</Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="rounded-full px-8 border-secondary text-secondary hover:bg-secondary hover:text-white">
               <Link href="/blog/what-is-the-11-plus">Learn About the 11 Plus</Link>
@@ -172,7 +172,7 @@ export function Subject11Plus() {
 
           <div className="text-center">
             <Button asChild variant="outline" className="rounded-full font-semibold px-8 border-primary text-primary hover:bg-primary hover:text-white">
-              <a href="https://app.klaralearn.com" target="_blank" rel="noopener noreferrer">View All 11 Plus Tutors</a>
+              <Link href="/find-a-tutor">View All 11 Plus Tutors</Link>
             </Button>
           </div>
         </div>

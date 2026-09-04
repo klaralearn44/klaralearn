@@ -13,7 +13,7 @@ function SkeletonCard() {
     <div className="rounded-2xl border bg-white p-6 animate-pulse">
       <div className="flex justify-between gap-4">
         <div className="flex gap-4">
-          <div className="h-16 w-16 rounded-full bg-slate-200" />
+          <div className="h-20 w-20 rounded-full bg-slate-200" />
           <div className="space-y-2 pt-1">
             <div className="h-5 w-28 rounded bg-slate-200" />
             <div className="h-4 w-20 rounded bg-slate-100" />
@@ -344,7 +344,7 @@ export function FindATutor() {
                 <p>
                   Live tutor availability is temporarily offline.{' '}
                   <a
-                    href="https://app.klaralearn.com"
+                    href="https://app.klaralearn.com/version-test?view=signup"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-semibold underline underline-offset-2"

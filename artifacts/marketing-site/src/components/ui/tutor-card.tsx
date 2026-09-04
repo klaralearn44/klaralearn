@@ -20,7 +20,7 @@ export function TutorCard({ tutor, index = 0 }: { tutor: Tutor, index?: number }
     >
       <div className="flex items-start justify-between mb-4">
         <div className="flex gap-4">
-          <Avatar className="w-16 h-16 border-2 border-slate-50">
+          <Avatar className="w-20 h-20 border-2 border-slate-50">
             {tutor.photoUrl && <AvatarImage src={tutor.photoUrl} alt={`${tutor.name}'s profile`} />}
             <AvatarFallback className="bg-primary/10 text-primary text-xl font-bold">{tutor.initials}</AvatarFallback>
           </Avatar>

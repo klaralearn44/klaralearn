@@ -243,7 +243,7 @@ export function BlogGrammarVsComprehensive() {
               <h3 className="text-2xl font-bold text-white mb-4">Explore the Grammar School Option</h3>
               <p className="text-white/80 mb-6">If you're considering grammar school for your child, KlaraLearn's 11 plus tutors can help you explore whether it's the right fit. Compare available profiles and current rates before booking.</p>
               <a
-                href="https://app.klaralearn.com"
+                href="/find-a-tutor"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white font-bold py-3 px-8 rounded-full transition-colors no-underline"

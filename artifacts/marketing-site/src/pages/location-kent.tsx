@@ -99,7 +99,7 @@ export function LocationKent() {
           </p>
 
           <Button asChild size="lg" className="bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white rounded-full px-8">
-            <a href="https://app.klaralearn.com" target="_blank" rel="noopener noreferrer">Find a Kent Tutor</a>
+            <Link href="/find-a-tutor">Find a Kent Tutor</Link>
           </Button>
         </div>
       </section>
@@ -261,7 +261,7 @@ export function LocationKent() {
 
           <div className="text-center">
             <Button asChild variant="outline" className="rounded-full font-semibold px-8 border-primary text-primary hover:bg-primary hover:text-white">
-              <a href="https://app.klaralearn.com" target="_blank" rel="noopener noreferrer">View All 11 Plus Tutors</a>
+              <Link href="/find-a-tutor">View All 11 Plus Tutors</Link>
             </Button>
           </div>
         </div>
@@ -299,7 +299,7 @@ export function LocationKent() {
           </div>
           <div className="text-center mt-8">
             <Button asChild size="lg" className="bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white rounded-full px-8">
-              <a href="https://app.klaralearn.com" target="_blank" rel="noopener noreferrer">Book a Free Trial Lesson</a>
+              <a href="https://app.klaralearn.com/version-test?view=signup" target="_blank" rel="noopener noreferrer">Book a Free Trial Lesson</a>
             </Button>
           </div>
         </div>

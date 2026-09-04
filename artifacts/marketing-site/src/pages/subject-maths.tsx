@@ -102,7 +102,7 @@ export function SubjectMaths() {
           </div>
 
           <Button asChild size="lg" className="bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white rounded-full px-8">
-            <a href="https://app.klaralearn.com" target="_blank" rel="noopener noreferrer">Find a Maths Tutor</a>
+            <Link href="/find-a-tutor">Find a Maths Tutor</Link>
           </Button>
         </div>
       </section>
@@ -262,7 +262,7 @@ export function SubjectMaths() {
 
           <div className="text-center">
             <Button asChild variant="outline" className="rounded-full font-semibold px-8 border-primary text-primary hover:bg-primary hover:text-white">
-              <a href="https://app.klaralearn.com" target="_blank" rel="noopener noreferrer">View All Maths Tutors</a>
+              <Link href="/find-a-tutor">View All Maths Tutors</Link>
             </Button>
           </div>
         </div>

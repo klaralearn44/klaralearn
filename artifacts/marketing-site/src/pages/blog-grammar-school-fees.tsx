@@ -231,7 +231,7 @@ export function BlogGrammarSchoolFees() {
               <h3 className="text-2xl font-bold text-white mb-4">Make Grammar School Preparation Affordable</h3>
               <p className="text-white/80 mb-6">Compare expert 11 plus tutor profiles and current rates. Don't let local tuition rates stand between your child and a grammar school place.</p>
               <a
-                href="https://app.klaralearn.com"
+                href="/find-a-tutor"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white font-bold py-3 px-8 rounded-full transition-colors no-underline"

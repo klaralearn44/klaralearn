@@ -219,7 +219,7 @@ export function BlogGrammarSchoolAdmissions() {
               <h3 className="text-2xl font-bold text-white mb-4">Start Grammar School Preparation Today</h3>
               <p className="text-white/80 mb-6">Expert 11 plus tutors familiar with GL Assessment and CEM formats. Compare current profile rates. Free trial lesson.</p>
               <a
-                href="https://app.klaralearn.com"
+                href="/find-a-tutor"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white font-bold py-3 px-8 rounded-full transition-colors no-underline"

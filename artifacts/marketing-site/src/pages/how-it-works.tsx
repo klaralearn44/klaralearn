@@ -101,7 +101,7 @@ export function HowItWorksPage() {
         <div className="container mx-auto px-4 max-w-2xl">
           <h2 className="text-3xl font-bold text-secondary mb-6">Ready to find the perfect tutor?</h2>
           <Button asChild size="lg" className="bg-[#1B3D5C] hover:bg-[#1B3D5C]/90 text-white rounded-full px-10 h-14 text-lg">
-            <a href="https://app.klaralearn.com">Start Searching Now</a>
+            <a href="https://app.klaralearn.com/version-test?view=signup">Sign Up Now</a>
           </Button>
         </div>
       </section>

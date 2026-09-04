@@ -102,11 +102,11 @@ export function Navbar() {
 
         {/* Desktop CTAs */}
         <div className="hidden md:flex items-center gap-4">
-          <a href="https://app.klaralearn.com/login" className="text-slate-600 font-medium hover:text-[#1B3D5C] transition-colors">
+          <a href="https://app.klaralearn.com/version-test?view=login" className="text-slate-600 font-medium hover:text-[#1B3D5C] transition-colors">
             Login
           </a>
           <Button asChild className="bg-[#00A896] hover:bg-[#00A896]/90 text-white rounded-full px-6 font-semibold">
-            <a href="https://app.klaralearn.com">Find a Tutor</a>
+            <a href="https://app.klaralearn.com/version-test?view=signup">Sign Up</a>
           </Button>
         </div>
 
@@ -159,9 +159,9 @@ export function Navbar() {
             <Link href="/become-a-tutor" onClick={() => setIsOpen(false)} className="block px-2 py-2 text-slate-900 font-medium">Become a Tutor</Link>
             <Link href="/blog" onClick={() => setIsOpen(false)} className="block px-2 py-2 text-slate-900 font-medium">All Blog Articles</Link>
             <div className="flex flex-col gap-3 pt-4">
-              <a href="https://app.klaralearn.com/login" className="w-full text-center py-3 font-medium border rounded-full">Login</a>
+              <a href="https://app.klaralearn.com/version-test?view=login" className="w-full text-center py-3 font-medium border rounded-full">Login</a>
               <Button asChild className="w-full bg-[#00A896] hover:bg-[#00A896]/90 text-white rounded-full py-6 text-lg font-semibold">
-                <a href="https://app.klaralearn.com">Find a Tutor</a>
+                <a href="https://app.klaralearn.com/version-test?view=signup">Sign Up</a>
               </Button>
             </div>
           </div>

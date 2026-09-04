@@ -300,7 +300,7 @@ export function Blog11PlusPracticePapers() {
               <h3 className="text-2xl font-bold text-white mb-4">Turn Practice Papers Into Progress</h3>
               <p className="text-white/80 mb-6">Available 11 plus tutors review your child's papers and target their exact weak areas. Compare current profile rates.</p>
               <a
-                href="https://app.klaralearn.com"
+                href="/find-a-tutor"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white font-bold py-3 px-8 rounded-full transition-colors no-underline"

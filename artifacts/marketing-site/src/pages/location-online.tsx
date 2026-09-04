@@ -59,7 +59,7 @@ export function LocationOnline() {
           </p>
 
           <Button asChild size="lg" className="bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white rounded-full px-8">
-            <a href="https://app.klaralearn.com">Browse Online Tutors</a>
+            <Link href="/find-a-tutor">Browse Online Tutors</Link>
           </Button>
         </div>
       </section>
