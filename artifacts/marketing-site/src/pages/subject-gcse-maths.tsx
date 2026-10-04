@@ -33,6 +33,14 @@ export function SubjectGcseMaths() {
     {
       q: "Can I review the tutor's qualifications?",
       a: "Profiles may include educational background, tutoring experience, and areas of focus. Review the information shown and ask the tutor for any details that are important to your family."
+    },
+    {
+      q: "Can a private tutor help with a GCSE maths resit?",
+      a: "Yes, if the profile lists GCSE maths. A resit needs a short list of the topics that lost marks last time, then past-paper practice against the same exam board. Ask for that plan in the free 15-minute trial before you book a block of lessons."
+    },
+    {
+      q: "How much is a private tutor for GCSE maths?",
+      a: "There is no single GCSE price on KlaraLearn. Local GCSE maths tutors in the UK are often listed around £30–£60 an hour, and London rates can be higher. Compare the hourly rate written on each current profile."
     }
   ];
 
@@ -89,7 +97,7 @@ export function SubjectGcseMaths() {
     <Layout>
       <SEOHead
         title="Private GCSE Maths Tutors UK | Higher & Foundation | KlaraLearn"
-        description="Compare private GCSE maths tutor profiles for Higher and Foundation tiers, then check current rates, experience and availability."
+        description="Find a private tutor for GCSE maths, including Higher, Foundation and resits. Compare GCSE private tutor profiles and current hourly rates."
         path="/subjects/gcse-maths"
         schema={[schema, faqSchema, breadcrumbSchema]}
       />
@@ -231,6 +239,18 @@ export function SubjectGcseMaths() {
               </AccordionItem>
             ))}
           </Accordion>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white border-t">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-3xl font-bold text-secondary mb-4">A private tutor for GCSE maths</h2>
+          <p className="text-lg text-slate-700 leading-relaxed mb-4">
+            A GCSE private tutor for maths has to match the tier and the board. Foundation stops at grade 5. Higher runs up to grade 9. AQA, Edexcel and OCR do not use the same question style, so a tutor who has not taught your child’s specification should say so before you book a term.
+          </p>
+          <p className="text-lg text-slate-700 leading-relaxed">
+            Year 10 is the calmer time to close gaps. Year 11 and a resit still work when the lessons target the marks that were lost, not a fresh tour of the whole syllabus. Broader maths support, including A-Level, sits on the <Link href="/subjects/maths" className="text-primary font-semibold hover:underline">maths tutors</Link> page. Price ranges are explained in <Link href="/blog/how-much-does-tutoring-cost" className="text-primary font-semibold hover:underline">how much a private tutor costs</Link>.
+          </p>
         </div>
       </section>
 

@@ -34,6 +34,14 @@ export function HowItWorksPage() {
     {
       q: "How do I start?",
       a: "Create a parent account and start your journey today with a free 15-minute trial session."
+    },
+    {
+      q: "Is a KlaraLearn lesson one to one?",
+      a: "Yes. A 121 private tutor lesson is one tutor and one child. It is not a tuition-centre class. You agree the subject and the time, meet in a free 15-minute trial, then book paid lessons if the match is right."
+    },
+    {
+      q: "What happens in a one-to-one private tutor lesson?",
+      a: "The tutor teaches the agreed topic in the secure online classroom. Parents can review the recording, the topics covered and the tutor’s feedback afterwards. You can stop after the trial if you do not want a package."
     }
   ];
 
@@ -41,7 +49,7 @@ export function HowItWorksPage() {
     <Layout>
       <SEOHead 
         title="How KlaraLearn Works | Find Available Tutors"
-        description="See how to compare available online tutor profiles, arrange an introductory session, learn securely and track your child’s progress."
+        description="See how a one-to-one private tutor lesson works: compare profiles, take a free 15-minute trial, then learn online with session recordings for parents."
         path="/how-it-works"
         schema={faqPageSchema(faqs)}
       />
@@ -151,6 +159,12 @@ export function HowItWorksPage() {
 
       <section className="py-16 bg-white border-t">
         <div className="container mx-auto px-4 text-center">
+          <div className="max-w-3xl mx-auto text-left mb-10">
+            <h2 className="text-3xl font-bold text-secondary mb-4">A 121 private tutor, not a class</h2>
+            <p className="text-lg text-slate-700 leading-relaxed">
+              One-to-one means the hour is spent on your child. The tutor can stop when a method has not landed and try another. That is the difference from a tuition centre, where the room moves on. You still read the profile first: subject, stage, and hourly rate. Then you use the free 15-minute trial. Paid lessons stay inside KlaraLearn, and <Link href="/safeguarding" className="text-primary font-semibold hover:underline">safeguarding</Link> explains identity checks and recordings.
+            </p>
+          </div>
           <h2 className="text-xl font-bold text-secondary mb-8">Read this before you book</h2>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/find-a-tutor" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Find a Tutor</Link>

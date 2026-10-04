@@ -157,6 +157,12 @@ export function LocationKent() {
               </motion.div>
             ))}
           </div>
+          <div className="max-w-3xl mx-auto mt-12 text-left">
+            <h2 className="text-2xl font-bold text-secondary mb-3">A private tutor in Newington, or across the border in Essex</h2>
+            <p className="text-slate-700 leading-relaxed">
+              A search for a private tutor in Newington, Kent, is still a Kent Test search for many families in that part of the county. Essex is next door, and Essex grammar schools also use GL Assessment, so a private tutor in Essex is often the same kind of preparation. KlaraLearn does not send a tutor to a house in Newington or Essex. Lessons are online, so the same profiles are available from Tonbridge, Newington, or over the county border. Read <Link href="/location/online" className="text-primary font-semibold hover:underline">online tutoring</Link> and the <Link href="/subjects/11-plus" className="text-primary font-semibold hover:underline">11 Plus tutor</Link> page before you book.
+            </p>
+          </div>
         </div>
       </section>
 

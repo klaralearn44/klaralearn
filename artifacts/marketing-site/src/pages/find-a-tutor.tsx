@@ -164,6 +164,18 @@ export function FindATutor() {
     {
       q: "Are lessons recorded?",
       a: "Lessons run in KlaraLearn's secure online classroom. Session recordings are available so parents can review what their child covered."
+    },
+    {
+      q: "How do I find a private tutor near me?",
+      a: "Start with the subject and the school stage, not the street the tutor lives on. Filter the profiles on this page, compare experience and the hourly rate, then book a free 15-minute trial. Online lessons mean a strong tutor does not have to live in your postcode."
+    },
+    {
+      q: "What should I look for in a private tutor?",
+      a: "Check the subjects and exam boards listed, the tutor's experience, any qualifications written on the profile, and the current hourly rate. Use the trial to see whether your child will ask questions. Read the safeguarding page before you book paid lessons."
+    },
+    {
+      q: "Where can I find a GCSE private tutor?",
+      a: "Use the subject filters for GCSE maths, English or science, or open the dedicated GCSE maths, English and science pages. A GCSE private tutor should match the tier and the exam board your child is sitting."
     }
   ];
 
@@ -184,7 +196,7 @@ export function FindATutor() {
     <Layout>
       <SEOHead
         title="Find a Tutor | Private Tutors Online | KlaraLearn"
-        description="Find available private tutors online for Maths, English, Science, GCSE, A-Level and other subjects. Compare live profiles, experience and current hourly rates."
+        description="Find a private tutor near you for Maths, English, Science, GCSE and A-Level. Compare profiles, experience and current hourly rates, then book a free 15-minute trial."
         path="/find-a-tutor"
         schema={[breadcrumbSchema, collectionSchema, faqSchema]}
       />
@@ -405,6 +417,21 @@ export function FindATutor() {
             )}
           </div>
 
+        </div>
+      </section>
+
+      <section className="py-16 bg-white border-t">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-3xl font-bold text-secondary mb-4">How to find a private tutor</h2>
+          <p className="text-lg text-slate-700 leading-relaxed mb-4">
+            Parents who search “private tutor near me” usually need a tutor this term, not a directory of every teacher in the postcode. Start with the exam or the subject, then the hourly rate, then whether your child can work with that person. On KlaraLearn those three checks happen on the profile and in a free 15-minute trial.
+          </p>
+          <p className="text-lg text-slate-700 leading-relaxed mb-4">
+            A good private tutor for a UK family can show the school stage they teach, such as KS2, 11 Plus, GCSE or A-Level, and the subjects they list. Qualifications appear only when the tutor has written them on the profile. Do not treat a missing qualification line as a hidden credential.
+          </p>
+          <p className="text-lg text-slate-700 leading-relaxed">
+            If the search is really “GCSE private tutor near me”, open <Link href="/subjects/gcse-maths" className="text-primary font-semibold hover:underline">GCSE maths tutors</Link>, <Link href="/subjects/english" className="text-primary font-semibold hover:underline">English tutors</Link> or <Link href="/subjects/science" className="text-primary font-semibold hover:underline">science tutors</Link>. Families outside a big city can use an <Link href="/location/online" className="text-primary font-semibold hover:underline">online private tutor</Link> instead of waiting for someone local. Read <Link href="/safeguarding" className="text-primary font-semibold hover:underline">how lessons are safeguarded</Link> before you book.
+          </p>
         </div>
       </section>
 

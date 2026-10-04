@@ -51,6 +51,10 @@ export function Subject11Plus() {
     {
       q: "Can my child have 11 plus tuition even if we're not near a grammar school area?",
       a: "Yes — KlaraLearn tutors work entirely online, so geography is irrelevant. Children in rural areas, Scotland, Wales, or anywhere in the UK can access expert 11 plus tuition via our secure online classroom. Many families in non-selective areas move to grammar school areas and want to prepare in advance."
+    },
+    {
+      q: "How do I find an 11 Plus private tutor near me?",
+      a: "The useful match is the exam format, not the tutor’s street. Kent uses the Kent Test. Parts of London use GL Assessment or their own tests. Trafford has its own consortium. Compare profiles that mention the format you need, then use a free 15-minute trial. An online 11 Plus private tutor can teach a child who does not live near a grammar school."
     }
   ];
 
@@ -82,7 +86,7 @@ export function Subject11Plus() {
     <Layout>
       <SEOHead
         title="11 Plus Tutors for Grammar School Entry | KlaraLearn"
-        description="Find available online 11 Plus tutors for grammar school entrance preparation. Compare profiles for verbal reasoning, maths, English and more, including current hourly rates."
+        description="Find an 11 Plus private tutor for grammar school entrance. Compare online profiles for verbal reasoning, maths and English, including current hourly rates."
         path="/subjects/11-plus"
         schema={[schema, faqSchema]}
       />
@@ -283,6 +287,18 @@ export function Subject11Plus() {
               </AccordionItem>
             ))}
           </Accordion>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white border-t">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-3xl font-bold text-secondary mb-4">11 Plus private tutor</h2>
+          <p className="text-lg text-slate-700 leading-relaxed mb-4">
+            An 11 Plus private tutor prepares a child for a selective entrance exam, not for a general primary catch-up. England has 163 state grammar schools. The paper can include verbal reasoning, non-verbal reasoning, maths and English, and the exact mix depends on the area. A tutor who has only taught GCSE maths has not automatically taught the Kent Test or a London GL paper.
+          </p>
+          <p className="text-lg text-slate-700 leading-relaxed">
+            Read <Link href="/blog/what-is-the-11-plus" className="text-primary font-semibold hover:underline">what the 11 Plus is</Link>, then the area pages for <Link href="/location/kent" className="text-primary font-semibold hover:underline">Kent</Link> and <Link href="/location/london" className="text-primary font-semibold hover:underline">London</Link>. If you searched “11 Plus private tutor near me”, use the format named on the profile and a free 15-minute trial. You do not need the tutor to live in the same town.
+          </p>
         </div>
       </section>
 

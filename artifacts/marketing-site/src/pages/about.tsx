@@ -32,6 +32,14 @@ export function AboutPage() {
     {
       q: "What if a tutor is not the right fit?",
       a: "The trial comes before a paid booking. Families can compare other available profiles and choose a different tutor."
+    },
+    {
+      q: "What does private tutor mean?",
+      a: "A private tutor is someone a family pays to teach a child outside normal school lessons. On KlaraLearn the lesson is online and one to one. The tutor is not employed by your child’s school, and the school remains responsible for the school place."
+    },
+    {
+      q: "Who is a private tutor on KlaraLearn?",
+      a: "A tutor with a public profile that lists their name, subjects, a short biography and an hourly rate. Qualifications appear only when the tutor has provided them. Families in the UK book them for the 11 Plus, GCSE, SATs and other school subjects."
     }
   ];
 
@@ -39,7 +47,7 @@ export function AboutPage() {
     <Layout>
       <SEOHead 
         title="About KlaraLearn | Affordable Private Tutoring Mission"
-        description="Learn about KlaraLearn's mission to make private tutoring more affordable for UK families through an online tutor marketplace."
+        description="What a private tutor is, who KlaraLearn is for, and how UK families compare tutor profiles before a free 15-minute trial."
         path="/about"
         schema={faqPageSchema(faqs)}
       />
@@ -132,6 +140,15 @@ export function AboutPage() {
 
       <section className="py-16 bg-white border-t">
         <div className="container mx-auto px-4 text-center">
+          <div className="max-w-3xl mx-auto text-left mb-10">
+            <h2 className="text-3xl font-bold text-secondary mb-4">Private tutor meaning</h2>
+            <p className="text-lg text-slate-700 leading-relaxed mb-4">
+              People ask what a private tutor is because the phrase covers a neighbour who helps with homework, a London agency, and an online marketplace. On this site it means a named tutor with a public profile, a listed hourly rate, and lessons in KlaraLearn’s classroom. You are not buying a course with a fixed syllabus. You are booking a person for your child’s subject.
+            </p>
+            <p className="text-lg text-slate-700 leading-relaxed">
+              If you want to hire one, <Link href="/find-a-tutor" className="text-primary font-semibold hover:underline">find a private tutor</Link>. If you want to teach, the route is <Link href="/become-a-tutor" className="text-primary font-semibold hover:underline">become a private tutor</Link>, which is a different page with a different application.
+            </p>
+          </div>
           <h2 className="text-xl font-bold text-secondary mb-8">Explore KlaraLearn</h2>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/how-it-works" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">How It Works</Link>

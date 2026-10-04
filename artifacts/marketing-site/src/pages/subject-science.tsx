@@ -33,6 +33,14 @@ export function SubjectScience() {
     {
       q: "How much do science tutors cost?",
       a: "Rates vary by tutor and are shown on current profiles. Compare the listed rate, subject focus, level, and current availability before choosing."
+    },
+    {
+      q: "Do you have a chemistry private tutor?",
+      a: "Open the science profiles and look for Chemistry in the subjects. A chemistry private tutor for GCSE is not the same booking as a general KS3 science tutor, and an A-Level chemistry private tutor should list A-Level, not only GCSE."
+    },
+    {
+      q: "Can I book a science private tutor for a child at KS3?",
+      a: "Yes, when the profile lists KS3 or the separate sciences your child is starting. Use the trial to check that the tutor will teach the topic the school is on now, rather than a general science overview."
     }
   ];
 
@@ -89,7 +97,7 @@ export function SubjectScience() {
     <Layout>
       <SEOHead
         title="Private Science Tutors UK | Biology, Chemistry, Physics | KlaraLearn"
-        description="Compare private science tutor profiles for KS3, GCSE Combined Science and Triple Science, including current rates and availability."
+        description="Find a science private tutor for KS3, GCSE and the separate sciences. Compare biology, chemistry and physics profiles and current hourly rates."
         path="/subjects/science"
         schema={[schema, faqSchema, breadcrumbSchema]}
       />
@@ -216,6 +224,18 @@ export function SubjectScience() {
               </AccordionItem>
             ))}
           </Accordion>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white border-t">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-3xl font-bold text-secondary mb-4">Science private tutor, or a chemistry private tutor?</h2>
+          <p className="text-lg text-slate-700 leading-relaxed mb-4">
+            “Science private tutor” usually means Combined Science or KS3 science: biology, chemistry and physics in one timetable. “Chemistry private tutor” means one subject, often because that paper is the one pulling the grade down. Triple Science and A-Level chemistry are narrower still.
+          </p>
+          <p className="text-lg text-slate-700 leading-relaxed">
+            Read the subjects on the profile. If Chemistry is not listed, do not book that tutor for A-Level chemistry. Biology and physics work the same way. For the maths that sits inside science calculations, a <Link href="/subjects/gcse-maths" className="text-primary font-semibold hover:underline">GCSE maths tutor</Link> can sit alongside the science lessons. Start with a free 15-minute trial so your child can ask one real question from their current topic.
+          </p>
         </div>
       </section>
 

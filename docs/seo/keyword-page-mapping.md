@@ -470,3 +470,81 @@
 15. **`/blog/grammar-school-vs-comprehensive/`** — "comprehensive school" (1,740/mo) — stub → build
 16. **`/parents/`**, **`/how-it-works/`**, **`/about/`** — trust architecture / E-E-A-T
 17. Subject pages for maths, english, science — after additional exports
+
+---
+
+## Ubersuggest addition — `private tutor` export (2026-10-04)
+
+**Source:** Ubersuggest export `ubersuggest_private_tutor` (about 895 rows). Volumes below are monthly searches from that export. They do not replace the Moz volumes in the tables above. Where Moz and Ubersuggest disagree (for example Moz “private tutor” at 867/mo and Ubersuggest at 1,900/mo), keep the existing page owner and treat the newer volume as a fresher demand signal, not a reason to move the keyword.
+
+**Rule added:** one primary owner per keyword still applies. Intent outranks volume. A high-volume row with the wrong intent is excluded or parked on the supply page, even when the number is larger than a parent keyword.
+
+**Rule changed:** the 2026-08-13 line that excluded all supply-side terms is superseded for `/become-a-tutor/`, which now exists. “Private tutor jobs”, “how to become a private tutor”, and salary or qualification questions belong on that page. They stay off the homepage.
+
+**Price claims:** do not restore “from £15/hr” in new titles or copy. Live pages compare the rate on the profile. Older title formulas in this file that still mention £15/hr are historical and are not the live titles.
+
+### Parent demand — reinforce the page that already owns it
+
+| Keyword | Vol/mo | Intent | Primary owner | Why this page |
+|---------|--------|--------|---------------|---------------|
+| private tutor | 1,900 | commercial | `/` | Head term. Already the homepage owner. |
+| private tutor in uk / affordable private tutor | 70 / 20 | commercial | `/` | UK marketplace, not a new city page. |
+| private tutor agency | 30 | commercial | `/` | Agency comparison already lives on the homepage and cost guide. |
+| private tutor near me | 1,300 | commercial | `/find-a-tutor/` | “Near me” is a find action. Online pages may mention it and must link here. |
+| find private tutor / how to find a private tutor | 50 / 20 | commercial / informational | `/find-a-tutor/` | Same job as the directory. |
+| private tutor gcse / gcse private tutor | 320 / 210 | commercial | `/find-a-tutor/` | General GCSE. Subject pages own the named subject. |
+| private tutor for gcse maths / gcse private tutor near me | 70 / 70 | commercial | `/subjects/gcse-maths/` | Subject is in the query. |
+| private tutor math / in maths / mathematics | 880 / 720 / 590 | commercial | `/subjects/maths/` | Maths head terms. |
+| mathematics private tutor / a level maths private tutor | 390 / 20 | commercial | `/subjects/maths/` | Same owner. A-Level is a stage on that page, not a new URL. |
+| private tutor english / english private tutor / in english | 590 / 480 / 390 | commercial | `/subjects/english/` | English head terms. |
+| science private tutor / chemistry private tutor | 90 / 40 | commercial | `/subjects/science/` | Science page; chemistry is a subject on it, not a new URL. |
+| private tutor 11 plus / 11 plus private tutor near me | 20 / 0 | commercial | `/subjects/11-plus/` | Low volume, high product fit. CPC on “private tutor 11 plus” was £7.17. |
+| online private tutor | 390 | commercial | `/location/online/` | Online is the product. |
+| private tutor london / london private tutor | 590 / 390 | commercial | `/location/london/` | Named city that already has a page. |
+| private tutor manchester | 50 | commercial | `/location/manchester/` | Named city that already has a page. |
+| 121 private tutor / one to one | 110 | commercial | `/how-it-works/` | Lesson format, not a new product page. |
+| what is a private tutor / private tutor meaning | 30 / 20 | informational | `/about/` | Definition. Homepage may mention and must link here. |
+| homeschool / primary / KS1 / KS2 | 50–70 | transactional / informational | `/parents/` | Family use-case. Cost of those hours stays on the cost guide. |
+| private tutor safeguarding policy | 0 | informational | `/safeguarding/` | Exact policy intent. Volume is not the reason to own it. |
+
+### Cost questions — one owner
+
+Primary owner remains `/blog/how-much-does-tutoring-cost/`. Subject, location, and parent pages may quote a band only when it already appears on that page, and must link here.
+
+| Keyword | Vol/mo | Intent |
+|---------|--------|--------|
+| private tutor price | 260 | commercial |
+| how much does private tutor cost | 170 | commercial |
+| how much does a private tutor cost | 140 | informational |
+| how much is a private tutor | 90 | informational |
+| private tutor cost per hour | 50 | commercial |
+| cost of private tutor for homeschooling uk | 70 | commercial |
+| how much is a private tutor for gcse / for maths / for english | 0 | informational long tail |
+
+### Cities with no page
+
+Do not add a city URL for Sheffield (140), Cambridge (90), Glasgow, Liverpool, Edinburgh, Leeds, Bournemouth (70), or Birmingham, Bristol, Nottingham (50). Answer those “near me” searches on `/location/online/` as online lessons, and say KlaraLearn does not send a tutor to the house. Kent may mention Newington and neighbouring Essex because both are 11 Plus / GL searches already covered by `/location/kent/` and `/subjects/11-plus/`.
+
+### Supply side — `/become-a-tutor/` only
+
+| Keyword | Vol/mo | Intent | Notes |
+|---------|--------|--------|-------|
+| private tutor work | 720 | ambiguous | Teach on the platform. Not the homepage. |
+| private tutor jobs | 480 | informational, commercial | Online jobs, not a local vacancy board. |
+| how do I become a private tutor | 170 | commercial, navigational | Application steps. |
+| private tutor jobs london | 140 | navigational, commercial | Same jobs, no London commute. |
+| private tutor jobs near me | 110 | commercial | Online, not in-home work. |
+| become a private tutor / how to become a private tutor | 110 / 110 | commercial / informational | Same page. |
+| how to become a private tutor uk | 50 | informational | UK curriculum, tutor may live elsewhere. |
+| private tutor salary | 50 | navigational | No invented salary. The tutor sets the hourly rate. |
+| what qualifications do you need to become a private tutor | 0 | informational | Identity, curriculum assessment, interview. DBS is not claimed for overseas tutors. |
+| how to get clients as a private tutor | 0 | informational | Profile, not outbound prospecting. |
+
+### Excluded from this export
+
+| Category | Examples | Reason |
+|----------|----------|--------|
+| Fiction and entertainment | private tutor to the duke's daughter (590), related anime, manga, and film titles | Not a parent looking for a tutor. High volume, wrong intent. |
+| Overseas licence and visa queries | Dubai, Qatar, Singapore, Australia work permits and salaries | Not the UK family marketplace. |
+| Tutor insurance products | private tutor insurance | KlaraLearn does not sell insurance. |
+| Named-school and competitor navigational queries | already excluded in 2026-08-13 | Still not ownable. |

@@ -37,6 +37,14 @@ export function LocationLondon() {
     {
       q: "Are KlaraLearn lessons recorded for parents?",
       a: "Lessons run in KlaraLearn's secure online classroom, and session recordings are available so parents can review what was covered."
+    },
+    {
+      q: "How much does a private tutor in London cost?",
+      a: "A private tutor in London hired through a local agency is often listed from about £50 to more than £80 an hour. KlaraLearn does not set one London price. Compare the hourly rate on each online profile, including tutors who teach families in north London, south London and the grammar-school boroughs."
+    },
+    {
+      q: "Is a London private tutor agency the only option?",
+      a: "No. A private tutor agency in London introduces local tutors and adds its own fee. You can also compare independent online profiles and book a free 15-minute trial before you pay for a block of lessons."
     }
   ];
 
@@ -44,7 +52,7 @@ export function LocationLondon() {
     <Layout>
       <SEOHead 
         title="Private Tutors in London — 11 Plus, GCSE & SATs | KlaraLearn"
-        description="Looking for private tutors in London? Compare available online tutor profiles for grammar school admissions, GCSE and SATs, including current hourly rates."
+        description="Find a private tutor in London for 11 Plus, GCSE and SATs. Compare London private tutor profiles and current hourly rates, including north London grammar schools."
         path="/location/london"
         schema={faqPageSchema(faqs)}
       />
@@ -124,6 +132,15 @@ export function LocationLondon() {
 
       <section className="py-16 bg-white border-t">
         <div className="container mx-auto px-4 text-center">
+          <div className="max-w-3xl mx-auto text-left mb-10">
+            <h2 className="text-3xl font-bold text-secondary mb-4">Private tutor London: agency, or online profile?</h2>
+            <p className="text-lg text-slate-700 leading-relaxed mb-4">
+              “Private tutor London” and “London private tutor” are the same search. Families want 11 Plus, GCSE or SATs support without paying the highest local agency rate. North London grammar schools, including Queen Elizabeth’s School in Barnet and Henrietta Barnett, sit in a different exam pattern from Sutton and Kingston. Name the school area when you read a profile.
+            </p>
+            <p className="text-lg text-slate-700 leading-relaxed">
+              A private tutor cost in London is the number on the profile, not a city average. Use <Link href="/blog/how-much-does-tutoring-cost" className="text-primary font-semibold hover:underline">the UK tutoring cost guide</Link> for the wider range, then <Link href="/subjects/11-plus" className="text-primary font-semibold hover:underline">11 Plus tutors</Link> if the goal is a grammar school place. The first meeting is a free 15-minute trial.
+            </p>
+          </div>
           <h3 className="text-xl font-bold text-secondary mb-8">Explore More</h3>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/find-a-tutor" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Find a Tutor</Link>
