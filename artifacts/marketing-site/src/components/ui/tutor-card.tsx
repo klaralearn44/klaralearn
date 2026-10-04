@@ -4,6 +4,8 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { motion } from 'framer-motion';
 
+const PARENT_SIGNUP_URL = 'https://app.klaralearn.com/version-test?view=signup';
+
 export function TutorCard({ tutor, index = 0 }: { tutor: Tutor, index?: number }) {
   const updatedDate = tutor.updatedAt ? new Date(tutor.updatedAt) : null;
   const formattedUpdatedDate = updatedDate && !Number.isNaN(updatedDate.getTime())
@@ -70,7 +72,7 @@ export function TutorCard({ tutor, index = 0 }: { tutor: Tutor, index?: number }
 
       <Button asChild className="w-full bg-[#00A896] hover:bg-[#00A896]/90 text-white rounded-full">
         <a
-          href={tutor.profileUrl ?? 'https://app.klaralearn.com'}
+          href={PARENT_SIGNUP_URL}
           target="_blank"
           rel="noopener noreferrer"
         >

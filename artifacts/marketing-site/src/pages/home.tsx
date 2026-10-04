@@ -117,13 +117,17 @@ export function Home() {
                 Give your child high-quality tutoring at an affordable price
               </h1>
 
-              <p className="text-lg md:text-xl text-white/90 mb-10 leading-relaxed max-w-2xl font-light">
+              <p className="text-lg md:text-xl text-white/90 mb-6 leading-relaxed max-w-2xl font-light">
                 KlaraLearn connects UK families with carefully selected educators in the UK, Africa and other international locations who are experienced in teaching the UK curriculum. <span className="font-semibold text-white">Experience the safety, transparency, and progress visibility parents expect.</span>
+              </p>
+
+              <p className="text-lg md:text-xl text-white font-semibold mb-8 leading-relaxed max-w-2xl">
+                Start your journey today with a free 15-minute trial session.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg" className="bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white border-none text-lg h-14 px-8 rounded-full shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5">
-                   <a href="https://app.klaralearn.com/version-test?view=signup">Sign Up for Tutoring</a>
+                <Button asChild size="lg" className="bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white border-none text-lg h-auto min-h-14 whitespace-normal px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5">
+                   <a href="https://app.klaralearn.com/version-test?view=signup">Start your free 15-minute trial</a>
                 </Button>
                 <Button asChild size="lg" variant="outline" className="bg-white/10 hover:bg-white/20 text-white border-white/30 text-lg h-14 px-8 rounded-full backdrop-blur-sm transition-all">
                   <Link href="/find-a-tutor">Browse Live Tutors</Link>
