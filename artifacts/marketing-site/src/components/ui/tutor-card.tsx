@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { motion } from 'framer-motion';
+import { PARENT_SIGNUP_URL, TRIAL_BUTTON_LABEL } from '@/lib/trial-cta';
 
 export function TutorCard({ tutor, index = 0 }: { tutor: Tutor, index?: number }) {
   const updatedDate = tutor.updatedAt ? new Date(tutor.updatedAt) : null;
@@ -70,11 +71,11 @@ export function TutorCard({ tutor, index = 0 }: { tutor: Tutor, index?: number }
 
       <Button asChild className="w-full bg-[#00A896] hover:bg-[#00A896]/90 text-white rounded-full">
         <a
-          href={tutor.profileUrl ?? 'https://app.klaralearn.com'}
+          href={PARENT_SIGNUP_URL}
           target="_blank"
           rel="noopener noreferrer"
         >
-          View Profile
+          {TRIAL_BUTTON_LABEL}
         </a>
       </Button>
     </motion.div>

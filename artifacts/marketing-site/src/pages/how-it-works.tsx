@@ -1,17 +1,49 @@
 import { SEOHead } from '@/components/seo/SEOHead';
 import { Layout } from '@/components/layout/Layout';
 import { HowItWorksSteps } from '@/components/ui/how-it-works';
-import { Button } from '@/components/ui/button';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { TrialSignupButton } from '@/components/cta/TrialSignupButton';
+import { QuickAnswer } from '@/components/seo/QuickAnswer';
+import { faqPageSchema } from '@/lib/faq-schema';
 import { CheckCircle2, CreditCard, Search } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Link } from 'wouter';
 
 export function HowItWorksPage() {
+  const faqs = [
+    {
+      q: "How does KlaraLearn tutoring work?",
+      a: "Parents compare tutor profiles by subject, age, curriculum, learning goal, availability and budget. They then meet the tutor in a free 15-minute trial before booking paid lessons."
+    },
+    {
+      q: "What happens in the free 15-minute trial?",
+      a: "The introductory session lets your child meet the tutor and lets you ask about the subject, the learning goal and whether the teaching style feels right before you pay for lessons."
+    },
+    {
+      q: "Where do the lessons happen?",
+      a: "Paid lessons happen in KlaraLearn's secure online classroom. Session recordings are available to parents, along with notes on topics covered and tutor feedback."
+    },
+    {
+      q: "What can parents see after a lesson?",
+      a: "Parents can review completed lessons, topics covered, tutor feedback and how progress is changing over time."
+    },
+    {
+      q: "Do we have to commit to a package?",
+      a: "No. The trial comes first, and families can choose another available tutor if the first match is not right."
+    },
+    {
+      q: "How do I start?",
+      a: "Create a parent account and start your journey today with a free 15-minute trial session."
+    }
+  ];
+
   return (
     <Layout>
       <SEOHead 
         title="How KlaraLearn Works | Find Available Tutors"
         description="See how to compare available online tutor profiles, arrange an introductory session, learn securely and track your child’s progress."
         path="/how-it-works"
+        schema={faqPageSchema(faqs)}
       />
 
       <section className="bg-[#1B3D5C] pt-24 pb-20 relative text-center">
@@ -22,6 +54,12 @@ export function HowItWorksPage() {
           <p className="text-xl text-white/90 mb-8 leading-relaxed">
             We've built a platform that removes the stress from finding a great tutor, so you can focus on your child's progress.
           </p>
+          <div className="max-w-3xl mx-auto text-left">
+            <QuickAnswer tone="dark">
+              Families create an account, compare tutor profiles, and meet a tutor in a free 15-minute trial. Paid lessons then run online, with session recordings and progress notes available to parents.
+            </QuickAnswer>
+          </div>
+          <TrialSignupButton />
         </div>
       </section>
 
@@ -97,12 +135,30 @@ export function HowItWorksPage() {
         </div>
       </section>
 
-      <section className="py-20 bg-primary/10 text-center">
-        <div className="container mx-auto px-4 max-w-2xl">
-          <h2 className="text-3xl font-bold text-secondary mb-6">Ready to find the perfect tutor?</h2>
-          <Button asChild size="lg" className="bg-[#1B3D5C] hover:bg-[#1B3D5C]/90 text-white rounded-full px-10 h-14 text-lg">
-            <a href="https://app.klaralearn.com/version-test?view=signup">Sign Up Now</a>
-          </Button>
+      <section className="py-20 bg-white border-t">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Questions about getting started</h2>
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((faq, index) => (
+              <AccordionItem key={faq.q} value={`item-${index}`}>
+                <AccordionTrigger>{faq.q}</AccordionTrigger>
+                <AccordionContent>{faq.a}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white border-t">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-xl font-bold text-secondary mb-8">Read this before you book</h2>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/find-a-tutor" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Find a Tutor</Link>
+            <Link href="/safeguarding" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Safeguarding</Link>
+            <Link href="/subjects/11-plus" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">11 Plus Tutors</Link>
+            <Link href="/parents" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">For Parents</Link>
+            <Link href="/blog/how-much-does-tutoring-cost" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Tutoring Costs</Link>
+          </div>
         </div>
       </section>
     </Layout>

@@ -3,6 +3,8 @@ import { SEOHead } from '@/components/seo/SEOHead';
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { Link } from 'wouter';
+import { TrialSignupButton } from '@/components/cta/TrialSignupButton';
+import { QuickAnswer } from '@/components/seo/QuickAnswer';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { CheckCircle2, Calculator, CalendarDays, ClipboardList, ExternalLink, RefreshCw } from 'lucide-react';
 
@@ -325,9 +327,15 @@ export function ParentTools() {
           <h1 className="text-4xl md:text-5xl font-bold mb-4 font-serif !text-white">
             Free Parent Tools &amp; Resources
           </h1>
-          <p className="text-lg text-slate-300 max-w-2xl leading-relaxed">
+          <div className="max-w-3xl mb-8">
+            <QuickAnswer tone="dark">
+              Use these free checklists, planners and cost comparisons while you decide on tutoring. When you are ready, start with a free 15-minute trial session and compare live tutor profiles.
+            </QuickAnswer>
+          </div>
+          <p className="text-lg text-slate-300 max-w-2xl leading-relaxed mb-8">
             Practical, interactive tools designed to help you navigate exam preparation, compare tutoring costs, and make informed decisions for your child's education.
           </p>
+          <TrialSignupButton />
         </div>
       </section>
 

@@ -6,6 +6,7 @@ import { tutors } from '@/data/tutors';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { TrustStats } from '@/components/ui/trust-stats';
 import { Link } from 'wouter';
+import { TrialSignupButton } from '@/components/cta/TrialSignupButton';
 import { Beaker } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -122,9 +123,12 @@ export function SubjectScience() {
             </p>
           </div>
 
-          <Button asChild size="lg" className="bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white rounded-full px-8">
-            <Link href="/find-a-tutor">Find a Science Tutor</Link>
-          </Button>
+          <div className="flex flex-wrap gap-4">
+            <TrialSignupButton />
+            <Button asChild size="lg" variant="outline" className="rounded-full px-8">
+              <Link href="/find-a-tutor">Browse science tutors</Link>
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -224,6 +228,8 @@ export function SubjectScience() {
             <Link href="/subjects/gcse-maths" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">GCSE Maths</Link>
             <Link href="/subjects/english" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">GCSE English</Link>
             <Link href="/location/online" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Online Tutoring</Link>
+            <Link href="/blog/how-much-does-tutoring-cost" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">How Much Tutoring Costs</Link>
+            <Link href="/how-it-works" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">How It Works</Link>
           </div>
         </div>
       </section>

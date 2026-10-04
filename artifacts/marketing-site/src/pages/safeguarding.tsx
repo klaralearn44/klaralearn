@@ -1,18 +1,50 @@
 import { SEOHead } from '@/components/seo/SEOHead';
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { motion } from 'framer-motion';
 import { Shield, Video, CheckCircle2, UserCheck, FileCheck, Target } from 'lucide-react';
 import { Link } from 'wouter';
+import { TrialSignupButton } from '@/components/cta/TrialSignupButton';
+import { QuickAnswer } from '@/components/seo/QuickAnswer';
+import { faqPageSchema } from '@/lib/faq-schema';
 
 export function SafeguardingPage() {
+  const faqs = [
+    {
+      q: "Does KlaraLearn use DBS checks?",
+      a: "A DBS check is a UK process and cannot be run on tutors who live outside the UK. KlaraLearn therefore uses identity verification, an interview and curriculum assessment, platform lessons, session recording, and a 15-minute introductory session."
+    },
+    {
+      q: "How are tutor identities checked?",
+      a: "Before a tutor can list their services, KlaraLearn verifies their identity so families know the person on the profile is the person teaching."
+    },
+    {
+      q: "What happens in the tutor interview?",
+      a: "Prospective tutors are interviewed on professionalism and communication, and they complete an assessment of curriculum knowledge for the UK subjects they want to teach."
+    },
+    {
+      q: "Where do lessons take place?",
+      a: "Tutoring sessions take place inside KlaraLearn's secure online classroom. Lessons are not moved to unmonitored third-party video tools."
+    },
+    {
+      q: "Can parents watch or review a lesson?",
+      a: "Lessons conducted through KlaraLearn are recorded. Parents can review the recording, the topics covered, and the tutor's feedback."
+    },
+    {
+      q: "Can we meet a tutor before paying for lessons?",
+      a: "Yes. Families can arrange a free 15-minute introductory session to ask questions and decide whether the tutor is a suitable fit."
+    }
+  ];
+
   const schema = [
     {
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": "Safeguarding & Trust | KlaraLearn",
       "description": "Learn about KlaraLearn's international safeguarding processes, including identity verification, session recording, and parent visibility."
-    }
+    },
+    faqPageSchema(faqs)
   ];
 
   return (
@@ -32,6 +64,11 @@ export function SafeguardingPage() {
           <p className="text-xl text-white/90 mb-8 leading-relaxed max-w-2xl mx-auto font-light">
             We built KlaraLearn to give parents access to affordable, high-quality global teaching talent without compromising on safety or visibility.
           </p>
+          <div className="max-w-3xl mx-auto">
+            <QuickAnswer tone="dark">
+              Tutors outside the UK cannot be DBS checked. KlaraLearn uses identity verification, an interview, a curriculum assessment, recorded lessons, and a free 15-minute introductory session before paid bookings.
+            </QuickAnswer>
+          </div>
         </div>
         {/* Subtle noise texture */}
         <div className="absolute inset-0 opacity-10 mix-blend-overlay pointer-events-none" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.65\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")' }}></div>
@@ -118,6 +155,20 @@ export function SafeguardingPage() {
         </div>
       </section>
 
+      <section className="py-20 bg-white border-t">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Safeguarding questions parents ask</h2>
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((faq, index) => (
+              <AccordionItem key={faq.q} value={`item-${index}`}>
+                <AccordionTrigger>{faq.q}</AccordionTrigger>
+                <AccordionContent>{faq.a}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
       <section className="py-20 bg-slate-50 border-t">
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <h2 className="text-3xl font-bold text-secondary mb-6">Experience the difference</h2>
@@ -125,12 +176,16 @@ export function SafeguardingPage() {
             Find the right support for your child with the transparency you expect.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white rounded-full px-8 h-14 text-lg">
-              <Link href="/find-a-tutor">Find a Tutor</Link>
-            </Button>
+            <TrialSignupButton />
             <Button asChild size="lg" variant="outline" className="rounded-full px-8 h-14 text-lg bg-white border-primary text-primary hover:bg-primary/5">
               <Link href="/how-it-works">How It Works</Link>
             </Button>
+          </div>
+          <div className="flex flex-wrap justify-center gap-3 mt-8">
+            <Link href="/find-a-tutor" className="text-primary font-semibold hover:underline">Find a tutor</Link>
+            <Link href="/parents" className="text-primary font-semibold hover:underline">For parents</Link>
+            <Link href="/about" className="text-primary font-semibold hover:underline">About KlaraLearn</Link>
+            <Link href="/blog/how-much-does-tutoring-cost" className="text-primary font-semibold hover:underline">Tutoring costs</Link>
           </div>
         </div>
       </section>

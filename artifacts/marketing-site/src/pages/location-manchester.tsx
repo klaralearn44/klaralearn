@@ -5,6 +5,7 @@ import { TutorShowcase } from '@/components/ui/tutor-showcase';
 import { tutors } from '@/data/tutors';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Link } from 'wouter';
+import { TrialSignupButton } from '@/components/cta/TrialSignupButton';
 import { MapPin } from 'lucide-react';
 
 export function LocationManchester() {
@@ -111,15 +112,19 @@ export function LocationManchester() {
             Private Tutors in Manchester — 11 Plus, GCSE &amp; SATs
           </h1>
           
-          <div className="border-l-4 border-accent bg-black/20 p-6 rounded-r-xl mb-8 backdrop-blur-sm">
+          <div className="border-l-4 border-accent bg-black/20 p-6 rounded-r-xl mb-8 backdrop-blur-sm text-left">
+            <p className="text-sm font-bold uppercase tracking-wider text-accent mb-2">Quick Answer</p>
             <p className="text-white/90 leading-relaxed">
-              From Trafford grammar school entrance tests to GCSE options across Greater Manchester, finding the right support takes comparison. Review current tutor profiles and check each tutor’s subjects, experience, rate and availability.
+              From Trafford grammar school entrance tests to GCSE options across Greater Manchester, families compare current tutor profiles for subjects, experience and rate. New families can start with a free 15-minute trial session.
             </p>
           </div>
 
-          <Button asChild size="lg" className="bg-[#00A896] hover:bg-[#00A896]/90 text-white rounded-full px-8">
-            <Link href="/find-a-tutor">Find a Manchester Tutor</Link>
-          </Button>
+          <div className="flex flex-wrap gap-4">
+            <TrialSignupButton />
+            <Button asChild size="lg" variant="outline" className="rounded-full px-8 bg-white/10 text-white border-white/30 hover:bg-white/20">
+              <Link href="/find-a-tutor">Browse tutors</Link>
+            </Button>
+          </div>
         </div>
       </section>
 

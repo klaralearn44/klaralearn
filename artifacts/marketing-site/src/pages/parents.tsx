@@ -3,6 +3,8 @@ import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Link } from 'wouter';
+import { TrialSignupButton } from '@/components/cta/TrialSignupButton';
+import { QuickAnswer } from '@/components/seo/QuickAnswer';
 import { CheckCircle2, Search } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -85,13 +87,11 @@ export function ParentsPage() {
           <h1 className="text-4xl md:text-5xl font-bold text-secondary mb-6 leading-tight">
             For Parents: Everything You Need to Know About KlaraLearn
           </h1>
-          <p className="text-xl text-slate-600 mb-8 max-w-2xl">
-            Compare available online tutor profiles for your child's needs, then review the details and arrange tuition when you find a suitable fit.
-          </p>
+          <QuickAnswer>
+            KlaraLearn is for parents of UK school children who want 11 Plus, GCSE or SATs support. Compare available tutor profiles, then start with a free 15-minute trial before you book paid lessons.
+          </QuickAnswer>
           <div className="flex flex-wrap gap-4">
-            <Button asChild size="lg" className="bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white rounded-full px-8">
-              <a href="https://app.klaralearn.com/version-test?view=signup" target="_blank" rel="noopener noreferrer">Start with a Free Trial Lesson</a>
-            </Button>
+            <TrialSignupButton />
             <Button asChild size="lg" variant="outline" className="rounded-full px-8 border-secondary text-secondary hover:bg-secondary hover:text-white">
               <Link href="/find-a-tutor">Browse tutors first</Link>
             </Button>
@@ -127,9 +127,7 @@ export function ParentsPage() {
           </div>
 
           <div className="text-center mt-10">
-            <Button asChild className="bg-[#00A896] hover:bg-[#00A896]/90 text-white rounded-full px-8">
-              <a href="https://app.klaralearn.com/version-test?view=signup" target="_blank" rel="noopener noreferrer">Get Started — Free Trial</a>
-            </Button>
+            <TrialSignupButton className="bg-[#00A896] hover:bg-[#00A896]/90" />
           </div>
         </div>
       </section>
@@ -252,9 +250,7 @@ export function ParentsPage() {
         <div className="container mx-auto px-4 text-center max-w-2xl">
           <h2 className="text-3xl font-bold text-white mb-4">Ready to Find the Right Tutor?</h2>
           <p className="text-white/80 mb-8">Available tutor profiles with current rates. Review the details before booking.</p>
-          <Button asChild size="lg" className="bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white rounded-full px-10">
-            <Link href="/find-a-tutor">Find a Tutor Today</Link>
-          </Button>
+          <TrialSignupButton />
         </div>
       </section>
 

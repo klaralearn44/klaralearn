@@ -5,6 +5,10 @@ import { Button } from '@/components/ui/button';
 import { TutorCard } from '@/components/ui/tutor-card';
 import { useLiveTutors } from '@/hooks/use-live-tutors';
 import { Link } from 'wouter';
+import { TrialSignupButton } from '@/components/cta/TrialSignupButton';
+import { SITE_URL } from '@/site-config';
+import { PARENT_SIGNUP_URL, TRIAL_BUTTON_LABEL } from '@/lib/trial-cta';
+import { QuickAnswer } from '@/components/seo/QuickAnswer';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { ShieldCheck, BookOpen, RotateCcw, CreditCard, Search, X, CheckCircle2 } from 'lucide-react';
 
@@ -130,7 +134,7 @@ export function FindATutor() {
           "@type": "Person",
           "name": tutor.name,
           "description": tutor.bio,
-          "url": tutor.profileUrl || "https://app.klaralearn.com"
+          "url": `${SITE_URL}/find-a-tutor`
         }
       }))
     }
@@ -152,6 +156,14 @@ export function FindATutor() {
     {
       q: "How do I book lessons after the trial?",
       a: "If you're happy with the trial, you can seamlessly schedule regular weekly slots directly through the KlaraLearn platform, managing all payments and communication in one secure place."
+    },
+    {
+      q: "How do I start a free 15-minute trial?",
+      a: "Create a parent account and start your journey today with a free 15-minute trial session. You can compare profiles first, then meet a tutor before booking paid lessons."
+    },
+    {
+      q: "Are lessons recorded?",
+      a: "Lessons run in KlaraLearn's secure online classroom. Session recordings are available so parents can review what their child covered."
     }
   ];
 
@@ -189,9 +201,13 @@ export function FindATutor() {
           <h1 className="text-4xl md:text-5xl font-bold text-secondary mb-4">
             Find a Tutor: Available Private Tutors Online
           </h1>
-          <p className="text-lg text-slate-600 max-w-2xl">
+          <p className="text-lg text-slate-600 max-w-2xl mb-8">
             Looking for private tutors near you? Browse available online tutor profiles for 11 Plus, GCSEs and core subjects, then review their details to find a suitable fit for your child.
           </p>
+          <QuickAnswer>
+            KlaraLearn lists currently available online tutors for UK families. Compare subjects, experience and hourly rates on each profile, then start with a free 15-minute trial session before you book paid lessons.
+          </QuickAnswer>
+          <TrialSignupButton />
         </div>
       </section>
 
@@ -344,14 +360,14 @@ export function FindATutor() {
                 <p>
                   Live tutor availability is temporarily offline.{' '}
                   <a
-                    href="https://app.klaralearn.com/version-test?view=signup"
+                    href={PARENT_SIGNUP_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="font-semibold underline underline-offset-2"
                   >
-                    Open KlaraLearn
+                    {TRIAL_BUTTON_LABEL}
                   </a>{' '}
-                  to enquire about current availability.
+                  before booking paid lessons.
                 </p>
               </div>
             )}

@@ -1,15 +1,47 @@
 import { SEOHead } from '@/components/seo/SEOHead';
 import { Layout } from '@/components/layout/Layout';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { TrialSignupButton } from '@/components/cta/TrialSignupButton';
+import { QuickAnswer } from '@/components/seo/QuickAnswer';
+import { faqPageSchema } from '@/lib/faq-schema';
 import { Target, Heart, Globe } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { Link } from 'wouter';
 
 export function AboutPage() {
+  const faqs = [
+    {
+      q: "What is KlaraLearn?",
+      a: "KlaraLearn is a UK-focused online tutoring marketplace. Parents compare available tutor profiles for 11 Plus, GCSE, SATs and core subjects, then start with a free 15-minute trial session."
+    },
+    {
+      q: "Who is KlaraLearn for?",
+      a: "KlaraLearn is for parents of UK school children who want tutoring for grammar school entrance, GCSE or SATs without paying a typical local agency premium."
+    },
+    {
+      q: "How do families start?",
+      a: "Create a parent account, compare profiles by subject, experience and hourly rate, and book a free 15-minute trial before paid lessons."
+    },
+    {
+      q: "How much does tutoring cost?",
+      a: "Each tutor profile shows its current hourly rate. Local UK tutors often charge £35–£80 an hour. Compare the rate on the profile rather than assuming one platform price."
+    },
+    {
+      q: "How are lessons kept transparent?",
+      a: "Lessons run in KlaraLearn's secure online classroom. Session recordings, topics covered and tutor feedback are available for parents to review."
+    },
+    {
+      q: "What if a tutor is not the right fit?",
+      a: "The trial comes before a paid booking. Families can compare other available profiles and choose a different tutor."
+    }
+  ];
+
   return (
     <Layout>
       <SEOHead 
         title="About KlaraLearn | Affordable Private Tutoring Mission"
         description="Learn about KlaraLearn's mission to make private tutoring more affordable for UK families through an online tutor marketplace."
         path="/about"
+        schema={faqPageSchema(faqs)}
       />
 
       <section className="bg-slate-50 pt-24 pb-20 border-b">
@@ -17,9 +49,15 @@ export function AboutPage() {
           <h1 className="text-4xl md:text-5xl font-bold text-secondary mb-6 leading-tight">
             Making world-class tuition accessible to every UK family
           </h1>
-          <p className="text-xl text-slate-600 leading-relaxed">
-            KlaraLearn is a UK-focused online tutoring marketplace connecting parents with highly qualified, affordable educators from around the globe.
+          <div className="max-w-3xl mx-auto text-left mb-8">
+            <QuickAnswer>
+              KlaraLearn is an online tutoring marketplace for UK families. Parents compare tutor profiles for 11 Plus, GCSE and SATs, then start with a free 15-minute trial before booking paid lessons.
+            </QuickAnswer>
+          </div>
+          <p className="text-xl text-slate-600 leading-relaxed mb-8">
+            KlaraLearn is a UK-focused online tutoring marketplace connecting parents with educators who teach the UK curriculum from the UK, Africa and other locations.
           </p>
+          <TrialSignupButton />
         </div>
       </section>
 
@@ -74,6 +112,33 @@ export function AboutPage() {
             <p>
               By applying a modern marketplace model to online education, KlaraLearn helps UK families find available tutors and compare profile details before booking. We remain proudly independent and committed to making education more accessible.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-slate-50 border-t">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-3xl font-bold text-secondary mb-8 text-center">Questions about KlaraLearn</h2>
+          <Accordion type="single" collapsible className="w-full bg-white rounded-2xl border px-4 md:px-8">
+            {faqs.map((faq, index) => (
+              <AccordionItem key={faq.q} value={`item-${index}`}>
+                <AccordionTrigger>{faq.q}</AccordionTrigger>
+                <AccordionContent>{faq.a}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white border-t">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-xl font-bold text-secondary mb-8">Explore KlaraLearn</h2>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/how-it-works" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">How It Works</Link>
+            <Link href="/safeguarding" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Safeguarding</Link>
+            <Link href="/find-a-tutor" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Find a Tutor</Link>
+            <Link href="/parents" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">For Parents</Link>
+            <Link href="/blog" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Parent Guides</Link>
           </div>
         </div>
       </section>

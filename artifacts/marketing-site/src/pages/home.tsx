@@ -9,6 +9,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { BookOpen, Calculator, PenTool, Beaker, CheckCircle2, ArrowRight, Search, Target, CalendarCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { Link } from 'wouter';
+import { TrialSignupButton } from '@/components/cta/TrialSignupButton';
+import { QuickAnswer } from '@/components/seo/QuickAnswer';
 
 export function Home() {
   const heroImageSrc = `${import.meta.env.BASE_URL}images/klara-school-tutoring.jpg`;
@@ -37,6 +39,10 @@ export function Home() {
     {
       q: "What if a tutor is not the right fit?",
       a: "You can compare other available tutor profiles and choose a tutor who better suits your child's needs, schedule and budget."
+    },
+    {
+      q: "How do I start tutoring on KlaraLearn?",
+      a: "Create a parent account and start with a free 15-minute trial session. Compare available tutor profiles by subject, experience and hourly rate before you book paid lessons."
     }
   ];
 
@@ -117,14 +123,20 @@ export function Home() {
                 Give your child high-quality tutoring at an affordable price
               </h1>
 
-              <p className="text-lg md:text-xl text-white/90 mb-10 leading-relaxed max-w-2xl font-light">
+              <QuickAnswer tone="dark">
+                KlaraLearn is an online tutoring marketplace for UK families. Parents compare available tutor profiles for 11 Plus, GCSE and SATs, then start with a free 15-minute trial before booking paid lessons.
+              </QuickAnswer>
+
+              <p className="text-lg md:text-xl text-white/90 mb-6 leading-relaxed max-w-2xl font-light">
                 KlaraLearn connects UK families with carefully selected educators in the UK, Africa and other international locations who are experienced in teaching the UK curriculum. <span className="font-semibold text-white">Experience the safety, transparency, and progress visibility parents expect.</span>
+              </p>
+
+              <p className="text-lg md:text-xl text-white font-semibold mb-8 leading-relaxed max-w-2xl">
+                Start your journey today with a free 15-minute trial session.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button asChild size="lg" className="bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white border-none text-lg h-14 px-8 rounded-full shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5">
-                   <a href="https://app.klaralearn.com/version-test?view=signup">Sign Up for Tutoring</a>
-                </Button>
+                <TrialSignupButton className="text-lg min-h-14 px-8 py-3 shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5" />
                 <Button asChild size="lg" variant="outline" className="bg-white/10 hover:bg-white/20 text-white border-white/30 text-lg h-14 px-8 rounded-full backdrop-blur-sm transition-all">
                   <Link href="/find-a-tutor">Browse Live Tutors</Link>
                 </Button>
@@ -136,6 +148,43 @@ export function Home() {
                 <span className="flex items-center gap-1.5"><CheckCircle2 className="w-5 h-5 text-[#4DE1C1]" /> No Commitments</span>
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white border-b">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <QuickAnswer>
+            KlaraLearn is an online tutoring marketplace for UK families. Parents compare tutor profiles for 11 Plus, GCSE, SATs and core subjects, then start with a free 15-minute trial before paid lessons. Lessons run online, and session recordings are available to parents.
+          </QuickAnswer>
+          <div className="overflow-x-auto rounded-2xl border">
+            <table className="w-full text-left text-sm">
+              <caption className="sr-only">How KlaraLearn compares with a typical local UK tutor</caption>
+              <thead className="bg-slate-50 text-secondary">
+                <tr>
+                  <th className="p-4 font-semibold">What parents compare</th>
+                  <th className="p-4 font-semibold">Typical local UK tutor</th>
+                  <th className="p-4 font-semibold">KlaraLearn</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y">
+                <tr>
+                  <th className="p-4 font-medium text-secondary">Hourly rate</th>
+                  <td className="p-4 text-slate-600">Often £35–£80</td>
+                  <td className="p-4 text-slate-600">The current rate shown on each profile</td>
+                </tr>
+                <tr>
+                  <th className="p-4 font-medium text-secondary">First meeting</th>
+                  <td className="p-4 text-slate-600">Usually a paid lesson</td>
+                  <td className="p-4 text-slate-600">Free 15-minute trial session</td>
+                </tr>
+                <tr>
+                  <th className="p-4 font-medium text-secondary">Lesson format</th>
+                  <td className="p-4 text-slate-600">In person or online</td>
+                  <td className="p-4 text-slate-600">Online classroom, with recordings available to parents</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
@@ -332,6 +381,34 @@ export function Home() {
 
       <HowItWorksSteps />
 
+      <section className="py-20 bg-white border-t">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-4">Answers parents search for</h2>
+            <p className="text-lg text-slate-600">Use these guides to decide what your child needs, then start with a free 15-minute trial.</p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-3 max-w-5xl mx-auto">
+            {[
+              ['What is the 11 Plus?', '/blog/what-is-the-11-plus'],
+              ['How to prepare for the 11 Plus', '/blog/how-to-prepare-for-11-plus'],
+              ['How much tutoring costs', '/blog/how-much-does-tutoring-cost'],
+              ['How KlaraLearn works', '/how-it-works'],
+              ['Safeguarding and recorded lessons', '/safeguarding'],
+              ['11 Plus tutors', '/subjects/11-plus'],
+              ['GCSE maths tutors', '/subjects/gcse-maths'],
+              ['Tutors in London', '/location/london'],
+              ['Tutors in Kent', '/location/kent'],
+              ['Online tutors', '/location/online'],
+              ['Parent tools', '/parents/tools'],
+            ].map(([label, href]) => (
+              <Link key={href} href={href} className="px-5 py-3 bg-slate-50 border rounded-full font-medium text-secondary hover:border-primary hover:text-primary transition-colors">
+                {label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-24 bg-slate-50 border-t">
         <div className="container mx-auto px-4 max-w-4xl">
@@ -353,17 +430,6 @@ export function Home() {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="py-24 bg-[#00A896] text-center px-4 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\'20\' height=\'20\' viewBox=\'0 0 20 20\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Ccircle cx=\'2\' cy=\'2\' r=\'2\' fill=\'%23ffffff\' fill-opacity=\'0.1\'/%3E%3C/svg%3E')] opacity-30"></div>
-        <div className="relative z-10 max-w-3xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Give them the confidence to succeed</h2>
-          <p className="text-xl text-white/90 mb-10">Start your journey today with a free 15-minute trial session.</p>
-          <Button asChild size="lg" className="bg-[#1B3D5C] hover:bg-[#1B3D5C]/90 text-white text-lg h-14 px-10 rounded-full shadow-xl">
-            <a href="https://app.klaralearn.com/version-test?view=signup">Sign Up for Tutoring <ArrowRight className="ml-2 w-5 h-5" /></a>
-          </Button>
-        </div>
-      </section>
     </Layout>
   );
 }

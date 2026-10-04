@@ -6,6 +6,8 @@ import { tutors } from '@/data/tutors';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { TrustStats } from '@/components/ui/trust-stats';
 import { Link } from 'wouter';
+import { TrialSignupButton } from '@/components/cta/TrialSignupButton';
+import { QuickAnswer } from '@/components/seo/QuickAnswer';
 import { MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -98,9 +100,16 @@ export function LocationKent() {
             Kent has 36 grammar schools — more than any county in England. The Kent Test is intensely competitive. Compare expert preparation from tutors who know the GL Assessment format inside out, with current rates shown on each profile.
           </p>
 
-          <Button asChild size="lg" className="bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white rounded-full px-8">
-            <Link href="/find-a-tutor">Find a Kent Tutor</Link>
-          </Button>
+          <QuickAnswer tone="dark">
+            Kent has 36 grammar schools and uses the Kent Test. KlaraLearn lets families compare online 11 Plus tutor profiles and current rates, then start with a free 15-minute trial before booking paid lessons.
+          </QuickAnswer>
+
+          <div className="flex flex-wrap gap-4">
+            <TrialSignupButton />
+            <Button asChild size="lg" variant="outline" className="rounded-full px-8 bg-white/10 text-white border-white/30 hover:bg-white/20">
+              <Link href="/find-a-tutor">Browse tutors</Link>
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -298,9 +307,7 @@ export function LocationKent() {
             </div>
           </div>
           <div className="text-center mt-8">
-            <Button asChild size="lg" className="bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white rounded-full px-8">
-              <a href="https://app.klaralearn.com/version-test?view=signup" target="_blank" rel="noopener noreferrer">Book a Free Trial Lesson</a>
-            </Button>
+            <TrialSignupButton />
           </div>
         </div>
       </section>
