@@ -33,6 +33,18 @@ export function ParentsPage() {
     {
       q: "How quickly can we start?",
       a: "Start by browsing currently available tutor profiles. Availability varies, so check each profile and discuss suitable times directly before booking."
+    },
+    {
+      q: "Can we use a private tutor for homeschooling?",
+      a: "Yes. Homeschool families use a private tutor for a subject the parent does not want to teach alone, often maths, English or science. The cost is still the tutor’s hourly rate times the number of lessons. It is not a full-time school replacement unless you book enough hours for that, and you should agree the hours in the trial."
+    },
+    {
+      q: "Do you have a private tutor for primary school?",
+      a: "Look for KS1 or KS2 on the profile, or for Year 1 through Year 6. A primary private tutor is not the same booking as a GCSE or A-Level tutor. SATs and the 11 Plus are the usual primary goals."
+    },
+    {
+      q: "Is a private tutor better than Kumon or a tuition centre?",
+      a: "Kumon and a tuition centre teach a set method to a group. A private tutor teaches one child and can change the lesson when that child is stuck. The private tutor costs more per hour than a group class. Compare the hourly rate on the profile with what the centre charges per session before you decide."
     }
   ];
 
@@ -76,7 +88,7 @@ export function ParentsPage() {
     <Layout>
       <SEOHead
         title="For Parents: How KlaraLearn Works | KlaraLearn"
-        description="KlaraLearn helps UK parents compare available online tutor profiles for 11 Plus, GCSE and SATs support. Learn what to review before booking."
+        description="Advice for UK parents comparing a private tutor for primary, 11 Plus, GCSE, SATs or homeschool support. See what to check before a free 15-minute trial."
         path="/parents"
         schema={faqSchema}
       />
@@ -251,6 +263,18 @@ export function ParentsPage() {
           <h2 className="text-3xl font-bold text-white mb-4">Ready to Find the Right Tutor?</h2>
           <p className="text-white/80 mb-8">Available tutor profiles with current rates. Review the details before booking.</p>
           <TrialSignupButton />
+        </div>
+      </section>
+
+      <section className="py-16 bg-slate-50 border-t">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-3xl font-bold text-secondary mb-4">A private tutor for primary school or homeschool</h2>
+          <p className="text-lg text-slate-700 leading-relaxed mb-4">
+            A private tutor for primary school usually means KS1 or KS2: reading, early maths, Year 6 SATs, or the start of 11 Plus work. A GCSE tutor is the wrong brief for a six-year-old. Check the year group on the profile. Parents also search for a private tutor for a child with dyslexia or another learning difference. KlaraLearn does not badge tutors as SEN specialists. Use the trial to ask how the tutor adapts a lesson, and keep looking if the answer is vague.
+          </p>
+          <p className="text-lg text-slate-700 leading-relaxed">
+            Homeschool with a private tutor when you want a second adult on one subject. The price is the hourly rate, so a cost of a private tutor for homeschooling in the UK depends on how many hours you book. See <Link href="/blog/how-much-does-tutoring-cost" className="text-primary font-semibold hover:underline">private tutor prices</Link> and <Link href="/how-it-works" className="text-primary font-semibold hover:underline">how a one-to-one lesson runs</Link>.
+          </p>
         </div>
       </section>
 

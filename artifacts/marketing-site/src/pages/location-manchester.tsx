@@ -27,6 +27,10 @@ export function LocationManchester() {
     {
       q: "Do I have to use a local tutor?",
       a: "No. The curriculum and exam formats (such as AQA, Edexcel, and GL/CEM) are standardised. We invite parents to review profile information for online tutors nationwide, expanding the pool of available expertise beyond just those who live nearby."
+    },
+    {
+      q: "Can I find a private tutor in Manchester online?",
+      a: "Yes. A private tutor for Manchester families can teach online for Trafford grammar entrance, GCSE and SATs. You still compare the subjects, the exam format and the hourly rate on the profile. The tutor does not have to commute across Greater Manchester."
     }
   ];
 
@@ -87,7 +91,7 @@ export function LocationManchester() {
     <Layout>
       <SEOHead 
         title="Private Tutors in Manchester | Grammar School & GCSE | KlaraLearn"
-        description="Looking for private tutors in Manchester? Compare online profiles for Trafford grammar school entrance, GCSE and SATs support."
+        description="Find a private tutor in Manchester for Trafford grammar schools, GCSE and SATs. Compare online profiles and current hourly rates."
         path="/location/manchester"
         schema={[schema, faqSchema, breadcrumbSchema]}
       />
@@ -166,6 +170,12 @@ export function LocationManchester() {
 
       <section className="py-16 bg-white border-t">
         <div className="container mx-auto px-4 text-center">
+          <div className="max-w-3xl mx-auto text-left mb-10">
+            <h2 className="text-3xl font-bold text-secondary mb-4">Private tutor Manchester</h2>
+            <p className="text-lg text-slate-700 leading-relaxed">
+              Families searching for a private tutor in Manchester are often preparing for Trafford’s grammar schools or for GCSE. Altrincham, Sale, Stretford and Urmston do not all use the same entrance paper. Read the exam named on the profile, compare the hourly rate, and use a free 15-minute trial before you book weekly lessons. If the child is sitting the 11 Plus, start with the <Link href="/subjects/11-plus" className="text-primary font-semibold hover:underline">11 Plus tutor</Link> page as well as the Manchester profiles.
+            </p>
+          </div>
           <h3 className="text-xl font-bold text-secondary mb-8">Explore More</h3>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/find-a-tutor" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Find a Tutor</Link>

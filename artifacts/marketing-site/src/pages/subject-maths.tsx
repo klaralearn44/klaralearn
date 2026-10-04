@@ -37,6 +37,14 @@ export function SubjectMaths() {
     {
       q: "How do I choose the right maths tutor?",
       a: "Review available tutor profiles for experience with your child's specific exam format (KS2 SATs, 11 Plus GL/CEM or GCSE), listed qualifications and hourly rate. Ask questions before booking to decide whether a tutor's approach suits your child."
+    },
+    {
+      q: "Do you have a private tutor in maths for primary and A-Level?",
+      a: "Maths profiles can cover KS2, 11 Plus, GCSE and A-Level. Read the stage on the profile. An A-Level maths private tutor is not automatically the right person for a Year 4 child, and a primary maths tutor is not automatically the right person for A-Level."
+    },
+    {
+      q: "Can my child use a maths private tutor online?",
+      a: "Yes. A maths private tutor online can write equations on a shared board during the lesson. Compare the hourly rate on the profile with local maths tutors, who are often listed from about £25 an hour at KS2 and £35–£60 an hour at GCSE."
     }
   ];
 
@@ -68,7 +76,7 @@ export function SubjectMaths() {
     <Layout>
       <SEOHead
         title="Private Maths Tutors UK — KS2, GCSE & 11 Plus | KlaraLearn"
-        description="Find affordable private maths tutors for KS2, 11 plus, and GCSE. Compare experienced online tutor profiles and current rates. Free trial lesson."
+        description="Find a private tutor in maths for KS2, 11 Plus, GCSE and A-Level. Compare mathematics private tutor profiles, experience and current hourly rates."
         path="/subjects/maths"
         schema={[schema, faqSchema]}
       />
@@ -286,6 +294,21 @@ export function SubjectMaths() {
               </AccordionItem>
             ))}
           </Accordion>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white border-t">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-3xl font-bold text-secondary mb-4">Private tutor in maths: which stage to book</h2>
+          <p className="text-lg text-slate-700 leading-relaxed mb-4">
+            “Private tutor math”, “private tutor in maths” and “mathematics private tutor” are the same search. Parents want a person who can teach the maths their child is doing now. On KlaraLearn that means matching the profile to the stage, not to a single job title.
+          </p>
+          <p className="text-lg text-slate-700 leading-relaxed mb-4">
+            A private tutor for kids’ maths at KS2 usually works on number, fractions and the reasoning that shows up in SATs. An 11 Plus maths tutor adds speed and unfamiliar problem types. A GCSE maths tutor has to know Foundation or Higher. An A-Level maths private tutor is a different brief again: pure maths, statistics or mechanics, taught to a student who already has a GCSE grade.
+          </p>
+          <p className="text-lg text-slate-700 leading-relaxed">
+            If the exam is GCSE, use the <Link href="/subjects/gcse-maths" className="text-primary font-semibold hover:underline">GCSE maths tutor</Link> page. If you are comparing hourly rates first, read <Link href="/blog/how-much-does-tutoring-cost" className="text-primary font-semibold hover:underline">how much a private tutor costs</Link>. Lessons are one to one online, and new families can start with a free 15-minute trial.
+          </p>
         </div>
       </section>
 

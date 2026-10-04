@@ -34,6 +34,10 @@ export function SafeguardingPage() {
     {
       q: "Can we meet a tutor before paying for lessons?",
       a: "Yes. Families can arrange a free 15-minute introductory session to ask questions and decide whether the tutor is a suitable fit."
+    },
+    {
+      q: "Where is KlaraLearn's private tutor safeguarding policy?",
+      a: "This page is the public explanation. Tutors outside the UK are not DBS checked, because DBS is a UK process. KlaraLearn checks identity, interviews the tutor, assesses curriculum knowledge, keeps lessons in its own classroom, records those lessons for parents, and offers a free 15-minute trial before paid bookings."
     }
   ];
 
@@ -51,7 +55,7 @@ export function SafeguardingPage() {
     <Layout>
       <SEOHead 
         title="Safeguarding & Trust | KlaraLearn"
-        description="Discover how KlaraLearn ensures safety and transparency with international tutors through ID verification, interviews, and session recording."
+        description="KlaraLearn's private tutor safeguarding approach: identity checks, interviews, curriculum assessment, recorded online lessons, and a free 15-minute trial."
         path="/safeguarding"
         schema={schema}
       />
@@ -171,6 +175,15 @@ export function SafeguardingPage() {
 
       <section className="py-20 bg-slate-50 border-t">
         <div className="container mx-auto px-4 max-w-4xl text-center">
+          <div className="max-w-3xl mx-auto text-left mb-12">
+            <h2 className="text-3xl font-bold text-secondary mb-4">Private tutor safeguarding policy</h2>
+            <p className="text-lg text-slate-700 leading-relaxed mb-4">
+              A parent handing a child to a tutor they have not met wants a written process, not a badge. KlaraLearn’s process is built for tutors who may live outside the UK, so a DBS certificate is not the test. DBS does not cover a tutor in Lagos or Nairobi.
+            </p>
+            <p className="text-lg text-slate-700 leading-relaxed">
+              Before a profile is shown, the tutor’s identity is checked, they are interviewed, and their curriculum knowledge is assessed for the UK subjects they want to teach. Lessons stay in KlaraLearn’s classroom and are recorded so a parent can watch what happened. The free 15-minute trial is part of that policy: you can leave before a paid lesson. Read <Link href="/how-it-works" className="text-primary font-semibold hover:underline">how a lesson runs</Link> and then <Link href="/find-a-tutor" className="text-primary font-semibold hover:underline">compare tutor profiles</Link>.
+            </p>
+          </div>
           <h2 className="text-3xl font-bold text-secondary mb-6">Experience the difference</h2>
           <p className="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
             Find the right support for your child with the transparency you expect.

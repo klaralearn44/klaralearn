@@ -4,6 +4,34 @@ import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
 import { Globe, BookOpen, Clock, Banknote, ShieldCheck, Laptop } from 'lucide-react';
 import { Link } from 'wouter';
+import { faqPageSchema } from '@/lib/faq-schema';
+
+const tutorFaqs = [
+  {
+    q: "How do I become a private tutor?",
+    a: "Apply on KlaraLearn, confirm your identity, sit a curriculum assessment, and complete an interview. If you are accepted, you set your own hourly rate and list the UK curriculum subjects you can teach. Families then find that profile."
+  },
+  {
+    q: "How do I become a private tutor in the UK?",
+    a: "You do not need to live in the UK. The families are in the UK and the lessons are online. Tutors apply from the UK, Nigeria, Ghana, Kenya, and elsewhere. The curriculum you teach is the UK one: 11 Plus, SATs, GCSE, and A-Level."
+  },
+  {
+    q: "What qualifications do you need to become a private tutor?",
+    a: "KlaraLearn requires identity verification, a curriculum assessment, and an interview. Write any degree or teaching qualification on your profile when you have one. A UK DBS check is not requested from tutors who live outside the UK, because DBS does not cover them."
+  },
+  {
+    q: "Where can I find private tutor jobs?",
+    a: "Private tutor jobs on KlaraLearn are online lessons, including searches for jobs near you or jobs in London. There is no commute and no placement in a family’s home. Maths private tutor jobs use the same application: you name the subjects you can teach."
+  },
+  {
+    q: "How much does a private tutor earn in the UK?",
+    a: "KlaraLearn does not publish a private tutor salary and does not guarantee hours. You set the hourly rate. What you earn is that rate times the lessons families book."
+  },
+  {
+    q: "How do I get clients as a private tutor?",
+    a: "You do not find clients yourself. After you are accepted, UK families compare profiles by subject, school stage, and the hourly rate you set. A complete profile is how families choose you."
+  }
+];
 
 export function BecomeATutorPage() {
   const schema = [
@@ -11,15 +39,16 @@ export function BecomeATutorPage() {
       "@context": "https://schema.org",
       "@type": "WebPage",
       "name": "Become a Tutor | Online Tutoring Jobs | KlaraLearn",
-      "description": "Teach the UK curriculum online from Nigeria, Ghana, Kenya, the UK, and globally. Join KlaraLearn to find online tutoring jobs and manage your students securely."
-    }
+      "description": "Teach the UK curriculum online from Nigeria, Ghana, Kenya, the UK, and globally. See how to become a private tutor and how online private tutor jobs work."
+    },
+    faqPageSchema(tutorFaqs)
   ];
 
   return (
     <Layout>
       <SEOHead 
         title="Become a Tutor | Online Tutoring Jobs | KlaraLearn"
-        description="Teach the UK curriculum online from anywhere in the world. We welcome educators from Nigeria, Ghana, Kenya, and the UK to join our tutoring platform."
+        description="Teach the UK curriculum online from anywhere in the world. See how to become a private tutor for UK families, including online private tutor jobs from Nigeria, Ghana, Kenya, or the UK."
         path="/become-a-tutor"
         schema={schema}
       />
@@ -143,6 +172,40 @@ export function BecomeATutorPage() {
                 </div>
               </li>
             </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-white border-t">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-3xl font-bold text-secondary mb-4">How to become a private tutor</h2>
+          <p className="text-lg text-slate-600 leading-relaxed mb-6">
+            “How do I become a private tutor?” on KlaraLearn is an application, not a vacancy at a school. You apply, confirm who you are, show that you can teach the UK curriculum, and complete an interview. Become a private tutor online if you want the students to be in the UK while you teach from home.
+          </p>
+          <h3 className="text-2xl font-bold text-secondary mb-3">Private tutor jobs, including jobs near you</h3>
+          <p className="text-slate-700 leading-relaxed mb-6">
+            Private tutor jobs here are online lessons. A search for private tutor jobs near me, private tutor jobs in London, or maths private tutor jobs does not mean a commute across London or a visit to a family home. You teach UK families from Nigeria, Ghana, Kenya, the UK, or anywhere else with a quiet room and a stable connection. Private tutor work on this platform is the teaching itself: you keep your own hours, and families book the subjects you list.
+          </p>
+          <h3 className="text-2xl font-bold text-secondary mb-3">What qualifications do you need to become a private tutor?</h3>
+          <p className="text-slate-700 leading-relaxed mb-6">
+            What you need to become a private tutor here is identity verification, a curriculum assessment, and a professional interview. Add a degree or teaching qualification to your profile when you have one. Families only see qualifications you choose to write down. A UK DBS check is not part of this application for tutors who live outside the UK, because DBS does not cover them. The checks we do run are described on the <Link href="/safeguarding" className="text-primary font-semibold hover:underline">safeguarding</Link> page.
+          </p>
+          <h3 className="text-2xl font-bold text-secondary mb-3">How to get clients as a private tutor</h3>
+          <p className="text-slate-700 leading-relaxed mb-6">
+            How to get clients as a private tutor, after you are accepted, is the profile. You do not advertise in a local paper or message parents directly. Families compare subject, school stage, experience, and the hourly rate you set, then book. Look at <Link href="/find-a-tutor" className="text-primary font-semibold hover:underline">what parents see when they find a tutor</Link> and <Link href="/how-it-works" className="text-primary font-semibold hover:underline">how a lesson is booked</Link> so the profile answers the questions they ask.
+          </p>
+          <h3 className="text-2xl font-bold text-secondary mb-3">Private tutor salary</h3>
+          <p className="text-slate-700 leading-relaxed mb-10">
+            There is no KlaraLearn salary. A private tutor salary in the UK, if you teach here, is the hourly rate you choose multiplied by the lessons families actually book. We do not publish an earnings figure, a monthly wage, or a guarantee of hours. Set a rate that families can compare with other profiles.
+          </p>
+          <h2 className="text-3xl font-bold text-secondary mb-6">Questions tutors ask</h2>
+          <div className="space-y-8">
+            {tutorFaqs.map((faq) => (
+              <div key={faq.q} className="border-b border-slate-100 pb-6">
+                <h3 className="font-bold text-lg text-secondary mb-2">{faq.q}</h3>
+                <p className="text-slate-700 leading-relaxed">{faq.a}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

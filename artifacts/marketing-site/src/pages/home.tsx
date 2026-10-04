@@ -43,6 +43,14 @@ export function Home() {
     {
       q: "How do I start tutoring on KlaraLearn?",
       a: "Create a parent account and start with a free 15-minute trial session. Compare available tutor profiles by subject, experience and hourly rate before you book paid lessons."
+    },
+    {
+      q: "What is a private tutor?",
+      a: "A private tutor teaches one child, or a very small group, outside the school classroom. On KlaraLearn that lesson is online. Parents compare a tutor's subjects, experience and hourly rate, then start with a free 15-minute trial."
+    },
+    {
+      q: "Can I find an affordable private tutor in the UK?",
+      a: "Yes. Search the available profiles and compare each hourly rate with local agency prices, which are often £35–£80 an hour. An affordable private tutor is the one whose rate, subject and teaching style fit your child, not a single platform price."
     }
   ];
 
@@ -89,7 +97,7 @@ export function Home() {
     <Layout>
       <SEOHead 
         title="Affordable Private Tutors | 11 Plus, GCSE & SATs | KlaraLearn"
-        description="Find available private tutors online for Maths, English, Science, GCSE and A-Level support. Compare live profiles, experience and current hourly rates."
+        description="Find a private tutor for Maths, English, Science, GCSE and A-Level. Compare available profiles and current hourly rates when you want an affordable private tutor in the UK."
         path="/"
         schema={homepageSchema}
       />
@@ -406,6 +414,25 @@ export function Home() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-slate-50 border-t">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-6">What is a private tutor?</h2>
+          <p className="text-lg text-slate-700 leading-relaxed mb-4">
+            A private tutor is a teacher a family books directly, usually for one child at a time. Parents use a private tutor for the 11 Plus, GCSE, SATs, A-Level or to fill a gap the school timetable does not cover. The lesson is not a replacement for school. It is extra teaching aimed at one learning goal.
+          </p>
+          <p className="text-lg text-slate-700 leading-relaxed mb-8">
+            KlaraLearn is a private tutor marketplace for UK families. You compare profiles from educators who teach the UK curriculum, including tutors in the UK and tutors teaching online from further away. Each profile shows the subjects, experience and the current hourly rate. <Link href="/about" className="text-primary font-semibold hover:underline">Read how KlaraLearn works for families</Link>, or <Link href="/find-a-tutor" className="text-primary font-semibold hover:underline">find a private tutor</Link> and start with a free 15-minute trial.
+          </p>
+          <h2 className="text-3xl font-bold text-secondary mb-4">An affordable private tutor, without a local-agency premium</h2>
+          <p className="text-lg text-slate-700 leading-relaxed mb-4">
+            Families searching for an affordable private tutor are usually comparing a local agency rate with what they can actually book. Local UK tutors are often listed between £35 and £80 an hour, and London agency rates can sit higher. KlaraLearn does not publish one platform price. The affordable option is the profile whose rate matches the subject and the stage your child is in.
+          </p>
+          <p className="text-lg text-slate-700 leading-relaxed">
+            If you want a <Link href="/subjects/maths" className="text-primary font-semibold hover:underline">private tutor in maths</Link>, an <Link href="/subjects/english" className="text-primary font-semibold hover:underline">English private tutor</Link>, or a <Link href="/subjects/gcse-maths" className="text-primary font-semibold hover:underline">GCSE private tutor</Link>, open that subject first. For a price comparison, read <Link href="/blog/how-much-does-tutoring-cost" className="text-primary font-semibold hover:underline">how much a private tutor costs</Link>.
+          </p>
         </div>
       </section>
 

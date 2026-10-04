@@ -37,6 +37,14 @@ export function LocationOnline() {
     {
       q: "Which subjects can online tutors cover?",
       a: "Profiles list 11 Plus, GCSE, SATs, maths, English and science where those subjects are offered. Compare the subjects and rates on each current profile."
+    },
+    {
+      q: "I searched private tutor near me. Can the tutor be online?",
+      a: "Yes. “Private tutor near me” usually means a tutor who can start soon and teach your child, not a tutor who must live on your street. An online private tutor in the UK can teach families in London, Manchester, Kent, Sheffield, Birmingham, Leeds, Bristol and other towns from the same secure classroom."
+    },
+    {
+      q: "Is there an online private tutor for maths?",
+      a: "Yes, when the profile lists maths. Open the maths, English or science pages to see the stage they teach, then book a free 15-minute trial. A maths private tutor online uses a shared board so your child can see the working."
     }
   ];
 
@@ -44,7 +52,7 @@ export function LocationOnline() {
     <Layout>
       <SEOHead 
         title="Online Tutors UK — 11 Plus, GCSE & SATs | KlaraLearn"
-        description="Find expert online tutors in the UK. Flexible online tutoring for 11 Plus, GCSE and SATs. Compare global educator profiles and current hourly rates."
+        description="Find an online private tutor in the UK for 11 Plus, GCSE and SATs. Compare profiles and current hourly rates if you searched for a private tutor near you."
         path="/location/online"
         schema={faqPageSchema(faqs)}
       />
@@ -147,6 +155,15 @@ export function LocationOnline() {
 
       <section className="py-16 bg-slate-50 border-t">
         <div className="container mx-auto px-4 text-center">
+          <div className="max-w-3xl mx-auto text-left mb-10">
+            <h2 className="text-3xl font-bold text-secondary mb-4">Online private tutor, including if you searched “near me”</h2>
+            <p className="text-lg text-slate-700 leading-relaxed mb-4">
+              An online private tutor teaches on a video lesson with a shared board. KlaraLearn families use that model for the 11 Plus, GCSE, SATs and A-Level. The tutor can live in the UK or teach the UK curriculum from another country. The profile has to show the subject and the current hourly rate either way.
+            </p>
+            <p className="text-lg text-slate-700 leading-relaxed">
+              There is a dedicated page for a <Link href="/location/london" className="text-primary font-semibold hover:underline">private tutor in London</Link>, <Link href="/location/manchester" className="text-primary font-semibold hover:underline">Manchester</Link> and <Link href="/location/kent" className="text-primary font-semibold hover:underline">Kent</Link>. Families in Sheffield, Cambridge, Birmingham, Leeds, Liverpool, Bristol, Nottingham, Glasgow or Edinburgh can use the same online tutors. KlaraLearn does not send a tutor to the house in those cities. The lesson is online, and the first meeting is a free 15-minute trial.
+            </p>
+          </div>
           <h3 className="text-xl font-bold text-secondary mb-8">Keep Exploring</h3>
           <div className="flex flex-wrap justify-center gap-4">
             <Link href="/find-a-tutor" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Find an Online Tutor</Link>

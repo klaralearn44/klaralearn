@@ -33,6 +33,14 @@ export function SubjectEnglish() {
     {
       q: "How much does a private English tutor cost?",
       a: "Rates vary by tutor and are shown on current profiles. Compare the listed rate with the tutor's stated experience and proposed lesson approach."
+    },
+    {
+      q: "Where do I find an English private tutor for GCSE?",
+      a: "Look for a profile that names GCSE English Language, GCSE English Literature, or both, plus the exam board if the tutor has listed it. A private tutor in English for KS2 or the 11 Plus is a different lesson from a GCSE English private tutor."
+    },
+    {
+      q: "Can a private tutor help a child with English and maths?",
+      a: "Some profiles list both subjects. If one tutor does not list both, book an English private tutor and a maths private tutor separately. Check each hourly rate before you add a second subject."
     }
   ];
 
@@ -89,7 +97,7 @@ export function SubjectEnglish() {
     <Layout>
       <SEOHead
         title="Private English Tutors UK | KS2, 11 Plus & GCSE | KlaraLearn"
-        description="Compare private English tutor profiles for KS2, 11 Plus, GCSE Language and Literature, including current rates and availability."
+        description="Find an English private tutor for KS2, 11 Plus and GCSE English Language or Literature. Compare profiles and current hourly rates."
         path="/subjects/english"
         schema={[schema, faqSchema, breadcrumbSchema]}
       />
@@ -231,6 +239,18 @@ export function SubjectEnglish() {
               </AccordionItem>
             ))}
           </Accordion>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white border-t">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-3xl font-bold text-secondary mb-4">English private tutor: Language, Literature, or both</h2>
+          <p className="text-lg text-slate-700 leading-relaxed mb-4">
+            Parents searching for a private tutor in English are not all booking the same lesson. A KS2 English tutor works on reading, spelling and writing. An 11 Plus English tutor works on comprehension and the writing tasks in the entrance exam. A GCSE English private tutor has to know whether the child is sitting Language, Literature, or both, and which set texts the school uses.
+          </p>
+          <p className="text-lg text-slate-700 leading-relaxed">
+            Read the profile before you assume one person covers every paper. If you also need maths, open <Link href="/subjects/maths" className="text-primary font-semibold hover:underline">private maths tutors</Link> rather than stretching one profile past the subjects it lists. For entrance exams, start with <Link href="/blog/what-is-the-11-plus" className="text-primary font-semibold hover:underline">what the 11 Plus tests</Link>. New families can meet the tutor in a free 15-minute trial.
+          </p>
         </div>
       </section>
 

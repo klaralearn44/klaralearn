@@ -14,8 +14,8 @@ export function BlogTutoringCost() {
       "name": "KlaraLearn"
     },
     "datePublished": "2025-09-01",
-    "dateModified": "2026-08-13",
-    "description": "Private tutoring in the UK costs £25–£80/hr on average. We break down prices by subject, level, and location — and explain how to compare current tutor profile rates."
+    "dateModified": "2026-10-04",
+    "description": "Private tutoring in the UK costs £25–£80/hr on average. See a private tutor price by subject, how much a private tutor costs per hour, and how to compare current tutor profile rates."
   };
 
   const faqSchema = {
@@ -77,6 +77,30 @@ export function BlogTutoringCost() {
           "@type": "Answer",
           "text": "The National Tutoring Programme (NTP) offers subsidised tutoring through schools for eligible pupils. Some schools use Pupil Premium funding to provide free tuition. KlaraLearn offers a free trial lesson for all new families. Group tuition (4–6 pupils) from £8–£15 per pupil per session is a low-cost alternative to 1:1 sessions."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does a private tutor cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A private tutor in the UK usually costs £25–£80 per hour. London agencies are often £50–£90 per hour. On KlaraLearn the price is the hourly rate on the profile, not a platform fee."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much is a private tutor for GCSE?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Market bands on this page put GCSE maths at £30–£55 per hour, GCSE English at £28–£50, and GCSE sciences at £30–£60. Local GCSE maths listings are often £30–£60, and London can be higher. Compare the rate on the profile."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the cost of a private tutor for homeschooling in the UK?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Homeschool tutoring costs the tutor’s hourly rate times the hours you book. One subject for one hour a week costs that hour. It is not a school-fee replacement unless you book enough hours for that."
+        }
       }
     ]
   };
@@ -85,7 +109,7 @@ export function BlogTutoringCost() {
     <Layout>
       <SEOHead
         title="How Much Does Private Tutoring Cost in the UK? (2025 Prices) | KlaraLearn"
-        description="Private tutoring in the UK costs £25–£80/hr on average. We break down prices by subject, level, and location — and explain how to compare current tutor profile rates."
+        description="Private tutoring in the UK costs £25–£80/hr on average. See a private tutor price by subject, how much a private tutor costs per hour, and how to compare current tutor profile rates."
         path="/blog/how-much-does-tutoring-cost"
         schema={[articleSchema, faqSchema]}
       />
@@ -112,7 +136,7 @@ export function BlogTutoringCost() {
               </div>
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" />
-                <span>September 2025 · Updated August 2026</span>
+                <span>September 2025 · Updated October 2026</span>
               </div>
             </div>
           </div>
@@ -225,6 +249,34 @@ export function BlogTutoringCost() {
               Over a 12–18 month preparation period at 1–2 sessions per week, the total cost at London rates can reach £5,000–£10,000+. On KlaraLearn, the total depends on the tutor rate and session frequency, so compare current profiles to estimate the cost for your family's plan.
             </p>
 
+            <h2>How much does a private tutor cost?</h2>
+            <p>
+              How much does a private tutor cost, and how much is a private tutor, are the same question with two wordings. In the UK the usual market band is £25–£80 per hour. A private tutor price is not one number: London agencies are often £50–£90 per hour, and online lessons are typically 20–40% less than the same lesson in person. KlaraLearn does not publish a platform price. The figure you pay is the hourly rate written on the profile you choose.
+            </p>
+            <p>
+              How much does a private tutor cost in the UK, including the shorter searches “how much is a private tutor UK” and “private tutor prices”, is answered by the table on this page plus that profile rate. Start with a free 15-minute trial if you want to meet the tutor before the first paid hour.
+            </p>
+
+            <h3>How much does a private tutor cost per hour?</h3>
+            <p>
+              A private tutor cost per hour runs from about £22 for KS2 outside London to about £90 for a London agency specialist. The middle of the UK picture on this page is roughly £35–£50 per hour. “How much does a private tutor cost per hour”, “how much is a private tutor per hour”, and “private tutor prices per hour” all point at that band. On KlaraLearn, open the profile and read the rate next to “per hour” before you book.
+            </p>
+
+            <h3>How much is a private tutor for GCSE?</h3>
+            <p>
+              How much is a private tutor for GCSE depends on the subject. The market bands in the table are £30–£55 per hour for GCSE maths, £28–£50 for GCSE English, and £30–£60 for GCSE sciences. Local GCSE maths listings are often quoted at £30–£60 an hour, and London can sit above that. Use the <Link href="/subjects/gcse-maths" className="text-primary font-semibold hover:underline">GCSE maths tutor</Link>, <Link href="/subjects/english" className="text-primary font-semibold hover:underline">English tutor</Link>, and <Link href="/subjects/science" className="text-primary font-semibold hover:underline">science tutor</Link> pages to compare current profiles, not a city average.
+            </p>
+
+            <h3>How much is a private tutor for maths or English?</h3>
+            <p>
+              How much is a private tutor for maths follows the school stage in the table: £25–£40 per hour at KS2, £30–£55 at GCSE, and £40–£70 at A-Level. How much is a private tutor for English is usually a step below the same stage: £22–£38 at KS2, £28–£50 at GCSE, and £38–£65 at A-Level. Those ranges describe the wider UK market. The <Link href="/subjects/maths" className="text-primary font-semibold hover:underline">maths tutors</Link> page is where you compare a maths private tutor’s own rate.
+            </p>
+
+            <h3>Cost of a private tutor for homeschooling in the UK</h3>
+            <p>
+              The cost of a private tutor for homeschooling in the UK is the hourly rate times the hours you book. One subject, one hour a week, costs that one hour. It becomes a larger monthly or yearly bill only when you add hours. It is not a substitute for a school fee unless the timetable is large enough to replace school. Agree the hours in the trial. Homeschool planning sits on the <Link href="/parents" className="text-primary font-semibold hover:underline">parents</Link> page; this page only prices the hour.
+            </p>
+
             <h2>Is Private Tutoring Worth the Cost?</h2>
             <p>
               The evidence strongly supports the value of tutoring, particularly for structured objectives like 11 plus preparation or GCSE grade improvement:
@@ -270,7 +322,10 @@ export function BlogTutoringCost() {
                 { q: "How many sessions does my child need?", a: "For 11 plus: 1–2 sessions/week for 12–18 months. For GCSE support: 1 session/week throughout the year. For SATs: 1 session/week in Year 6. Quality matters more than quantity — a diagnostic specialist is more efficient." },
                 { q: "Are tutoring agencies worth the extra cost?", a: "Traditional agencies charge 20–30% above independent rates for vetting and matching. KlaraLearn lets families compare available profiles and current rates directly, then choose a tutor that fits their needs and budget." },
                 { q: "How much does 11 plus tutoring cost?", a: "Local 11 plus specialist tutors charge £35–£80/hr, with London agencies exceeding £60/hr. KlaraLearn profiles show the current rate for each available specialist, so families can compare options for a 12-month programme." },
-                { q: "Can I get free tutoring for my child?", a: "The National Tutoring Programme offers subsidised tutoring through schools. KlaraLearn offers a free trial lesson. Group tuition from £8–£15 per pupil per session is a low-cost alternative to 1:1." }
+                { q: "Can I get free tutoring for my child?", a: "The National Tutoring Programme offers subsidised tutoring through schools. KlaraLearn offers a free trial lesson. Group tuition from £8–£15 per pupil per session is a low-cost alternative to 1:1." },
+                { q: "How much does a private tutor cost?", a: "A private tutor in the UK usually costs £25–£80 per hour. London agencies are often £50–£90 per hour. On KlaraLearn the price is the hourly rate on the profile, not a platform fee." },
+                { q: "How much is a private tutor for GCSE?", a: "Market bands on this page put GCSE maths at £30–£55 per hour, GCSE English at £28–£50, and GCSE sciences at £30–£60. Local GCSE maths listings are often £30–£60, and London can be higher. Compare the rate on the profile." },
+                { q: "What is the cost of a private tutor for homeschooling in the UK?", a: "Homeschool tutoring costs the tutor’s hourly rate times the hours you book. One subject for one hour a week costs that hour. It is not a school-fee replacement unless you book enough hours for that." }
               ].map((faq, i) => (
                 <div key={i} className="border-b border-slate-100 pb-6">
                   <h4 className="font-bold text-lg text-secondary mb-2">{faq.q}</h4>
