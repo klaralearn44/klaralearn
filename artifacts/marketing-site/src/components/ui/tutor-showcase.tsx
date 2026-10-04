@@ -1,6 +1,7 @@
 import type { Tutor } from '@/data/tutors';
 import { TutorCard } from '@/components/ui/tutor-card';
 import { useLiveTutors } from '@/hooks/use-live-tutors';
+import { PARENT_SIGNUP_URL, TRIAL_BUTTON_LABEL } from '@/lib/trial-cta';
 
 interface TutorShowcaseProps {
   filter?: (tutor: Tutor) => boolean;
@@ -61,12 +62,12 @@ export function TutorShowcase({
         <p role="alert" className="rounded-xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900">
           Live tutor listings are temporarily unavailable.{' '}
           <a
-            href="https://app.klaralearn.com/version-test?view=signup"
+            href={PARENT_SIGNUP_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="font-semibold underline underline-offset-2"
           >
-            Open KlaraLearn
+            {TRIAL_BUTTON_LABEL}
           </a>
         </p>
       </div>

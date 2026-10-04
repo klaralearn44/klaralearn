@@ -248,14 +248,14 @@ export function BlogTutoringCost() {
 
             <div className="not-prose mt-8 mb-10 p-8 bg-[#1B3D5C] rounded-2xl text-center">
               <h3 className="text-2xl font-bold text-white mb-4">Compare Expert Tutors and Current Rates</h3>
-              <p className="text-white/80 mb-6">Free trial lesson. No subscription. Pay per session. Trusted by 5,000+ UK families.</p>
+              <p className="text-white/80 mb-6">Start your journey today with a free 15-minute trial session. Free trial lesson. No subscription. Pay per session. Trusted by 5,000+ UK families.</p>
               <a
-                href="/find-a-tutor"
+                href="https://app.klaralearn.com/version-test?view=signup"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white font-bold py-3 px-8 rounded-full transition-colors no-underline"
               >
-                Find a Tutor Today
+                Start your free 15-minute trial
               </a>
             </div>
 

@@ -95,6 +95,10 @@ export function BlogArticleGrammarSchool() {
             <h1 className="text-4xl md:text-5xl font-bold text-secondary mb-8 leading-tight">
               What Is a Grammar School? A Complete Guide for UK Parents [2026]
             </h1>
+            <div className="border-l-4 border-[#00A896] bg-[#00A896]/8 p-6 rounded-r-xl mb-8 text-left">
+              <p className="text-sm font-bold uppercase tracking-wider text-[#00A896] mb-2">Quick Answer</p>
+              <p className="text-slate-800 leading-relaxed">A grammar school is a state secondary school in England that admits pupils through the 11 Plus. There are 163 state grammar schools, and they do not charge tuition fees. Families preparing for entry can start with a free 15-minute trial on KlaraLearn.</p>
+            </div>
             
             <div className="flex items-center gap-6 text-sm text-slate-600">
               <div className="flex items-center gap-2">
@@ -196,10 +200,24 @@ export function BlogArticleGrammarSchool() {
 
             <div className="mt-16 p-8 bg-slate-50 rounded-2xl border border-primary/20 text-center">
               <h3 className="text-2xl font-bold text-secondary mb-4 mt-0">Ready to start preparing?</h3>
-              <p className="mb-6">Explore available 11 Plus tutor profiles for grammar school entrance preparation, with each tutor's current rate shown.</p>
-              <Link href="/subjects/11-plus" className="inline-block bg-primary hover:bg-primary/90 text-white font-bold py-3 px-8 rounded-full no-underline transition-colors">
+              <p className="mb-6">Start your journey today with a free 15-minute trial session. You can also explore available 11 Plus tutor profiles, with each tutor&apos;s current rate shown.</p>
+              <a href="https://app.klaralearn.com/version-test?view=signup" className="inline-block bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white font-bold py-3 px-8 rounded-full no-underline transition-colors mb-4">
+                Start your free 15-minute trial
+              </a>
+              <Link href="/subjects/11-plus" className="block mt-4 text-primary font-semibold hover:underline">
                 Find an 11 Plus Tutor
               </Link>
+            </div>
+
+            <div className="not-prose mt-16 p-8 bg-slate-50 rounded-2xl border border-primary/20">
+              <h3 className="text-xl font-bold text-secondary mb-4">Related Guides</h3>
+              <ul className="space-y-3">
+                <li><Link href="/blog/grammar-school-admissions" className="text-primary font-medium hover:underline">Grammar school admissions</Link></li>
+                <li><Link href="/blog/grammar-school-fees" className="text-primary font-medium hover:underline">Are grammar schools free?</Link></li>
+                <li><Link href="/blog/how-to-prepare-for-11-plus" className="text-primary font-medium hover:underline">How to prepare for the 11 Plus</Link></li>
+                <li><Link href="/location/kent" className="text-primary font-medium hover:underline">11 Plus tutors in Kent</Link></li>
+                <li><Link href="/location/london" className="text-primary font-medium hover:underline">Private tutors in London</Link></li>
+              </ul>
             </div>
           </div>
         </div>

@@ -5,6 +5,9 @@ import { TutorShowcase } from '@/components/ui/tutor-showcase';
 import { tutors } from '@/data/tutors';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Link } from 'wouter';
+import { TrialSignupButton } from '@/components/cta/TrialSignupButton';
+import { QuickAnswer } from '@/components/seo/QuickAnswer';
+import { faqPageSchema } from '@/lib/faq-schema';
 import { Clock, PiggyBank, ShieldCheck } from 'lucide-react';
 
 export function LocationOnline() {
@@ -22,6 +25,18 @@ export function LocationOnline() {
     {
       q: "How does payment work for online tutoring?",
       a: "Payments are handled securely through the KlaraLearn platform. You only pay after a session is completed, and we hold the funds safely. No need to worry about cash or bank transfers."
+    },
+    {
+      q: "Can I try an online tutor before I pay?",
+      a: "Yes. Start your journey with a free 15-minute trial session. It is a chance to see the tutor's style before you book paid lessons."
+    },
+    {
+      q: "Are online lessons recorded?",
+      a: "Lessons run in KlaraLearn's secure online classroom, and session recordings are available for parents to review."
+    },
+    {
+      q: "Which subjects can online tutors cover?",
+      a: "Profiles list 11 Plus, GCSE, SATs, maths, English and science where those subjects are offered. Compare the subjects and rates on each current profile."
     }
   ];
 
@@ -31,6 +46,7 @@ export function LocationOnline() {
         title="Online Tutors UK — 11 Plus, GCSE & SATs | KlaraLearn"
         description="Find expert online tutors in the UK. Flexible online tutoring for 11 Plus, GCSE and SATs. Compare global educator profiles and current hourly rates."
         path="/location/online"
+        schema={faqPageSchema(faqs)}
       />
 
       <section className="bg-slate-50 pt-20 pb-20 border-b relative overflow-hidden">
@@ -53,14 +69,21 @@ export function LocationOnline() {
           <h1 className="text-4xl md:text-5xl font-bold text-secondary mb-6 leading-tight">
             Online Tutors UK — 11 Plus, GCSE & SATs
           </h1>
-          
-          <p className="text-xl text-slate-600 mb-8 max-w-2xl leading-relaxed">
-            Break free from geographical limits. Access a global network of professional tutors who understand the UK curriculum, offering flexibility and affordability that local tutoring can't match.
-          </p>
 
-          <Button asChild size="lg" className="bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white rounded-full px-8">
-            <Link href="/find-a-tutor">Browse Online Tutors</Link>
-          </Button>
+          <p className="text-xl text-slate-600 mb-8 max-w-2xl leading-relaxed">
+            Break free from geographical limits. Access a global network of professional tutors who understand the UK curriculum, offering flexibility and affordability that local tutoring can&apos;t match.
+          </p>
+          
+          <QuickAnswer>
+            Online tutoring on KlaraLearn lets UK families compare tutor profiles for 11 Plus, GCSE and SATs without a local commute. Start with a free 15-minute trial, then continue lessons in the secure online classroom.
+          </QuickAnswer>
+
+          <div className="flex flex-wrap gap-4">
+            <TrialSignupButton />
+            <Button asChild size="lg" variant="outline" className="rounded-full px-8">
+              <Link href="/find-a-tutor">Browse online tutors</Link>
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -129,6 +152,11 @@ export function LocationOnline() {
             <Link href="/find-a-tutor" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Find an Online Tutor</Link>
             <Link href="/parents/tools" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Parent Tools</Link>
             <Link href="/parents" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">For Parents</Link>
+            <Link href="/subjects/11-plus" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">11 Plus Tutors</Link>
+            <Link href="/subjects/gcse-maths" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">GCSE Maths Tutors</Link>
+            <Link href="/location/london" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Tutors in London</Link>
+            <Link href="/location/kent" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Tutors in Kent</Link>
+            <Link href="/how-it-works" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">How It Works</Link>
           </div>
         </div>
       </section>

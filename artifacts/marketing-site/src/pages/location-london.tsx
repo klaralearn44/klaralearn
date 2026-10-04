@@ -5,6 +5,9 @@ import { TutorShowcase } from '@/components/ui/tutor-showcase';
 import { tutors } from '@/data/tutors';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { Link } from 'wouter';
+import { TrialSignupButton } from '@/components/cta/TrialSignupButton';
+import { QuickAnswer } from '@/components/seo/QuickAnswer';
+import { faqPageSchema } from '@/lib/faq-schema';
 import { MapPin } from 'lucide-react';
 
 export function LocationLondon() {
@@ -26,6 +29,14 @@ export function LocationLondon() {
     {
       q: "Do your tutors understand the specific London 11 Plus exams?",
       a: "Yes. Different London boroughs use different exam boards (like GL Assessment or SET). Our 11 Plus specialists are experienced in preparing students for the specific requirements of London grammar school admissions."
+    },
+    {
+      q: "Can London families start with a free trial?",
+      a: "Yes. New families can start with a free 15-minute trial session before booking paid lessons. Use it to see whether the tutor's style suits your child."
+    },
+    {
+      q: "Are KlaraLearn lessons recorded for parents?",
+      a: "Lessons run in KlaraLearn's secure online classroom, and session recordings are available so parents can review what was covered."
     }
   ];
 
@@ -35,6 +46,7 @@ export function LocationLondon() {
         title="Private Tutors in London — 11 Plus, GCSE & SATs | KlaraLearn"
         description="Looking for private tutors in London? Compare available online tutor profiles for grammar school admissions, GCSE and SATs, including current hourly rates."
         path="/location/london"
+        schema={faqPageSchema(faqs)}
       />
 
       <section className="bg-[#1B3D5C] pt-20 pb-20 relative overflow-hidden">
@@ -61,9 +73,16 @@ export function LocationLondon() {
             London's grammar school landscape is intensely competitive. Sutton, Kingston, and Barnet catchments demand rigorous preparation, but local tutor prices shouldn't hold your child back.
           </p>
 
-          <Button asChild size="lg" className="bg-[#00A896] hover:bg-[#00A896]/90 text-white rounded-full px-8">
-            <Link href="/find-a-tutor">Find a London Tutor</Link>
-          </Button>
+          <QuickAnswer tone="dark">
+            London families use KlaraLearn to compare online tutors for 11 Plus, GCSE and SATs instead of paying typical local rates of £50–£80 an hour. Start with a free 15-minute trial, then book lessons in the secure online classroom.
+          </QuickAnswer>
+
+          <div className="flex flex-wrap gap-4">
+            <TrialSignupButton />
+            <Button asChild size="lg" variant="outline" className="rounded-full px-8 bg-white/10 text-white border-white/30 hover:bg-white/20">
+              <Link href="/find-a-tutor">Browse tutors</Link>
+            </Button>
+          </div>
         </div>
       </section>
 

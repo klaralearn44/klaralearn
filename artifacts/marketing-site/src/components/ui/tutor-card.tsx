@@ -3,8 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { motion } from 'framer-motion';
-
-const PARENT_SIGNUP_URL = 'https://app.klaralearn.com/version-test?view=signup';
+import { PARENT_SIGNUP_URL, TRIAL_BUTTON_LABEL } from '@/lib/trial-cta';
 
 export function TutorCard({ tutor, index = 0 }: { tutor: Tutor, index?: number }) {
   const updatedDate = tutor.updatedAt ? new Date(tutor.updatedAt) : null;
@@ -76,7 +75,7 @@ export function TutorCard({ tutor, index = 0 }: { tutor: Tutor, index?: number }
           target="_blank"
           rel="noopener noreferrer"
         >
-          View Profile
+          {TRIAL_BUTTON_LABEL}
         </a>
       </Button>
     </motion.div>

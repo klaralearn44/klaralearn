@@ -217,14 +217,14 @@ export function BlogGrammarSchoolAdmissions() {
 
             <div className="not-prose mt-8 mb-10 p-8 bg-[#1B3D5C] rounded-2xl text-center">
               <h3 className="text-2xl font-bold text-white mb-4">Start Grammar School Preparation Today</h3>
-              <p className="text-white/80 mb-6">Expert 11 plus tutors familiar with GL Assessment and CEM formats. Compare current profile rates. Free trial lesson.</p>
+              <p className="text-white/80 mb-6">Start your journey today with a free 15-minute trial session. Expert 11 plus tutors familiar with GL Assessment and CEM formats. Compare current profile rates. Free trial lesson.</p>
               <a
-                href="/find-a-tutor"
+                href="https://app.klaralearn.com/version-test?view=signup"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white font-bold py-3 px-8 rounded-full transition-colors no-underline"
               >
-                Find an 11 Plus Tutor
+                Start your free 15-minute trial
               </a>
             </div>
 
@@ -252,6 +252,7 @@ export function BlogGrammarSchoolAdmissions() {
               <h3 className="text-xl font-bold text-secondary mb-4">Related Guides</h3>
               <ul className="space-y-3">
                 <li><Link href="/subjects/11-plus" className="text-primary font-medium hover:underline">→ Find an 11 Plus Tutor</Link></li>
+                <li><Link href="/location/manchester" className="text-primary font-medium hover:underline">→ Tutors in Manchester</Link></li>
                 <li><Link href="/blog/what-is-a-grammar-school" className="text-primary font-medium hover:underline">→ What Is a Grammar School?</Link></li>
                 <li><Link href="/blog/how-to-prepare-for-11-plus" className="text-primary font-medium hover:underline">→ How to Prepare for the 11 Plus</Link></li>
                 <li><Link href="/blog/best-grammar-schools-uk" className="text-primary font-medium hover:underline">→ Best Grammar Schools in England</Link></li>

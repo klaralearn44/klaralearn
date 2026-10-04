@@ -5,6 +5,8 @@ import { TutorShowcase } from '@/components/ui/tutor-showcase';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { TrustStats } from '@/components/ui/trust-stats';
 import { Link } from 'wouter';
+import { TrialSignupButton } from '@/components/cta/TrialSignupButton';
+import { QuickAnswer } from '@/components/seo/QuickAnswer';
 import { CheckCircle2 } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -97,6 +99,10 @@ export function Subject11Plus() {
             11 Plus Tutors for Grammar School Entrance
           </h1>
 
+          <QuickAnswer>
+            The 11 Plus is the selective entrance exam used by England&apos;s grammar schools. KlaraLearn helps families compare available 11 Plus tutor profiles and start with a free 15-minute trial before booking paid preparation.
+          </QuickAnswer>
+
           <div className="prose prose-lg text-slate-600 mb-8 max-w-none">
             <p>
               The 11 plus is a highly competitive selective entrance exam that determines admission to grammar schools across England. For many parents, it represents a crucial stepping stone in their child's educational journey. However, the preparation can be daunting, and the cost of local specialist 11 plus tutors is often prohibitive — particularly in London and Kent, where agencies charge £55–90/hr.
@@ -107,9 +113,7 @@ export function Subject11Plus() {
           </div>
 
           <div className="flex flex-wrap gap-4">
-            <Button asChild size="lg" className="bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white rounded-full px-8">
-              <Link href="/find-a-tutor">Find an 11 Plus Tutor</Link>
-            </Button>
+            <TrialSignupButton />
             <Button asChild size="lg" variant="outline" className="rounded-full px-8 border-secondary text-secondary hover:bg-secondary hover:text-white">
               <Link href="/blog/what-is-the-11-plus">Learn About the 11 Plus</Link>
             </Button>
@@ -294,6 +298,9 @@ export function Subject11Plus() {
             <Link href="/subjects/science" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Science</Link>
             <Link href="/blog/what-is-the-11-plus" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">What Is the 11 Plus?</Link>
             <Link href="/blog/how-to-prepare-for-11-plus" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">How to Prepare</Link>
+            <Link href="/location/london" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">11 Plus Tutors in London</Link>
+            <Link href="/location/kent" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">11 Plus Tutors in Kent</Link>
+            <Link href="/safeguarding" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Safeguarding</Link>
           </div>
         </div>
       </section>

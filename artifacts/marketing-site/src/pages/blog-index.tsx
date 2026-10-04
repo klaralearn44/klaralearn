@@ -1,6 +1,8 @@
 import { SEOHead } from '@/components/seo/SEOHead';
 import { Layout } from '@/components/layout/Layout';
 import { Link } from 'wouter';
+import { QuickAnswer } from '@/components/seo/QuickAnswer';
+import { TrialSignupButton } from '@/components/cta/TrialSignupButton';
 import { ArrowRight, Calendar } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -89,9 +91,13 @@ export function BlogIndex() {
       <section className="bg-slate-50 pt-24 pb-16 border-b">
         <div className="container mx-auto px-4 text-center max-w-3xl">
           <h1 className="text-4xl md:text-5xl font-bold text-secondary mb-6">The KlaraLearn Blog</h1>
-          <p className="text-xl text-slate-600">
+          <p className="text-xl text-slate-600 mb-8">
             Clear, honest advice for parents navigating the UK education system.
           </p>
+          <QuickAnswer>
+            These guides answer parent questions about the 11 Plus, grammar schools, tutoring costs and exam preparation. When you are ready to begin, start with a free 15-minute trial session on KlaraLearn.
+          </QuickAnswer>
+          <TrialSignupButton />
         </div>
       </section>
 
@@ -124,6 +130,14 @@ export function BlogIndex() {
                 </div>
               </motion.article>
             ))}
+          </div>
+          <div className="flex flex-wrap justify-center gap-3 mt-12">
+            <Link href="/subjects/11-plus" className="px-5 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">11 Plus tutors</Link>
+            <Link href="/subjects/gcse-maths" className="px-5 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">GCSE maths tutors</Link>
+            <Link href="/location/london" className="px-5 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Tutors in London</Link>
+            <Link href="/location/kent" className="px-5 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Tutors in Kent</Link>
+            <Link href="/how-it-works" className="px-5 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">How it works</Link>
+            <Link href="/safeguarding" className="px-5 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Safeguarding</Link>
           </div>
         </div>
       </section>

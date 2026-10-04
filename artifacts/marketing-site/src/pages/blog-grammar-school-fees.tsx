@@ -229,14 +229,14 @@ export function BlogGrammarSchoolFees() {
 
             <div className="not-prose mt-8 mb-10 p-8 bg-[#1B3D5C] rounded-2xl text-center">
               <h3 className="text-2xl font-bold text-white mb-4">Make Grammar School Preparation Affordable</h3>
-              <p className="text-white/80 mb-6">Compare expert 11 plus tutor profiles and current rates. Don't let local tuition rates stand between your child and a grammar school place.</p>
+              <p className="text-white/80 mb-6">Start your journey today with a free 15-minute trial session. Compare expert 11 plus tutor profiles and current rates. Don't let local tuition rates stand between your child and a grammar school place.</p>
               <a
-                href="/find-a-tutor"
+                href="https://app.klaralearn.com/version-test?view=signup"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white font-bold py-3 px-8 rounded-full transition-colors no-underline"
               >
-                Find an 11 Plus Tutor
+                Start your free 15-minute trial
               </a>
             </div>
 
@@ -265,6 +265,7 @@ export function BlogGrammarSchoolFees() {
               <ul className="space-y-3">
                 <li><Link href="/blog/what-is-a-grammar-school" className="text-primary font-medium hover:underline">→ What Is a Grammar School?</Link></li>
                 <li><Link href="/subjects/11-plus" className="text-primary font-medium hover:underline">→ Find an 11 Plus Tutor</Link></li>
+                <li><Link href="/location/london" className="text-primary font-medium hover:underline">→ Private Tutors in London</Link></li>
                 <li><Link href="/blog/how-much-does-tutoring-cost" className="text-primary font-medium hover:underline">→ How Much Does Private Tutoring Cost?</Link></li>
                 <li><Link href="/blog/grammar-school-vs-comprehensive" className="text-primary font-medium hover:underline">→ Grammar School vs Comprehensive: Which Is Better?</Link></li>
               </ul>
