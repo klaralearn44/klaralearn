@@ -325,6 +325,8 @@ export function SubjectMaths() {
             <Link href="/blog/how-to-prepare-for-11-plus" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">11 Plus Preparation Guide</Link>
             <Link href="/blog/how-much-does-tutoring-cost" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Tutoring Costs</Link>
             <Link href="/location/london" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Tutors in London</Link>
+            <Link href="/location/manchester" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Tutors in Manchester</Link>
+            <Link href="/location/kent" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Tutors in Kent</Link>
           </div>
         </div>
       </section>

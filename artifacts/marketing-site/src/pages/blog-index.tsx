@@ -4,6 +4,7 @@ import { Link } from 'wouter';
 import { QuickAnswer } from '@/components/seo/QuickAnswer';
 import { TrialSignupButton } from '@/components/cta/TrialSignupButton';
 import { ArrowRight, Calendar } from 'lucide-react';
+import { familyLinks, locationLinks, subjectLinks } from '@/lib/internal-links';
 import { motion } from 'framer-motion';
 
 export function BlogIndex() {
@@ -131,13 +132,13 @@ export function BlogIndex() {
               </motion.article>
             ))}
           </div>
-          <div className="flex flex-wrap justify-center gap-3 mt-12">
-            <Link href="/subjects/11-plus" className="px-5 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">11 Plus tutors</Link>
-            <Link href="/subjects/gcse-maths" className="px-5 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">GCSE maths tutors</Link>
-            <Link href="/location/london" className="px-5 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Tutors in London</Link>
-            <Link href="/location/kent" className="px-5 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Tutors in Kent</Link>
-            <Link href="/how-it-works" className="px-5 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">How it works</Link>
-            <Link href="/safeguarding" className="px-5 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Safeguarding</Link>
+          <div className="mt-16">
+            <h2 className="text-2xl font-bold text-secondary mb-6 text-center">From a guide to a tutor</h2>
+            <div className="flex flex-wrap justify-center gap-3">
+              {[...subjectLinks, ...locationLinks, ...familyLinks].filter((link) => link.href !== '/blog').map((link) => (
+                <Link key={link.href} href={link.href} className="px-5 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">{link.label}</Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>

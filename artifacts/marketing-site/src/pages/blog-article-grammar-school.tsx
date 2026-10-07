@@ -215,8 +215,11 @@ export function BlogArticleGrammarSchool() {
                 <li><Link href="/blog/grammar-school-admissions" className="text-primary font-medium hover:underline">Grammar school admissions</Link></li>
                 <li><Link href="/blog/grammar-school-fees" className="text-primary font-medium hover:underline">Are grammar schools free?</Link></li>
                 <li><Link href="/blog/how-to-prepare-for-11-plus" className="text-primary font-medium hover:underline">How to prepare for the 11 Plus</Link></li>
+                <li><Link href="/blog/best-grammar-schools-uk" className="text-primary font-medium hover:underline">Best grammar schools in England</Link></li>
+                <li><Link href="/blog/grammar-school-vs-comprehensive" className="text-primary font-medium hover:underline">Grammar school vs comprehensive</Link></li>
                 <li><Link href="/location/kent" className="text-primary font-medium hover:underline">11 Plus tutors in Kent</Link></li>
                 <li><Link href="/location/london" className="text-primary font-medium hover:underline">Private tutors in London</Link></li>
+                <li><Link href="/location/manchester" className="text-primary font-medium hover:underline">Tutors in Manchester</Link></li>
               </ul>
             </div>
           </div>

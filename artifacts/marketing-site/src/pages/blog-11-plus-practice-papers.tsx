@@ -337,6 +337,8 @@ export function Blog11PlusPracticePapers() {
                 <li><Link href="/blog/11-plus-verbal-reasoning" className="text-primary font-medium hover:underline">→ 11 Plus Verbal & Non-Verbal Reasoning Explained</Link></li>
                 <li><Link href="/blog/how-to-prepare-for-11-plus" className="text-primary font-medium hover:underline">→ How to Prepare for the 11 Plus: Ultimate Guide</Link></li>
                 <li><Link href="/blog/what-is-the-11-plus" className="text-primary font-medium hover:underline">→ What Is the 11 Plus Exam?</Link></li>
+                <li><Link href="/blog/grammar-school-admissions" className="text-primary font-medium hover:underline">→ Grammar School Admissions</Link></li>
+                <li><Link href="/location/kent" className="text-primary font-medium hover:underline">→ Kent Test Tutors</Link></li>
               </ul>
             </div>
 

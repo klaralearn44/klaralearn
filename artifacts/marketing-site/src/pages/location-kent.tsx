@@ -346,7 +346,9 @@ export function LocationKent() {
             <Link href="/blog/what-is-the-11-plus" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">What Is the 11 Plus?</Link>
             <Link href="/blog/how-to-prepare-for-11-plus" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">How to Prepare</Link>
             <Link href="/location/london" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">London Tutors</Link>
+            <Link href="/location/manchester" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Tutors in Manchester</Link>
             <Link href="/location/online" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Online Tutoring</Link>
+            <Link href="/blog/best-grammar-schools-uk" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Best Grammar Schools</Link>
           </div>
         </div>
       </section>

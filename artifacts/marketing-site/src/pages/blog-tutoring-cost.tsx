@@ -341,6 +341,12 @@ export function BlogTutoringCost() {
                 <li><Link href="/subjects/gcse-maths" className="text-primary font-medium hover:underline">→ GCSE Maths Tutors</Link></li>
                 <li><Link href="/parents" className="text-primary font-medium hover:underline">→ For Parents: How KlaraLearn Works</Link></li>
                 <li><Link href="/blog/grammar-school-fees" className="text-primary font-medium hover:underline">→ Are Grammar Schools Free?</Link></li>
+                <li><Link href="/subjects/maths" className="text-primary font-medium hover:underline">→ Maths Tutors</Link></li>
+                <li><Link href="/subjects/english" className="text-primary font-medium hover:underline">→ English Tutors</Link></li>
+                <li><Link href="/subjects/science" className="text-primary font-medium hover:underline">→ Science Tutors</Link></li>
+                <li><Link href="/location/london" className="text-primary font-medium hover:underline">→ Tutors in London</Link></li>
+                <li><Link href="/location/kent" className="text-primary font-medium hover:underline">→ Tutors in Kent</Link></li>
+                <li><Link href="/location/manchester" className="text-primary font-medium hover:underline">→ Tutors in Manchester</Link></li>
                 <li><Link href="/location/online" className="text-primary font-medium hover:underline">→ Online Tutoring</Link></li>
               </ul>
             </div>

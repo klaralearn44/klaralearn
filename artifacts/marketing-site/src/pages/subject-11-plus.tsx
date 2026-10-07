@@ -316,6 +316,8 @@ export function Subject11Plus() {
             <Link href="/blog/how-to-prepare-for-11-plus" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">How to Prepare</Link>
             <Link href="/location/london" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">11 Plus Tutors in London</Link>
             <Link href="/location/kent" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">11 Plus Tutors in Kent</Link>
+            <Link href="/location/manchester" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Tutors in Manchester</Link>
+            <Link href="/blog/best-grammar-schools-uk" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Best Grammar Schools</Link>
             <Link href="/safeguarding" className="px-6 py-3 bg-white border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Safeguarding</Link>
           </div>
         </div>

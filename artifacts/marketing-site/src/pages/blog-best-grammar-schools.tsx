@@ -337,7 +337,10 @@ export function BlogBestGrammarSchools() {
                 <li><Link href="/subjects/11-plus" className="text-primary font-medium hover:underline">→ Find an 11 Plus Tutor</Link></li>
                 <li><Link href="/location/london" className="text-primary font-medium hover:underline">→ London 11 Plus Tutors</Link></li>
                 <li><Link href="/location/kent" className="text-primary font-medium hover:underline">→ Kent 11 Plus Tutors</Link></li>
+                <li><Link href="/location/manchester" className="text-primary font-medium hover:underline">→ Tutors in Manchester</Link></li>
                 <li><Link href="/blog/grammar-school-admissions" className="text-primary font-medium hover:underline">→ Grammar School Admissions Guide</Link></li>
+                <li><Link href="/blog/grammar-school-fees" className="text-primary font-medium hover:underline">→ Are Grammar Schools Free?</Link></li>
+                <li><Link href="/blog/grammar-school-vs-comprehensive" className="text-primary font-medium hover:underline">→ Grammar School vs Comprehensive</Link></li>
                 <li><Link href="/blog/what-is-a-grammar-school" className="text-primary font-medium hover:underline">→ What Is a Grammar School?</Link></li>
               </ul>
             </div>

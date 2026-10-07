@@ -438,6 +438,8 @@ export function BlogHowToPrepare11Plus() {
                 <li><Link href="/blog/11-plus-verbal-reasoning" className="text-primary font-medium hover:underline">→ Verbal & Non-Verbal Reasoning Explained</Link></li>
                 <li><Link href="/blog/11-plus-practice-papers" className="text-primary font-medium hover:underline">→ Best 11 Plus Practice Papers</Link></li>
                 <li><Link href="/blog/grammar-school-admissions" className="text-primary font-medium hover:underline">→ Grammar School Admissions: Complete Guide</Link></li>
+                <li><Link href="/blog/best-grammar-schools-uk" className="text-primary font-medium hover:underline">→ Best Grammar Schools in England</Link></li>
+                <li><Link href="/location/london" className="text-primary font-medium hover:underline">→ 11 Plus Tutors in London</Link></li>
               </ul>
             </div>
 

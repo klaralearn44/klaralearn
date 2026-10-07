@@ -207,6 +207,12 @@ export function BecomeATutorPage() {
               </div>
             ))}
           </div>
+          <div className="flex flex-wrap gap-4 mt-10">
+            <Link href="/about" className="text-primary font-semibold hover:underline">About KlaraLearn</Link>
+            <Link href="/how-it-works" className="text-primary font-semibold hover:underline">How lessons are booked</Link>
+            <Link href="/safeguarding" className="text-primary font-semibold hover:underline">Safeguarding</Link>
+            <Link href="/find-a-tutor" className="text-primary font-semibold hover:underline">What parents see</Link>
+          </div>
         </div>
       </section>
 
