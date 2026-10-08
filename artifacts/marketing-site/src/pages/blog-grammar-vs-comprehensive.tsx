@@ -280,6 +280,8 @@ export function BlogGrammarVsComprehensive() {
                 <li><Link href="/subjects/11-plus" className="text-primary font-medium hover:underline">→ Find an 11 Plus Tutor</Link></li>
                 <li><Link href="/location/online" className="text-primary font-medium hover:underline">→ Online Tutors</Link></li>
                 <li><Link href="/blog/grammar-school-admissions" className="text-primary font-medium hover:underline">→ Grammar School Admissions Guide</Link></li>
+                <li><Link href="/blog/best-grammar-schools-uk" className="text-primary font-medium hover:underline">→ Best Grammar Schools in England</Link></li>
+                <li><Link href="/location/manchester" className="text-primary font-medium hover:underline">→ Tutors in Manchester</Link></li>
               </ul>
             </div>
 

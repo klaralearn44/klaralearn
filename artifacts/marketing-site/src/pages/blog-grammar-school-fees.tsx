@@ -268,6 +268,8 @@ export function BlogGrammarSchoolFees() {
                 <li><Link href="/location/london" className="text-primary font-medium hover:underline">→ Private Tutors in London</Link></li>
                 <li><Link href="/blog/how-much-does-tutoring-cost" className="text-primary font-medium hover:underline">→ How Much Does Private Tutoring Cost?</Link></li>
                 <li><Link href="/blog/grammar-school-vs-comprehensive" className="text-primary font-medium hover:underline">→ Grammar School vs Comprehensive: Which Is Better?</Link></li>
+                <li><Link href="/blog/best-grammar-schools-uk" className="text-primary font-medium hover:underline">→ Best Grammar Schools in England</Link></li>
+                <li><Link href="/location/kent" className="text-primary font-medium hover:underline">→ 11 Plus Tutors in Kent</Link></li>
               </ul>
             </div>
 

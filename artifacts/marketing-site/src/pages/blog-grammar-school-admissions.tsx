@@ -256,6 +256,8 @@ export function BlogGrammarSchoolAdmissions() {
                 <li><Link href="/blog/what-is-a-grammar-school" className="text-primary font-medium hover:underline">→ What Is a Grammar School?</Link></li>
                 <li><Link href="/blog/how-to-prepare-for-11-plus" className="text-primary font-medium hover:underline">→ How to Prepare for the 11 Plus</Link></li>
                 <li><Link href="/blog/best-grammar-schools-uk" className="text-primary font-medium hover:underline">→ Best Grammar Schools in England</Link></li>
+                <li><Link href="/blog/grammar-school-fees" className="text-primary font-medium hover:underline">→ Are Grammar Schools Free?</Link></li>
+                <li><Link href="/blog/grammar-school-vs-comprehensive" className="text-primary font-medium hover:underline">→ Grammar School vs Comprehensive</Link></li>
               </ul>
             </div>
 

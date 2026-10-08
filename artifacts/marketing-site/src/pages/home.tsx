@@ -11,6 +11,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'wouter';
 import { TrialSignupButton } from '@/components/cta/TrialSignupButton';
 import { QuickAnswer } from '@/components/seo/QuickAnswer';
+import { familyLinks, guideLinks, locationLinks, subjectLinks } from '@/lib/internal-links';
 
 export function Home() {
   const heroImageSrc = `${import.meta.env.BASE_URL}images/klara-school-tutoring.jpg`;
@@ -395,23 +396,25 @@ export function Home() {
             <h2 className="text-3xl md:text-4xl font-bold text-secondary mb-4">Answers parents search for</h2>
             <p className="text-lg text-slate-600">Use these guides to decide what your child needs, then start with a free 15-minute trial.</p>
           </div>
-          <div className="flex flex-wrap justify-center gap-3 max-w-5xl mx-auto">
-            {[
-              ['What is the 11 Plus?', '/blog/what-is-the-11-plus'],
-              ['How to prepare for the 11 Plus', '/blog/how-to-prepare-for-11-plus'],
-              ['How much tutoring costs', '/blog/how-much-does-tutoring-cost'],
-              ['How KlaraLearn works', '/how-it-works'],
-              ['Safeguarding and recorded lessons', '/safeguarding'],
-              ['11 Plus tutors', '/subjects/11-plus'],
-              ['GCSE maths tutors', '/subjects/gcse-maths'],
-              ['Tutors in London', '/location/london'],
-              ['Tutors in Kent', '/location/kent'],
-              ['Online tutors', '/location/online'],
-              ['Parent tools', '/parents/tools'],
-            ].map(([label, href]) => (
-              <Link key={href} href={href} className="px-5 py-3 bg-slate-50 border rounded-full font-medium text-secondary hover:border-primary hover:text-primary transition-colors">
-                {label}
-              </Link>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto text-left">
+            {([
+              ['Subjects', subjectLinks],
+              ['Places', locationLinks],
+              ['For families', familyLinks],
+              ['Guides', guideLinks],
+            ] as const).map(([title, links]) => (
+              <div key={title}>
+                <h3 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-4">{title}</h3>
+                <ul className="space-y-3">
+                  {links.map((link) => (
+                    <li key={link.href}>
+                      <Link href={link.href} className="font-medium text-secondary hover:text-primary">
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </div>
         </div>

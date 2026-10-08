@@ -172,6 +172,10 @@ export function HowItWorksPage() {
             <Link href="/subjects/11-plus" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">11 Plus Tutors</Link>
             <Link href="/parents" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">For Parents</Link>
             <Link href="/blog/how-much-does-tutoring-cost" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Tutoring Costs</Link>
+            <Link href="/about" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">About KlaraLearn</Link>
+            <Link href="/become-a-tutor" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Become a Tutor</Link>
+            <Link href="/subjects/maths" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">Maths Tutors</Link>
+            <Link href="/subjects/english" className="px-6 py-3 bg-slate-50 border rounded-full font-medium hover:border-primary hover:text-primary transition-colors">English Tutors</Link>
           </div>
         </div>
       </section>

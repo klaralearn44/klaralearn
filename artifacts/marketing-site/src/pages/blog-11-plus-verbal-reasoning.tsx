@@ -394,6 +394,8 @@ export function Blog11PlusVerbalReasoning() {
                 <li><Link href="/blog/what-is-the-11-plus" className="text-primary font-medium hover:underline">→ What Is the 11 Plus Exam? Complete Parent Guide</Link></li>
                 <li><Link href="/blog/11-plus-practice-papers" className="text-primary font-medium hover:underline">→ Best 11 Plus Practice Papers</Link></li>
                 <li><Link href="/blog/how-to-prepare-for-11-plus" className="text-primary font-medium hover:underline">→ How to Prepare for the 11 Plus: Ultimate Guide</Link></li>
+                <li><Link href="/blog/what-is-a-grammar-school" className="text-primary font-medium hover:underline">→ What Is a Grammar School?</Link></li>
+                <li><Link href="/location/kent" className="text-primary font-medium hover:underline">→ Kent Test Tutors</Link></li>
               </ul>
             </div>
 

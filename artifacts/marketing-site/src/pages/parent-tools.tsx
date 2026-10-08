@@ -402,6 +402,27 @@ export function ParentTools() {
         </div>
       </section>
 
+      <section className="py-16 bg-white border-t">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-2xl font-bold text-secondary mb-4">Use a tool, then open the matching page</h2>
+          <p className="text-slate-700 leading-relaxed mb-6">
+            The checklist is the starting point. The pages below explain the exam, the cost, and how to book a tutor.
+          </p>
+          <ul className="space-y-3">
+            <li><Link href="/blog/what-is-the-11-plus" className="text-primary font-semibold hover:underline">What is the 11 Plus?</Link></li>
+            <li><Link href="/blog/how-to-prepare-for-11-plus" className="text-primary font-semibold hover:underline">How to prepare for the 11 Plus</Link></li>
+            <li><Link href="/blog/11-plus-practice-papers" className="text-primary font-semibold hover:underline">11 Plus practice papers</Link></li>
+            <li><Link href="/blog/11-plus-verbal-reasoning" className="text-primary font-semibold hover:underline">Verbal and non-verbal reasoning</Link></li>
+            <li><Link href="/blog/how-much-does-tutoring-cost" className="text-primary font-semibold hover:underline">How much tutoring costs</Link></li>
+            <li><Link href="/subjects/11-plus" className="text-primary font-semibold hover:underline">11 Plus tutors</Link></li>
+            <li><Link href="/parents" className="text-primary font-semibold hover:underline">Advice for parents</Link></li>
+            <li><Link href="/find-a-tutor" className="text-primary font-semibold hover:underline">Find a tutor</Link></li>
+            <li><Link href="/safeguarding" className="text-primary font-semibold hover:underline">Safeguarding</Link></li>
+            <li><Link href="/how-it-works" className="text-primary font-semibold hover:underline">How a lesson is booked</Link></li>
+          </ul>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-20 bg-white border-t border-slate-100">
         <div className="container mx-auto px-4 max-w-3xl">
