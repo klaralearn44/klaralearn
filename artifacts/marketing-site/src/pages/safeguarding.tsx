@@ -25,11 +25,11 @@ export function SafeguardingPage() {
     },
     {
       q: "Where do lessons take place?",
-      a: "Tutoring sessions take place inside KlaraLearn's secure online classroom. Lessons are not moved to unmonitored third-party video tools."
+      a: "Lessons use the Zoom or Google Meet link saved in KlaraLearn. A notetaker called KlaraLearn Notetaker joins and records the lesson. Tutors must not send a different link."
     },
     {
       q: "Can parents watch or review a lesson?",
-      a: "Lessons conducted through KlaraLearn are recorded. Parents can review the recording, the topics covered, and the tutor's feedback."
+      a: "Yes. Parents can watch their child’s lesson video for 30 days. The written transcript is available on request. The Session Recording Policy sets out who else can see a recording."
     },
     {
       q: "Can we meet a tutor before paying for lessons?",
@@ -37,7 +37,7 @@ export function SafeguardingPage() {
     },
     {
       q: "Where is KlaraLearn's private tutor safeguarding policy?",
-      a: "This page is the public explanation. Tutors outside the UK are not DBS checked, because DBS is a UK process. KlaraLearn checks identity, interviews the tutor, assesses curriculum knowledge, keeps lessons in its own classroom, records those lessons for parents, and offers a free 15-minute trial before paid bookings."
+      a: "The formal Safeguarding Policy is at /legal/safeguarding. This page is the plain-language overview. Tutors outside the UK are not DBS checked, because DBS is a UK process. KlaraLearn checks identity, interviews the tutor, assesses curriculum knowledge, records lessons on the Zoom or Google Meet link saved in KlaraLearn, and offers a free 15-minute trial before paid bookings."
     }
   ];
 
@@ -122,7 +122,7 @@ export function SafeguardingPage() {
               <div>
                 <h3 className="text-2xl font-bold text-secondary mb-3">3. Platform Lessons</h3>
                 <p className="text-slate-600 leading-relaxed">
-                  All tutoring sessions must happen within the KlaraLearn secure environment. We do not permit tutors and students to move lessons to unmonitored third-party video software, ensuring our safety tools are always active.
+                  Lessons use the Zoom or Google Meet link saved in KlaraLearn. A notetaker called KlaraLearn Notetaker joins every lesson. Tutors must not send a different link or remove the notetaker.
                 </p>
               </div>
             </motion.div>
@@ -137,7 +137,7 @@ export function SafeguardingPage() {
                   We believe transparency is a vital safeguard. Lessons conducted through KlaraLearn are recorded so parents can review learning activity and maintain visibility.
                 </p>
                 <ul className="space-y-2">
-                  <li className="flex items-start gap-2 text-slate-600"><CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" /> <span>Parents have access to session recordings for review.</span></li>
+                  <li className="flex items-start gap-2 text-slate-600"><CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" /> <span>Parents can watch their child’s lesson video for 30 days.</span></li>
                   <li className="flex items-start gap-2 text-slate-600"><CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" /> <span>Learning activity and topics covered are documented.</span></li>
                   <li className="flex items-start gap-2 text-slate-600"><CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" /> <span>Tutor feedback is visible to parents after sessions.</span></li>
                 </ul>
@@ -181,7 +181,7 @@ export function SafeguardingPage() {
               A parent handing a child to a tutor they have not met wants a written process, not a badge. KlaraLearn’s process is built for tutors who may live outside the UK, so a DBS certificate is not the test. DBS does not cover a tutor in Lagos or Nairobi.
             </p>
             <p className="text-lg text-slate-700 leading-relaxed">
-              Before a profile is shown, the tutor’s identity is checked, they are interviewed, and their curriculum knowledge is assessed for the UK subjects they want to teach. Lessons stay in KlaraLearn’s classroom and are recorded so a parent can watch what happened. The free 15-minute trial is part of that policy: you can leave before a paid lesson. Read <Link href="/how-it-works" className="text-primary font-semibold hover:underline">how a lesson runs</Link> and then <Link href="/find-a-tutor" className="text-primary font-semibold hover:underline">compare tutor profiles</Link>.
+              Before a profile is shown, the tutor’s identity is checked, they are interviewed, and their curriculum knowledge is assessed for the UK subjects they want to teach. Lessons use the Zoom or Google Meet link saved in KlaraLearn and are recorded so a parent can watch what happened for 30 days. The free 15-minute trial is part of that process: you can leave before a paid lesson. Read the <Link href="/legal/safeguarding" className="text-primary font-semibold hover:underline">Safeguarding Policy</Link>, <Link href="/how-it-works" className="text-primary font-semibold hover:underline">how a lesson runs</Link>, and then <Link href="/find-a-tutor" className="text-primary font-semibold hover:underline">compare tutor profiles</Link>.
             </p>
           </div>
           <h2 className="text-3xl font-bold text-secondary mb-6">Experience the difference</h2>

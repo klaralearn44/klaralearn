@@ -1,7 +1,7 @@
 import { Link } from 'wouter';
 import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 import { PARENT_SIGNUP_URL, TRIAL_BUTTON_LABEL } from '@/lib/trial-cta';
-import { familyLinks, guideLinks, locationLinks, subjectLinks } from '@/lib/internal-links';
+import { familyLinks, guideLinks, locationLinks, policyLinks, subjectLinks } from '@/lib/internal-links';
 
 export function Footer() {
   const logoSrc = `${import.meta.env.BASE_URL}brand/logo-mono-white.png`;
@@ -68,11 +68,23 @@ export function Footer() {
           </div>
         </div>
 
+        <div className="border-t border-white/10 pt-8">
+          <h4 className="text-white font-bold mb-4">Policies</h4>
+          <ul className="flex flex-wrap gap-x-6 gap-y-3 text-sm">
+            {policyLinks.map((link) => (
+              <li key={link.href}>
+                <Link href={link.href} className="hover:text-white transition-colors">{link.label}</Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
           <p>© 2026 KlaraLearn. All rights reserved.</p>
-          <div className="flex gap-6">
-            <Link href="/legal/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2">
+            <Link href="/legal/privacy" className="hover:text-white transition-colors">Privacy Notice</Link>
             <Link href="/legal/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link href="/legal/cookies" className="hover:text-white transition-colors">Cookie settings</Link>
             <a href="/sitemap.xml" className="hover:text-white transition-colors">Sitemap</a>
           </div>
         </div>
