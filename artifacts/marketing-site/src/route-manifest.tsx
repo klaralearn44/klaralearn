@@ -83,8 +83,18 @@ export const publicRoutes: readonly PublicRoute[] = [
   route('/parents', page(() => import('./pages/parents'), 'ParentsPage')),
   route('/find-a-tutor', page(() => import('./pages/find-a-tutor'), 'FindATutor')),
   route('/parents/tools', page(() => import('./pages/parent-tools'), 'ParentTools')),
-  route('/legal/privacy', page(() => import('./pages/legal'), 'PrivacyPage')),
-  route('/legal/terms', page(() => import('./pages/legal'), 'TermsPage')),
+  route('/legal/privacy', page(() => import('./pages/policies/privacy'), 'PrivacyPage')),
+  route('/legal/tutor-privacy', page(() => import('./pages/policies/tutor-privacy'), 'TutorPrivacyPage')),
+  route('/legal/young-people', page(() => import('./pages/policies/young-people'), 'YoungPeoplePage')),
+  route('/legal/terms', page(() => import('./pages/policies/terms'), 'TermsPage')),
+  route('/legal/tutor-agreement', page(() => import('./pages/policies/tutor-agreement'), 'TutorAgreementPage')),
+  route('/legal/tutor-code-of-conduct', page(() => import('./pages/policies/code-of-conduct'), 'TutorCodeOfConductPage')),
+  route('/legal/safeguarding', page(() => import('./pages/policies/safeguarding'), 'SafeguardingPolicyPage')),
+  route('/legal/session-recording', page(() => import('./pages/policies/session-recording'), 'SessionRecordingPage')),
+  route('/legal/acceptable-use', page(() => import('./pages/policies/acceptable-use'), 'AcceptableUsePage')),
+  route('/legal/refunds', page(() => import('./pages/policies/refunds'), 'RefundsPage')),
+  route('/legal/complaints', page(() => import('./pages/policies/complaints'), 'ComplaintsPage')),
+  route('/legal/cookies', page(() => import('./pages/policies/cookies'), 'CookiePolicyPage')),
 ];
 
 /** Legacy discovery URL: rendered for users, canonicalized and noindexed. */

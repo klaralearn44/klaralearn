@@ -27,6 +27,21 @@ export const familyLinks: readonly SiteLink[] = [
   { href: '/parents/tools', label: 'Parent Tools' },
 ];
 
+export const policyLinks: readonly SiteLink[] = [
+  { href: '/legal/privacy', label: 'Privacy Notice' },
+  { href: '/legal/tutor-privacy', label: 'Tutor Privacy Notice' },
+  { href: '/legal/young-people', label: 'Notice for Young People' },
+  { href: '/legal/terms', label: 'Terms of Service' },
+  { href: '/legal/tutor-agreement', label: 'Tutor Agreement' },
+  { href: '/legal/tutor-code-of-conduct', label: 'Tutor Code of Conduct' },
+  { href: '/legal/safeguarding', label: 'Safeguarding Policy' },
+  { href: '/legal/session-recording', label: 'Session Recording Policy' },
+  { href: '/legal/acceptable-use', label: 'Acceptable Use Policy' },
+  { href: '/legal/refunds', label: 'Cancellation & Refund Policy' },
+  { href: '/legal/complaints', label: 'Complaints Policy' },
+  { href: '/legal/cookies', label: 'Cookie Policy' },
+];
+
 export const guideLinks: readonly SiteLink[] = [
   { href: '/blog/what-is-the-11-plus', label: 'What Is the 11 Plus?' },
   { href: '/blog/how-to-prepare-for-11-plus', label: 'How to Prepare for the 11 Plus' },
