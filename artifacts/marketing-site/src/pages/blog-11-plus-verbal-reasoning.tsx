@@ -356,7 +356,7 @@ export function Blog11PlusVerbalReasoning() {
               <h3 className="text-2xl font-bold text-white mb-4">Expert 11 Plus Verbal Reasoning Tutors</h3>
               <p className="text-white/80 mb-6">Start your journey today with a free 15-minute trial session. Diagnostic first session · GL and CEM formats · current profile rates</p>
               <a
-                href="https://app.klaralearn.com/version-test?view=signup"
+                href="https://app.klaralearn.com?view=signup"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white font-bold py-3 px-8 rounded-full transition-colors no-underline"
