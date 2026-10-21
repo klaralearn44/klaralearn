@@ -201,7 +201,7 @@ export function BlogArticleGrammarSchool() {
             <div className="mt-16 p-8 bg-slate-50 rounded-2xl border border-primary/20 text-center">
               <h3 className="text-2xl font-bold text-secondary mb-4 mt-0">Ready to start preparing?</h3>
               <p className="mb-6">Start your journey today with a free 15-minute trial session. You can also explore available 11 Plus tutor profiles, with each tutor&apos;s current rate shown.</p>
-              <a href="https://app.klaralearn.com/version-test?view=signup" className="inline-block bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white font-bold py-3 px-8 rounded-full no-underline transition-colors mb-4">
+              <a href="https://app.klaralearn.com?view=signup" className="inline-block bg-[#E05C2A] hover:bg-[#E05C2A]/90 text-white font-bold py-3 px-8 rounded-full no-underline transition-colors mb-4">
                 Start your free 15-minute trial
               </a>
               <Link href="/subjects/11-plus" className="block mt-4 text-primary font-semibold hover:underline">
